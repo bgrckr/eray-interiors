@@ -1,0 +1,192 @@
+/* ============================================================
+   Çok dillilik (TR / EN / ES)
+   ------------------------------------------------------------
+   METİNLERİ DÜZENLEMEK İÇİN: aşağıdaki `translations` nesnesini
+   düzenlemeniz yeterli. Her metnin üç dildeki karşılığı yan yana
+   durur. Sayfa gövde metinleri page.* altındadır ve HTML içerir
+   (<p> ... </p>). Türkçe metni değiştirdiğinizde en/es
+   karşılıklarını da güncellemeyi unutmayın.
+   ============================================================ */
+
+window.I18N = (function () {
+  const LANGS = [
+    { code: 'tr', label: 'TR', name: 'Türkçe' },
+    { code: 'en', label: 'EN', name: 'English' },
+    { code: 'es', label: 'ES', name: 'Español' }
+  ];
+
+  const translations = {
+    tr: {
+      menu: { ozel: 'Özel Tasarım', ic: 'İç Mekanlar', mutfak: 'Mutfaklar' },
+      search: { placeholder: 'Ara…', empty: 'Sonuç bulunamadı' },
+      footer: {
+        contact: 'İletişim', follow: 'Bizi Takip Edin',
+        rights: '© 2026 Eray Interiors. Tüm hakları saklıdır.'
+      },
+      page: {
+        home: {
+          hero: 'ERAY INTERIORS',
+          sub: 'İç mekânlara karakter ve zarafet',
+          title: 'İç Mekânlarınıza Karakter Katıyoruz',
+          body:
+            '<p>Eray Interiors, yaşam ve çalışma alanlarını yalnızca güzel değil; işlevsel, sürdürülebilir ve size özel kılan bir iç mimarlık stüdyosudur. Her projeye mekânın ruhunu ve içinde yaşayanların ihtiyaçlarını dinleyerek başlıyoruz.</p>' +
+            '<p>Konut projelerinden ticari mekânlara, ısmarlama mobilyadan mutfak tasarımına kadar geniş bir yelpazede; malzeme, ışık ve oranın uyumunu gözeten bütüncül çözümler üretiyoruz. Amacımız, girdiğiniz anda kendinizi ait hissettiğiniz mekânlar tasarlamak.</p>'
+        },
+        ozel: {
+          hero: 'Özel Tasarım',
+          sub: 'Size ve mekânınıza özel çözümler',
+          title: 'Özel Tasarım',
+          body:
+            '<p>Her mekân biriciktir; bu yüzden hazır kalıplar yerine tümüyle size özel tasarımlar geliştiriyoruz. Ölçüden malzemeye, formdan işlevine kadar her ayrıntı, yaşam biçiminize ve zevkinize göre şekilleniyor.</p>' +
+            '<p>Ismarlama mobilya, özel dolap sistemleri ve mekâna gömülü çözümlerle her santimetrekareyi verimli ve estetik bir bütüne dönüştürüyoruz. Tasarım sürecini sizinle birlikte, şeffaf bir şekilde yürütüyor; fikirden uygulamaya kadar yanınızda oluyoruz.</p>'
+        },
+        ic: {
+          hero: 'İç Mekânlar',
+          sub: 'Konut ve ticari mekân tasarımı',
+          title: 'İç Mekânlar',
+          body:
+            '<p>İç mekân tasarımında hedefimiz; estetik ile konforu, işlevsellik ile duyguyu aynı çatı altında buluşturmak. Konutlar, ofisler ve ticari alanlar için mekânın potansiyelini en yüksek noktaya taşıyan tasarımlar kurguluyoruz.</p>' +
+            '<p>Renk paletinden aydınlatmaya, mobilya seçiminden dokulara kadar her kararı bütünsel bir dille ele alıyoruz. Böylece yalnızca göze değil, yaşayana da hitap eden; zamansız ve dengeli mekânlar ortaya çıkıyor.</p>'
+        },
+        mutfak: {
+          hero: 'Mutfaklar',
+          sub: 'İşlevsel ve şık mutfak tasarımları',
+          title: 'Mutfaklar',
+          body:
+            '<p>Mutfak, evin kalbidir. Bu yüzden mutfak tasarımlarımızda ergonomi, dayanıklılık ve estetiği bir arada düşünüyoruz. Çalışma üçgeninden depolama çözümlerine kadar her detay, günlük hayatınızı kolaylaştıracak şekilde planlanıyor.</p>' +
+            '<p>Modern ada mutfaklardan sıcak ve klasik kurgulara kadar; kaliteli malzemeler ve akıllı çözümlerle uzun yıllar keyifle kullanacağınız mutfaklar tasarlıyoruz. Her proje, sizin alışkanlıklarınıza göre biçimleniyor.</p>'
+        }
+      }
+    },
+
+    en: {
+      menu: { ozel: 'Custom Design', ic: 'Interiors', mutfak: 'Kitchens' },
+      search: { placeholder: 'Search…', empty: 'No results found' },
+      footer: {
+        contact: 'Contact', follow: 'Follow Us',
+        rights: '© 2026 Eray Interiors. All rights reserved.'
+      },
+      page: {
+        home: {
+          hero: 'ERAY INTERIORS',
+          sub: 'Character and elegance for interiors',
+          title: 'We Bring Character to Your Spaces',
+          body:
+            '<p>Eray Interiors is an interior architecture studio that makes living and working spaces not only beautiful, but functional, sustainable and truly yours. Every project begins by listening to the spirit of the space and the needs of the people who live in it.</p>' +
+            '<p>From residential projects to commercial spaces, from bespoke furniture to kitchen design, we deliver holistic solutions that balance material, light and proportion. Our goal is to design spaces you feel you belong to the moment you step in.</p>'
+        },
+        ozel: {
+          hero: 'Custom Design',
+          sub: 'Solutions tailored to you and your space',
+          title: 'Custom Design',
+          body:
+            '<p>Every space is unique, so instead of ready-made templates we develop designs entirely tailored to you. From dimensions to materials, from form to function, every detail is shaped around your lifestyle and taste.</p>' +
+            '<p>With bespoke furniture, custom storage systems and built-in solutions, we turn every square metre into an efficient and elegant whole. We run the design process transparently, standing by you from idea to completion.</p>'
+        },
+        ic: {
+          hero: 'Interiors',
+          sub: 'Residential and commercial interior design',
+          title: 'Interiors',
+          body:
+            '<p>In interior design our aim is to unite aesthetics with comfort, and function with emotion, under one roof. For homes, offices and commercial spaces we create designs that bring out the full potential of a space.</p>' +
+            '<p>From the colour palette to lighting, from furniture selection to textures, we handle every decision with a coherent language. The result is timeless, balanced spaces that speak not only to the eye but to those who live in them.</p>'
+        },
+        mutfak: {
+          hero: 'Kitchens',
+          sub: 'Functional and stylish kitchen design',
+          title: 'Kitchens',
+          body:
+            '<p>The kitchen is the heart of the home. That is why our kitchen designs bring together ergonomics, durability and aesthetics. From the work triangle to storage solutions, every detail is planned to make daily life easier.</p>' +
+            '<p>From modern island kitchens to warm, classic layouts, we design kitchens you will enjoy for many years, using quality materials and smart solutions. Every project is shaped around your habits.</p>'
+        }
+      }
+    },
+
+    es: {
+      menu: { ozel: 'Diseño Personalizado', ic: 'Interiores', mutfak: 'Cocinas' },
+      search: { placeholder: 'Buscar…', empty: 'No se encontraron resultados' },
+      footer: {
+        contact: 'Contacto', follow: 'Síguenos',
+        rights: '© 2026 Eray Interiors. Todos los derechos reservados.'
+      },
+      page: {
+        home: {
+          hero: 'ERAY INTERIORS',
+          sub: 'Carácter y elegancia para los interiores',
+          title: 'Damos Carácter a Sus Espacios',
+          body:
+            '<p>Eray Interiors es un estudio de arquitectura de interiores que hace que los espacios de vida y trabajo no solo sean bellos, sino funcionales, sostenibles y verdaderamente suyos. Cada proyecto comienza escuchando el alma del espacio y las necesidades de quienes lo habitan.</p>' +
+            '<p>Desde proyectos residenciales hasta espacios comerciales, del mobiliario a medida al diseño de cocinas, ofrecemos soluciones integrales que equilibran material, luz y proporción. Nuestro objetivo es diseñar espacios a los que sienta que pertenece desde el primer momento.</p>'
+        },
+        ozel: {
+          hero: 'Diseño Personalizado',
+          sub: 'Soluciones a medida para usted y su espacio',
+          title: 'Diseño Personalizado',
+          body:
+            '<p>Cada espacio es único, por eso en lugar de plantillas prefabricadas desarrollamos diseños totalmente hechos a su medida. De las dimensiones a los materiales, de la forma a la función, cada detalle se moldea según su estilo de vida y su gusto.</p>' +
+            '<p>Con mobiliario a medida, sistemas de almacenamiento personalizados y soluciones integradas, convertimos cada metro cuadrado en un conjunto eficiente y elegante. Llevamos el proceso de diseño de forma transparente, a su lado desde la idea hasta la ejecución.</p>'
+        },
+        ic: {
+          hero: 'Interiores',
+          sub: 'Diseño de interiores residenciales y comerciales',
+          title: 'Interiores',
+          body:
+            '<p>En el diseño de interiores nuestro objetivo es unir la estética con el confort, y la función con la emoción, bajo un mismo techo. Para viviendas, oficinas y espacios comerciales creamos diseños que revelan todo el potencial de un espacio.</p>' +
+            '<p>De la paleta de colores a la iluminación, de la selección de mobiliario a las texturas, abordamos cada decisión con un lenguaje coherente. El resultado son espacios atemporales y equilibrados que hablan no solo a la vista, sino a quienes los habitan.</p>'
+        },
+        mutfak: {
+          hero: 'Cocinas',
+          sub: 'Diseño de cocinas funcional y elegante',
+          title: 'Cocinas',
+          body:
+            '<p>La cocina es el corazón del hogar. Por eso nuestros diseños de cocina combinan ergonomía, durabilidad y estética. Del triángulo de trabajo a las soluciones de almacenamiento, cada detalle se planifica para facilitar su día a día.</p>' +
+            '<p>De cocinas modernas con isla a distribuciones cálidas y clásicas, diseñamos cocinas que disfrutará durante muchos años, con materiales de calidad y soluciones inteligentes. Cada proyecto se moldea según sus hábitos.</p>'
+        }
+      }
+    }
+  };
+
+  const STORAGE_KEY = 'eray_lang';
+
+  function current() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return LANGS.some(l => l.code === saved) ? saved : 'tr';
+  }
+
+  // Noktalı anahtarı (ör. "page.home.body") ilgili dilde çözer.
+  function t(key, lang) {
+    lang = lang || current();
+    const parts = key.split('.');
+    let node = translations[lang];
+    for (const p of parts) {
+      if (node == null) return null;
+      node = node[p];
+    }
+    return node == null ? null : node;
+  }
+
+  function apply(lang) {
+    lang = lang || current();
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const val = t(el.getAttribute('data-i18n'), lang);
+      if (val == null) return;
+      if (el.hasAttribute('data-i18n-html')) el.innerHTML = val;
+      else el.textContent = val;
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const val = t(el.getAttribute('data-i18n-placeholder'), lang);
+      if (val != null) el.setAttribute('placeholder', val);
+    });
+  }
+
+  function set(lang) {
+    if (!LANGS.some(l => l.code === lang)) return;
+    localStorage.setItem(STORAGE_KEY, lang);
+    apply(lang);
+    document.dispatchEvent(new CustomEvent('langchange', { detail: lang }));
+  }
+
+  return { LANGS, translations, t, current, apply, set };
+})();
