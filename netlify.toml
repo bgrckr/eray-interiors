@@ -1,4 +1,0 @@
-# Netlify yayın ayarı — statik site, derleme yok, kök klasör yayınlanır.
-[build]
-  publish = "."
-  command = ""

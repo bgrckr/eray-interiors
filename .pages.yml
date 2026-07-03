@@ -1,0 +1,45 @@
+# ============================================================
+# Pages CMS yapılandırması — Eray Interiors yönetim paneli
+# Panel: https://app.pagescms.org (GitHub hesabıyla giriş)
+# Netlify/Identity GEREKTİRMEZ. Panelden yapılan her değişiklik
+# doğrudan GitHub deposundaki main dalına kaydedilir; GitHub Pages
+# siteyi otomatik günceller.
+# ============================================================
+
+media:
+  input: assets/img          # yüklenen görsellerin depoda kaydedileceği klasör
+  output: assets/img         # görsele sitede erişim yolu (göreli — Pages alt-klasörüyle uyumlu)
+  extensions: [jpg, jpeg, png, webp, gif, svg]
+
+content:
+  - name: home
+    label: Ana Sayfa
+    type: file
+    path: content/home.json
+    fields:
+      - { name: hero, label: "Hero (büyük üst görsel)", type: image }
+      - { name: gallery, label: "Galeri görselleri", type: image, list: true }
+
+  - name: ozel
+    label: Özel Tasarım
+    type: file
+    path: content/ozel.json
+    fields:
+      - { name: hero, label: "Hero (büyük üst görsel)", type: image }
+      - { name: gallery, label: "Galeri görselleri", type: image, list: true }
+
+  - name: ic
+    label: İç Mekânlar
+    type: file
+    path: content/ic.json
+    fields:
+      - { name: hero, label: "Hero (büyük üst görsel)", type: image }
+      - { name: gallery, label: "Galeri görselleri", type: image, list: true }
+
+  - name: mutfak
+    label: Mutfaklar
+    type: file
+    path: content/mutfak.json
+    fields:
+      - { name: hero, label: "Hero (büyük üst görsel)", type: image }
+      - { name: gallery, label: "Galeri görselleri", type: image, list: true }

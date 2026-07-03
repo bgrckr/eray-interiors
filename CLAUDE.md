@@ -54,19 +54,21 @@ Her sayfanın düzeni: **header → hero görsel → tanıtım metni → otomati
 - Site göreli yollar kullandığı için alt-klasörlü Pages adresinde sorunsuz çalışır.
 
 ## İçerik yönetim paneli (CMS)
-- **Decap CMS** paneli `admin/` altındadır: `admin/index.html` + `admin/config.yml`.
-  Panel adresi: `<siteadresi>/admin/`. Giriş **Netlify Identity + Git Gateway** ile.
+- **Pages CMS** kullanılıyor (https://app.pagescms.org). Yapılandırma: kök dizindeki
+  **`.pages.yml`**. Giriş doğrudan **GitHub hesabıyla**; Netlify/Identity GEREKMEZ.
+  (Netlify Identity yeni sitelerde kullanımdan kaldırıldığı için bu yola geçildi.)
+- Panel, GitHub deposunu doğrudan düzenler; GitHub Pages siteyi otomatik günceller.
+  Yani **hosting GitHub Pages'te kalır**, ayrı bir panel sitesi yok.
 - Panelden yönetilen içerik **görsellerdir** (her sayfanın hero'su + galeri listesi).
+  Görseller `assets/img/`'e yüklenir (`.pages.yml` → media input/output).
 - İçerik veri dosyaları: `content/home.json`, `content/ozel.json`, `content/ic.json`,
   `content/mutfak.json`. Şema: `{ "hero": "assets/img/..", "gallery": ["assets/img/..", ...] }`.
 - **`js/content.js`** her sayfada `content/<data-page>.json`'ı `fetch` ile okur; hero
   arka planını ve `.carousel-track` içindeki galeriyi bu veriye göre oluşturur.
   `app.js` içinde `initCarousels()`'tan ÖNCE `await loadPageContent()` çağrılır.
   Dosya okunamazsa (ör. `file://`) HTML'deki statik görseller/yer tutucular kalır.
-- **Not:** Panel için site bir HTTP sunucudan servis edilmelidir (Netlify). Yönetim
-  paneli Netlify Identity gerektirdiğinden GitHub Pages tek başına panel girişi sağlamaz.
 - **Metinler hâlâ `js/i18n.js`'te** (panelde değil). İstenirse metinler de panele
-  taşınabilir (content JSON'a tr/en/es alanları eklenip content.js ile I18N'e verilir).
+  taşınabilir (content JSON'a tr/en/es alanları eklenip .pages.yml ve content.js güncellenir).
 
 ## Yapılacaklar / açık maddeler
 - Gerçek hero ve galeri görsellerini ekle.
