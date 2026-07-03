@@ -1,5 +1,5 @@
 {
-  "hero": "assets/img/15.jpg",
+  "hero": "assets/img/3.jpg",
   "hero_title": {
     "tr": "ERAY INTERIORS",
     "en": "ERAY INTERIORS",
@@ -22,6 +22,7 @@
   },
   "gallery": [
     "assets/img/8.jpg",
+    "assets/img/32.jpg",
     "assets/img/16.jpg",
     "assets/img/b4.jpg"
   ]
