@@ -1,5 +1,5 @@
 {
-  "hero": "assets/img/gchgf.png",
+  "hero": "assets/img/15.jpg",
   "hero_title": {
     "tr": "ERAY INTERIORS",
     "en": "ERAY INTERIORS",
@@ -21,11 +21,7 @@
     "es": "Eray Interiors es un estudio de arquitectura de interiores que hace que los espacios de vida y trabajo no solo sean bellos, sino funcionales, sostenibles y verdaderamente suyos. Cada proyecto comienza escuchando el alma del espacio y las necesidades de quienes lo habitan.\n\nDesde proyectos residenciales hasta espacios comerciales, del mobiliario a medida al diseño de cocinas, ofrecemos soluciones integrales que equilibran material, luz y proporción. Nuestro objetivo es diseñar espacios a los que sienta que pertenece desde el primer momento."
   },
   "gallery": [
-    "assets/img/home-1.jpg",
-    "assets/img/home-2.jpg",
-    "assets/img/home-3.jpg",
-    "assets/img/home-4.jpg",
-    "assets/img/home-5.jpg",
-    "assets/img/home-6.jpg"
+    "assets/img/8.jpg",
+    "assets/img/16.jpg"
   ]
 }
