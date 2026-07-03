@@ -1,5 +1,5 @@
 {
-  "hero": "assets/img/hero-mutfak.jpg",
+  "hero": "assets/img/6-1.jpg",
   "hero_title": {
     "tr": "Mutfaklar",
     "en": "Kitchens",
@@ -21,11 +21,8 @@
     "es": "La cocina es el corazón del hogar. Por eso nuestros diseños de cocina combinan ergonomía, durabilidad y estética. Del triángulo de trabajo a las soluciones de almacenamiento, cada detalle se planifica para facilitar su día a día.\n\nDe cocinas modernas con isla a distribuciones cálidas y clásicas, diseñamos cocinas que disfrutará durante muchos años, con materiales de calidad y soluciones inteligentes. Cada proyecto se moldea según sus hábitos."
   },
   "gallery": [
-    "assets/img/mutfak-1.jpg",
-    "assets/img/mutfak-2.jpg",
-    "assets/img/mutfak-3.jpg",
-    "assets/img/mutfak-4.jpg",
-    "assets/img/mutfak-5.jpg",
-    "assets/img/mutfak-6.jpg"
+    "assets/img/6-2.jpg",
+    "assets/img/8-1.jpg",
+    "assets/img/7.jpg"
   ]
 }
