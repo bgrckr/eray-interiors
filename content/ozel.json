@@ -1,5 +1,25 @@
 {
   "hero": "assets/img/hero-ozel.jpg",
+  "hero_title": {
+    "tr": "Özel Tasarım",
+    "en": "Custom Design",
+    "es": "Diseño Personalizado"
+  },
+  "hero_sub": {
+    "tr": "Size ve mekânınıza özel çözümler",
+    "en": "Solutions tailored to you and your space",
+    "es": "Soluciones a medida para usted y su espacio"
+  },
+  "title": {
+    "tr": "Özel Tasarım",
+    "en": "Custom Design",
+    "es": "Diseño Personalizado"
+  },
+  "body": {
+    "tr": "Her mekân biriciktir; bu yüzden hazır kalıplar yerine tümüyle size özel tasarımlar geliştiriyoruz. Ölçüden malzemeye, formdan işlevine kadar her ayrıntı, yaşam biçiminize ve zevkinize göre şekilleniyor.\n\nIsmarlama mobilya, özel dolap sistemleri ve mekâna gömülü çözümlerle her santimetrekareyi verimli ve estetik bir bütüne dönüştürüyoruz. Tasarım sürecini sizinle birlikte, şeffaf bir şekilde yürütüyor; fikirden uygulamaya kadar yanınızda oluyoruz.",
+    "en": "Every space is unique, so instead of ready-made templates we develop designs entirely tailored to you. From dimensions to materials, from form to function, every detail is shaped around your lifestyle and taste.\n\nWith bespoke furniture, custom storage systems and built-in solutions, we turn every square metre into an efficient and elegant whole. We run the design process transparently, standing by you from idea to completion.",
+    "es": "Cada espacio es único, por eso en lugar de plantillas prefabricadas desarrollamos diseños totalmente hechos a su medida. De las dimensiones a los materiales, de la forma a la función, cada detalle se moldea según su estilo de vida y su gusto.\n\nCon mobiliario a medida, sistemas de almacenamiento personalizados y soluciones integradas, convertimos cada metro cuadrado en un conjunto eficiente y elegante. Llevamos el proceso de diseño de forma transparente, a su lado desde la idea hasta la ejecución."
+  },
   "gallery": [
     "assets/img/ozel-1.jpg",
     "assets/img/ozel-2.jpg",

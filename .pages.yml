@@ -11,6 +11,8 @@ media:
   output: assets/img         # görsele sitede erişim yolu (göreli — Pages alt-klasörüyle uyumlu)
   extensions: [jpg, jpeg, png, webp, gif, svg]
 
+# Her sayfa alanı 3 dilde (TR/EN/ES) düzenlenir. Metinlerde paragrafları
+# BOŞ SATIRLA ayırın. Görselleri "hero" ve "galeri" alanlarından yükleyin.
 content:
   - name: home
     label: Ana Sayfa
@@ -18,6 +20,34 @@ content:
     path: content/home.json
     fields:
       - { name: hero, label: "Hero (büyük üst görsel)", type: image }
+      - name: hero_title
+        label: "Hero başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: hero_sub
+        label: "Hero alt başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: title
+        label: "Sayfa başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: body
+        label: "Tanıtım metni (paragrafları boş satırla ayırın)"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: text }
+          - { name: en, label: "English", type: text }
+          - { name: es, label: "Español", type: text }
       - { name: gallery, label: "Galeri görselleri", type: image, list: true }
 
   - name: ozel
@@ -26,6 +56,34 @@ content:
     path: content/ozel.json
     fields:
       - { name: hero, label: "Hero (büyük üst görsel)", type: image }
+      - name: hero_title
+        label: "Hero başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: hero_sub
+        label: "Hero alt başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: title
+        label: "Sayfa başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: body
+        label: "Tanıtım metni (paragrafları boş satırla ayırın)"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: text }
+          - { name: en, label: "English", type: text }
+          - { name: es, label: "Español", type: text }
       - { name: gallery, label: "Galeri görselleri", type: image, list: true }
 
   - name: ic
@@ -34,6 +92,34 @@ content:
     path: content/ic.json
     fields:
       - { name: hero, label: "Hero (büyük üst görsel)", type: image }
+      - name: hero_title
+        label: "Hero başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: hero_sub
+        label: "Hero alt başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: title
+        label: "Sayfa başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: body
+        label: "Tanıtım metni (paragrafları boş satırla ayırın)"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: text }
+          - { name: en, label: "English", type: text }
+          - { name: es, label: "Español", type: text }
       - { name: gallery, label: "Galeri görselleri", type: image, list: true }
 
   - name: mutfak
@@ -42,4 +128,32 @@ content:
     path: content/mutfak.json
     fields:
       - { name: hero, label: "Hero (büyük üst görsel)", type: image }
+      - name: hero_title
+        label: "Hero başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: hero_sub
+        label: "Hero alt başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: title
+        label: "Sayfa başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: body
+        label: "Tanıtım metni (paragrafları boş satırla ayırın)"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: text }
+          - { name: en, label: "English", type: text }
+          - { name: es, label: "Español", type: text }
       - { name: gallery, label: "Galeri görselleri", type: image, list: true }

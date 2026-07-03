@@ -1,5 +1,25 @@
 {
   "hero": "assets/img/hero-mutfak.jpg",
+  "hero_title": {
+    "tr": "Mutfaklar",
+    "en": "Kitchens",
+    "es": "Cocinas"
+  },
+  "hero_sub": {
+    "tr": "İşlevsel ve şık mutfak tasarımları",
+    "en": "Functional and stylish kitchen design",
+    "es": "Diseño de cocinas funcional y elegante"
+  },
+  "title": {
+    "tr": "Mutfaklar",
+    "en": "Kitchens",
+    "es": "Cocinas"
+  },
+  "body": {
+    "tr": "Mutfak, evin kalbidir. Bu yüzden mutfak tasarımlarımızda ergonomi, dayanıklılık ve estetiği bir arada düşünüyoruz. Çalışma üçgeninden depolama çözümlerine kadar her detay, günlük hayatınızı kolaylaştıracak şekilde planlanıyor.\n\nModern ada mutfaklardan sıcak ve klasik kurgulara kadar; kaliteli malzemeler ve akıllı çözümlerle uzun yıllar keyifle kullanacağınız mutfaklar tasarlıyoruz. Her proje, sizin alışkanlıklarınıza göre biçimleniyor.",
+    "en": "The kitchen is the heart of the home. That is why our kitchen designs bring together ergonomics, durability and aesthetics. From the work triangle to storage solutions, every detail is planned to make daily life easier.\n\nFrom modern island kitchens to warm, classic layouts, we design kitchens you will enjoy for many years, using quality materials and smart solutions. Every project is shaped around your habits.",
+    "es": "La cocina es el corazón del hogar. Por eso nuestros diseños de cocina combinan ergonomía, durabilidad y estética. Del triángulo de trabajo a las soluciones de almacenamiento, cada detalle se planifica para facilitar su día a día.\n\nDe cocinas modernas con isla a distribuciones cálidas y clásicas, diseñamos cocinas que disfrutará durante muchos años, con materiales de calidad y soluciones inteligentes. Cada proyecto se moldea según sus hábitos."
+  },
   "gallery": [
     "assets/img/mutfak-1.jpg",
     "assets/img/mutfak-2.jpg",

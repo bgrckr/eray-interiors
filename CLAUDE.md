@@ -61,14 +61,20 @@ Her sayfanın düzeni: **header → hero görsel → tanıtım metni → otomati
   Yani **hosting GitHub Pages'te kalır**, ayrı bir panel sitesi yok.
 - Panelden yönetilen içerik **görsellerdir** (her sayfanın hero'su + galeri listesi).
   Görseller `assets/img/`'e yüklenir (`.pages.yml` → media input/output).
-- İçerik veri dosyaları: `content/home.json`, `content/ozel.json`, `content/ic.json`,
-  `content/mutfak.json`. Şema: `{ "hero": "assets/img/..", "gallery": ["assets/img/..", ...] }`.
-- **`js/content.js`** her sayfada `content/<data-page>.json`'ı `fetch` ile okur; hero
-  arka planını ve `.carousel-track` içindeki galeriyi bu veriye göre oluşturur.
+- Panelden yönetilen içerik: her sayfanın **hero görseli, galeri görselleri VE
+  3 dilli metinleri** (hero başlığı/alt başlığı, sayfa başlığı, tanıtım gövdesi).
+- İçerik veri dosyaları: `content/home.json` (+ ozel/ic/mutfak). Şema:
+  `{ "hero": "assets/img/..", "hero_title": {tr,en,es}, "hero_sub": {tr,en,es},
+  "title": {tr,en,es}, "body": {tr,en,es}, "gallery": ["assets/img/..", ...] }`.
+  `body` içindeki paragraflar BOŞ SATIRLA ayrılır.
+- **`js/content.js`** her sayfada `content/<data-page>.json`'ı `fetch` ile okur;
+  hero arka planını + galeriyi kurar ve metinleri `I18N.translations[l].page[<page>]`
+  içine yazıp `I18N.apply()` çağırır (`body` metni `<p>` paragraflarına çevrilir).
   `app.js` içinde `initCarousels()`'tan ÖNCE `await loadPageContent()` çağrılır.
-  Dosya okunamazsa (ör. `file://`) HTML'deki statik görseller/yer tutucular kalır.
-- **Metinler hâlâ `js/i18n.js`'te** (panelde değil). İstenirse metinler de panele
-  taşınabilir (content JSON'a tr/en/es alanları eklenip .pages.yml ve content.js güncellenir).
+- **Yedek:** `js/i18n.js`'teki `page.*` metinleri hâlâ durur ve JSON okunamazsa
+  (ör. `file://`) yedek olarak kullanılır. **Kaynak/gerçek metin = panel/JSON'dur**;
+  JSON değeri i18n.js'i çalışma anında ezer. Menü/footer/arama metinleri ise
+  yalnızca `js/i18n.js`'tedir (panelde değil).
 
 ## Yapılacaklar / açık maddeler
 - Gerçek hero ve galeri görsellerini ekle.
