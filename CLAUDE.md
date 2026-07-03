@@ -76,9 +76,28 @@ Her sayfanın düzeni: **header → hero görsel → tanıtım metni → otomati
   JSON değeri i18n.js'i çalışma anında ezer. Menü/footer/arama metinleri ise
   yalnızca `js/i18n.js`'tedir (panelde değil).
 
+## SEO & favicon
+- Her sayfanın `<head>`'inde: benzersiz `<title>` + `meta description`, `canonical`,
+  `robots`, Open Graph, Twitter Card, `theme-color` ve **JSON-LD `LocalBusiness`**
+  yapısal verisi bulunur. JSON-LD tüm sayfalarda aynıdır (ad, url, logo, e-posta,
+  telefon, `sameAs`=Instagram, `areaServed`=TR).
+- **Favicon/ikonlar:** kökte `favicon.ico` (16/32/48) + `favicon.svg` (vektör, yeşil
+  "E" monogramı) + `assets/apple-touch-icon.png` (180) + `assets/icon-192.png` /
+  `icon-512.png` (`site.webmanifest`'te). Marka rengi `#1B4D3E`.
+- **Sosyal paylaşım görseli:** `assets/og-image.png` (1200×630, tüm OG/Twitter
+  etiketlerinde mutlak URL ile). İkon/OG görselleri PowerShell `System.Drawing` ile
+  üretildi; yeniden üretmek gerekirse aynı geometri/renk kullanılır.
+- **Tarama/indeksleme:** kökte `robots.txt` (sitemap'e işaret eder) ve `sitemap.xml`
+  (4 sayfa). URL'ler mutlak Pages adresini kullanır; alan adı değişirse `sitemap.xml`,
+  `robots.txt`, tüm `canonical`/`og:url`/JSON-LD `url` alanları güncellenmeli.
+- **Not (yerel SEO):** İşletmeye fiziksel adres/şehir eklenirse JSON-LD'ye
+  `address` (PostalAddress) + `geo` eklenmeli — Google yerel paketi (harita) için
+  kritik. Şu an adres olmadığından eklenmedi.
+
 ## Yapılacaklar / açık maddeler
 - Gerçek hero ve galeri görsellerini ekle.
-- Facebook/Pinterest/LinkedIn gerçek URL'lerini `js/footer.js`'e yaz.
-- Favicon ekle.
+- Facebook/Pinterest/LinkedIn gerçek URL'lerini `js/footer.js`'e yaz
+  (verilince JSON-LD `sameAs` dizisine de eklenmeli).
+- İsteğe bağlı: fiziksel adres/şehir → JSON-LD `address` (yerel SEO).
 - İsteğe bağlı: kendi alan adını (ör. erayinteriors.com) Pages'e bağla.
 - İsteğe bağlı: `mailto` yerine gerçek iletişim formu (ör. Formspree).
