@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', async function () {
   setupSearch();
   setupMobileMenu();
   await loadPageContent(); // panelden gelen hero/galeri görsellerini uygula
-  initCarousels();         // galeri kurulduktan SONRA otomatik kaydırmayı başlat
+  if (window.loadProjects) await loadProjects();   // proje şeritlerini + detay sayfasını kur
+  if (window.initHeroSlider) initHeroSlider();      // ana sayfa hero slaytları
+  initCarousels();         // şeritler kurulduktan SONRA otomatik kaydırmayı başlat
 
   // Dışarı tıklayınca açık menüleri kapat
   document.addEventListener('click', function (e) {

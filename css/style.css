@@ -15,7 +15,17 @@
   --font-brand:'Raleway', sans-serif;      /* Başlık — Fathom'a yakın, ExtraLight */
   --font-body:'Jost', system-ui, sans-serif; /* Gövde — geometrik, Türkçe uyumlu */
   --header-h:84px;
-  --maxw:1280px;
+  --maxw:1280px;            /* İçerik genişliği (geniş monitörde büyür) */
+
+  /* Boşluk ölçeği — responsive ritim tek yerden. clamp: mobil→masaüstü akıcı. */
+  --space-xs: clamp(.5rem, 1.2vw, .85rem);
+  --space-sm: clamp(.85rem, 2vw, 1.25rem);
+  --space-md: clamp(1.25rem, 3vw, 2rem);
+  --space-lg: clamp(2rem, 5vw, 3.5rem);
+  --space-xl: clamp(3rem, 7vw, 6rem);
+  --gap-menu-title: clamp(72px, 9vw, 132px);  /* menü(header) ↔ sayfa başlığı boşluğu */
+  --hero-h: 78vh;          /* Hero yüksekliği (mobilde svh'ye döner) */
+  --radius: 8px;
 }
 
 *{ box-sizing:border-box; }
@@ -124,12 +134,12 @@ img{ max-width:100%; display:block; }
 
 /* ---------- Hero ---------- */
 .hero{
-  position:relative; min-height:72vh;
+  position:relative; min-height:var(--hero-h); overflow:hidden;
   background:linear-gradient(120deg, var(--green-700), var(--green) 60%, var(--green-300));
   background-size:cover; background-position:center;
   display:flex; align-items:center; justify-content:center;
 }
-.hero::after{ content:''; position:absolute; inset:0; background:rgba(15,35,28,.28); }
+.hero::after{ content:''; position:absolute; inset:0; background:rgba(15,35,28,.28); z-index:1; }
 .hero-overlay{ position:relative; z-index:2; text-align:center; color:var(--white); padding:0 24px; }
 .hero-title{
   font-family:var(--font-brand); font-weight:200; letter-spacing:.16em;
@@ -137,8 +147,27 @@ img{ max-width:100%; display:block; }
 }
 .hero-sub{ font-weight:300; letter-spacing:.14em; margin-top:14px; font-size:clamp(.85rem,1.6vw,1.05rem); opacity:.92; }
 
+/* Ana sayfa hero slayt gösterisi (5 görsel, yavaş yatay kayma) */
+.hero-slides{
+  position:absolute; inset:0; display:flex; z-index:0;
+  transition:transform .9s cubic-bezier(.65,0,.35,1); will-change:transform;
+}
+.hero-slide{
+  position:relative; flex:0 0 100%; height:100%;
+  background:#dfe5e2 center/cover no-repeat;
+}
+.hero-dots{
+  position:absolute; left:0; right:0; bottom:22px; z-index:3;
+  display:flex; gap:10px; justify-content:center;
+}
+.hero-dots button{
+  width:9px; height:9px; padding:0; border-radius:50%; cursor:pointer;
+  border:1px solid rgba(255,255,255,.85); background:transparent; transition:background .25s;
+}
+.hero-dots button.active{ background:var(--white); }
+
 /* ---------- Sayfa metni ---------- */
-.page-intro{ max-width:860px; margin:0 auto; padding:84px 28px 40px; text-align:center; }
+.page-intro{ max-width:860px; margin:0 auto; padding:var(--gap-menu-title) 28px var(--space-lg); text-align:center; }
 .page-title{
   font-family:var(--font-brand); font-weight:200; letter-spacing:.08em;
   font-size:clamp(1.7rem,3.4vw,2.6rem); color:var(--green); margin:0 0 24px;
@@ -170,6 +199,60 @@ img{ max-width:100%; display:block; }
 .car-arrow svg{ width:20px; height:20px; }
 .car-prev{ left:6px; }
 .car-next{ right:6px; }
+
+/* ---------- Proje şeridi (kayan kutular → proje) ---------- */
+.strip-head{ max-width:var(--maxw); margin:var(--space-lg) auto 0; padding:0 28px; }
+.strip-title{
+  font-family:var(--font-brand); font-weight:200; letter-spacing:.08em;
+  font-size:clamp(1.4rem,2.6vw,2rem); color:var(--green); margin:0;
+}
+.project-card{ position:relative; text-decoration:none; overflow:hidden; }
+.project-card .card-img{
+  position:absolute; inset:0; z-index:0; background:#dfe5e2 center/cover no-repeat;
+  transition:transform .5s ease;
+}
+.project-card::after{
+  content:''; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0) 58%);
+}
+.project-card:hover .card-img{ transform:scale(1.06); }
+.project-card .card-meta{ position:relative; z-index:2; }
+.project-card .card-title{
+  display:block; font-family:var(--font-brand); font-weight:300;
+  font-size:1.05rem; letter-spacing:.03em; line-height:1.25;
+}
+.project-card .card-date{
+  display:block; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; opacity:.85; margin-top:3px;
+}
+
+/* ---------- Proje detay sayfası (iki sütun, dikey kaydırma) ---------- */
+.project-detail{ max-width:var(--maxw); margin:0 auto; padding:var(--space-lg) 28px var(--space-xl); }
+.project-back{ display:inline-block; color:var(--green); font-size:.9rem; margin-bottom:var(--space-md); }
+.project-back:hover{ text-decoration:underline; }
+.project-head{ max-width:820px; margin:0 auto var(--space-lg); text-align:center; }
+.project-date{ font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+.project-title{
+  font-family:var(--font-brand); font-weight:200; letter-spacing:.04em;
+  font-size:clamp(1.8rem,4vw,2.8rem); color:var(--green); margin:0; line-height:1.2;
+}
+.project-grid{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:clamp(20px,3vw,44px); align-items:start;
+}
+.project-block.left{ grid-column:1; }
+.project-block.right{ grid-column:2; }
+.project-block img{
+  width:100%; height:auto; border-radius:var(--radius);
+  background:#dfe5e2 center/cover no-repeat; display:block;
+}
+.project-caption{ margin-top:14px; color:var(--ink); font-size:1rem; line-height:1.6; }
+.project-nav{
+  max-width:var(--maxw); margin:0 auto; padding:0 28px var(--space-xl);
+  display:flex; justify-content:space-between; gap:16px;
+}
+.project-nav a{ color:var(--green); font-size:.9rem; }
+.project-nav a:hover{ text-decoration:underline; }
+.project-empty{ text-align:center; color:var(--muted); padding:48px 0; }
 
 /* ---------- Yeşil iletişim footer ---------- */
 #site-footer{ background:var(--green); color:var(--white); }
@@ -236,9 +319,22 @@ img{ max-width:100%; display:block; }
 .post-gallery img{ width:100%; border-radius:8px; }
 
 /* ---------- Responsive ---------- */
+
+/* Geniş monitörler — içerik ve hero nefes alsın (2K / ultra-wide) */
+@media (min-width:1600px){
+  :root{ --maxw:1440px; --hero-h:82vh; }
+  .slide{ flex:0 0 360px; height:260px; }
+}
+@media (min-width:2200px){
+  :root{ --maxw:1600px; }
+}
+
+/* Blog 3→2 sütun */
 @media (max-width:1100px){
   .blog-grid{ grid-template-columns:repeat(2, 1fr); }
 }
+
+/* Tablet yatay / hamburger eşiği */
 @media (max-width:1024px){
   :root{ --header-h:70px; }
   .header-inner{ grid-template-columns:auto 1fr auto; padding:0 18px; }
@@ -256,10 +352,45 @@ img{ max-width:100%; display:block; }
   .footer-inner{ grid-template-columns:1fr; gap:34px; }
   .footer-right{ text-align:left; }
   .social{ justify-content:flex-start; }
-  .slide{ flex-basis:260px; height:190px; }
-  .page-intro{ padding-top:56px; }
+  .slide{ flex:0 0 260px; height:190px; }
   .blog-grid{ grid-template-columns:1fr; }
   .post-cover{ height:240px; }
   .post-gallery{ grid-template-columns:1fr; }
   .blog-link{ font-size:.72rem; letter-spacing:.08em; }
+}
+
+/* Tablet dikey / katlanabilir (açık ~717–884px) — iki sütun tek sütuna iner */
+@media (max-width:768px){
+  :root{ --hero-h:70svh; }
+  .project-grid{ grid-template-columns:1fr; gap:var(--space-md); }
+  .project-block.left, .project-block.right{ grid-column:1; }
+  .carousel{ padding:0 44px; margin-bottom:var(--space-xl); }
+}
+
+/* Telefon */
+@media (max-width:480px){
+  :root{ --hero-h:66svh; }
+  .header-inner{ padding:0 14px; gap:10px; }
+  .brand{ font-size:1.15rem; letter-spacing:.16em; }
+  .tools{ gap:8px; }
+  .slide{ flex:0 0 220px; height:160px; }
+  .carousel{ padding:0 16px; }
+  .car-arrow{ display:none; }              /* dar ekranda oklar gizli — parmakla kaydırılır */
+  .post{ padding:32px 20px 64px; }
+  .project-detail{ padding:var(--space-md) 18px var(--space-lg); }
+}
+
+/* Küçük telefon / Galaxy Fold kapak ekranı (~280–360px) */
+@media (max-width:360px){
+  .brand{ font-size:1rem; letter-spacing:.12em; }
+  .slide{ flex:0 0 180px; height:140px; }
+  .blog-link{ font-size:.66rem; }
+  .hero-title{ letter-spacing:.1em; }
+}
+
+/* Erişilebilirlik: kullanıcı "hareketi azalt" derse otomatik animasyonları durdur */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  .hero-slides{ transition:none; }
+  .project-card .card-img, .car-arrow, .blog-card{ transition:none; }
 }

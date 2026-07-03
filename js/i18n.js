@@ -20,6 +20,7 @@ window.I18N = (function () {
       menu: { ic: 'İç Mekanlar', mutfak: 'Mutfaklar', ozel: 'Özel Tasarım', ticari: 'Ticari Mekanlar', blog: 'Blog' },
       search: { placeholder: 'Ara…', empty: 'Sonuç bulunamadı' },
       blog: { title: 'Blog', intro: 'Tasarım üzerine yazılar, projelerimizden notlar ve ilham veren mekânlar.', readmore: 'Devamını oku', back: 'Bloga dön', empty: 'Henüz yazı eklenmedi.' },
+      projects: { title: 'Projeler', featured: 'Öne Çıkan Projeler', view: 'Projeyi gör', back: 'Projelere dön', empty: 'Proje bulunamadı.' },
       footer: {
         contact: 'İletişim', follow: 'Bizi Takip Edin',
         rights: '© 2026 Eray Interiors. Tüm hakları saklıdır.'
@@ -72,6 +73,7 @@ window.I18N = (function () {
       menu: { ic: 'Interiors', mutfak: 'Kitchens', ozel: 'Custom Design', ticari: 'Commercial', blog: 'Blog' },
       search: { placeholder: 'Search…', empty: 'No results found' },
       blog: { title: 'Blog', intro: 'Articles on design, notes from our projects and spaces that inspire.', readmore: 'Read more', back: 'Back to blog', empty: 'No posts yet.' },
+      projects: { title: 'Projects', featured: 'Featured Projects', view: 'View project', back: 'Back to projects', empty: 'Project not found.' },
       footer: {
         contact: 'Contact', follow: 'Follow Us',
         rights: '© 2026 Eray Interiors. All rights reserved.'
@@ -124,6 +126,7 @@ window.I18N = (function () {
       menu: { ic: 'Interiores', mutfak: 'Cocinas', ozel: 'Diseño Personalizado', ticari: 'Espacios Comerciales', blog: 'Blog' },
       search: { placeholder: 'Buscar…', empty: 'No se encontraron resultados' },
       blog: { title: 'Blog', intro: 'Artículos sobre diseño, notas de nuestros proyectos y espacios que inspiran.', readmore: 'Leer más', back: 'Volver al blog', empty: 'Aún no hay entradas.' },
+      projects: { title: 'Proyectos', featured: 'Proyectos Destacados', view: 'Ver proyecto', back: 'Volver a proyectos', empty: 'Proyecto no encontrado.' },
       footer: {
         contact: 'Contacto', follow: 'Síguenos',
         rights: '© 2026 Eray Interiors. Todos los derechos reservados.'

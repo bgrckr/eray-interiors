@@ -21,14 +21,27 @@ window.loadPageContent = async function () {
     return;                                    // fetch çalışmıyorsa (file://) yedek içerik kalır
   }
 
-  // --- Hero görseli ---
+  // --- Hero görseli (tek görsel; hizmet sayfaları) ---
   const hero = document.querySelector('.hero');
   if (hero && data.hero) {
     hero.style.backgroundImage = `url('${data.hero}')`;
   }
 
-  // --- Galeri görselleri ---
-  const track = document.querySelector('.carousel-track');
+  // --- Hero slaytları (ana sayfa; 5 büyük görsel) ---
+  // hero_slides doluysa slaytları panelden kur; boşsa HTML'deki statik
+  // slaytlar (yedek) korunur — böylece slider hep çalışır.
+  const heroSlides = document.querySelector('[data-hero-slider] .hero-slides');
+  if (heroSlides) {
+    const imgs = Array.isArray(data.hero_slides) ? data.hero_slides.filter(Boolean) : [];
+    if (imgs.length) {
+      heroSlides.innerHTML = imgs.map(src =>
+        `<div class="hero-slide" style="background-image:url('${src}')"></div>`
+      ).join('');
+    }
+  }
+
+  // --- Galeri görselleri (yalnızca proje şeridi OLMAYAN carousel'lerde) ---
+  const track = document.querySelector('[data-carousel]:not([data-projects]) .carousel-track');
   if (track && Array.isArray(data.gallery) && data.gallery.length) {
     track.innerHTML = data.gallery.map((src, i) =>
       `<div class="slide" style="background-image:url('${src}')">${String(i + 1).padStart(2, '0')}</div>`

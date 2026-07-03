@@ -24,12 +24,14 @@ function setupCarousel(car) {
   // Kesintisiz döngü için içerik bir kez çoğaltılır.
   track.innerHTML += track.innerHTML;
 
-  let auto = true;
+  // "Hareketi azalt" tercihinde otomatik kayma kapalı başlar/kalır.
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let auto = !reduce;
   let resumeTimer = null;
 
   function loop() {
     if (auto) {
-      let p = viewport.scrollLeft + 0.6;               // sola kayış hızı (px/kare)
+      let p = viewport.scrollLeft + 0.4;               // sola kayış hızı (px/kare) — yavaş
       const half = track.scrollWidth / 2;
       if (p >= half) p -= half;                         // yarıya gelince başa sar
       viewport.scrollLeft = p;
@@ -41,7 +43,7 @@ function setupCarousel(car) {
   function pause() {
     auto = false;
     clearTimeout(resumeTimer);
-    resumeTimer = setTimeout(() => { auto = true; }, 4000);
+    resumeTimer = setTimeout(() => { auto = !reduce; }, 4000);
   }
 
   const dist = 336; // bir kart + boşluk
@@ -49,5 +51,5 @@ function setupCarousel(car) {
   if (prev) prev.addEventListener('click', () => { pause(); viewport.scrollBy({ left: -dist, behavior: 'smooth' }); });
 
   viewport.addEventListener('mouseenter', () => { auto = false; });
-  viewport.addEventListener('mouseleave', () => { clearTimeout(resumeTimer); auto = true; });
+  viewport.addEventListener('mouseleave', () => { clearTimeout(resumeTimer); auto = !reduce; });
 }

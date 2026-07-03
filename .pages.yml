@@ -19,7 +19,8 @@ content:
     type: file
     path: content/home.json
     fields:
-      - { name: hero, label: "Hero (büyük üst görsel)", type: image }
+      - { name: hero, label: "Hero (tek görsel — slayt yoksa yedek)", type: image }
+      - { name: hero_slides, label: "Hero slaytları (5 büyük görsel, yavaş kayar)", type: image, list: true }
       - name: hero_title
         label: "Hero başlığı"
         type: object
@@ -193,6 +194,51 @@ content:
               - { name: en, label: "English", type: text }
               - { name: es, label: "Español", type: text }
           - { name: images, label: "Ek görseller (yazı içinde)", type: image, list: true }
+
+  - name: projects
+    label: Projeler
+    type: file
+    path: content/projects.json
+    fields:
+      - name: projects
+        label: "Projeler"
+        type: object
+        list: true
+        fields:
+          - { name: slug, label: "Kısa ad (link için, ör. bebek-daire)", type: string }
+          - { name: date, label: "Proje tarihi", type: date }
+          - name: category
+            label: "Kategori"
+            type: select
+            options:
+              values: [ic, mutfak, ozel, ticari]
+          - { name: featured, label: "Ana sayfada öne çıkar", type: boolean }
+          - { name: cover, label: "Kapak görseli (kayan kutu)", type: image }
+          - name: title
+            label: "Proje adı"
+            type: object
+            fields:
+              - { name: tr, label: "Türkçe", type: string }
+              - { name: en, label: "English", type: string }
+              - { name: es, label: "Español", type: string }
+          - name: blocks
+            label: "Görsel blokları (sırayı ve sol/sağ konumu siz belirlersiniz)"
+            type: object
+            list: true
+            fields:
+              - { name: image, label: "Görsel", type: image }
+              - name: side
+                label: "Konum (sol / sağ)"
+                type: select
+                options:
+                  values: [left, right]
+              - name: caption
+                label: "Görselin yanına yazı (boş bırakılabilir)"
+                type: object
+                fields:
+                  - { name: tr, label: "Türkçe", type: text }
+                  - { name: en, label: "English", type: text }
+                  - { name: es, label: "Español", type: text }
 
   - name: mutfak
     label: Mutfaklar

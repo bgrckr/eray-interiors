@@ -17,13 +17,16 @@ proje notlarını içerir. Yeni bir oturumda önce bunu okuyun.
 ```
 index.html · ic-mekanlar.html · mutfaklar.html · ozel-tasarim.html · ticari-mekanlar.html
 blog.html (liste) · yazi.html (tekil yazı, yazi.html?id=<slug>)
+proje.html (tekil proje, proje.html?id=<slug>)
 css/style.css
-js/  icons.js  data.js  i18n.js  header.js  footer.js  content.js  carousel.js  app.js  blog.js
-content/  home.json ic.json mutfak.json ozel.json ticari.json blog.json
+js/  icons.js  data.js  i18n.js  header.js  footer.js  content.js  carousel.js  hero.js  projects.js  app.js  blog.js
+content/  home.json ic.json mutfak.json ozel.json ticari.json blog.json projects.json
 assets/img/   (hero + galeri görselleri buraya)
 ```
-Hizmet sayfalarının düzeni: **header → hero görsel → tanıtım metni → otomatik kayan galeri → yeşil footer.**
+Hizmet sayfalarının düzeni: **header → hero görsel → tanıtım metni → otomatik kayan PROJE şeridi → yeşil footer.**
+Ana sayfa: **header → 5 görselli yavaş kayan hero slider → tanıtım → öne çıkan projeler şeridi → footer.**
 Blog: `blog.html` yazıları kart olarak listeler; kart → `yazi.html?id=<slug>` tekil yazı sayfasını açar. Her ikisi `js/blog.js` ile `content/blog.json`'dan render edilir.
+Projeler: kayan şeritteki kutu → `proje.html?id=<slug>` (iki sütunlu, sol/sağ büyük görseller + yanına yazı). `js/projects.js` + `content/projects.json`.
 
 ## Mimari notlar
 - **Header ve footer tek kaynaktan** JS ile enjekte edilir (`js/header.js`,
@@ -47,6 +50,15 @@ Blog: `blog.html` yazıları kart olarak listeler; kart → `yazi.html?id=<slug>
 - **İkon/bayraklar:** `js/icons.js` (inline SVG; bayraklar Windows'ta da tutarlı görünsün diye emoji değil).
 - **Görseller:** `assets/img/` içine README'deki adlarla ekle (`hero-*.jpg`,
   `home-1.jpg`…`mutfak-6.jpg`). Görsel yoksa yeşil degrade yer tutucu görünür.
+- **Projeler:** `content/projects.json` → `projects` dizisi (panelden: "Projeler").
+  Her proje: `slug, date, category(ic/mutfak/ozel/ticari), featured, cover, title{tr,en,es}`
+  ve `blocks[]` (her blok: `image`, `side`(left/right), `caption{tr,en,es}`). Şeritler
+  `date`'e göre azalan sıralanır. Render: `js/projects.js`.
+- **Ana sayfa hero slaytları:** `content/home.json` → `hero_slides` (5 görsel). Boşsa
+  `index.html`'deki statik slaytlar yedek. Slider mekaniği: `js/hero.js` (~6 sn, yavaş kayma).
+- **Responsive/boşluk:** `css/style.css` `:root` → `--space-*` token'ları + `--gap-menu-title`
+  (menü↔başlık boşluğu) + `--hero-h`. Kırılımlar: ≥1600/≥2200 (geniş), 1100, 1024 (hamburger),
+  768 (katlanabilir/tablet), 480 (telefon), 360 (Fold kapak). `prefers-reduced-motion` desteklenir.
 
 ## İletişim bilgileri (footer'da sabit)
 - E-posta: `erayinteriors@gmail.com` · Telefon: `+90 507 164 8959`
@@ -54,9 +66,27 @@ Blog: `blog.html` yazıları kart olarak listeler; kart → `yazi.html?id=<slug>
 ## Yayın (deployment)
 - **GitHub deposu:** https://github.com/bgrckr/eray-interiors (public)
 - **Canlı site (GitHub Pages):** https://bgrckr.github.io/eray-interiors/
-- **Güncelleme akışı:** değişiklik → `git add .` → `git commit -m "..."` → `git push`.
-  Push'tan ~1 dk sonra Pages otomatik yeniden yayınlar.
+- **Güncelleme akışı:** değişiklik → `git add .` → `git commit -m "..."` →
+  **`git pull --rebase`** → `git push`. (Panel/ikinci hesap eşzamanlı commit
+  atabildiği için push'tan önce her zaman `pull --rebase` yap.) Push'tan ~1 dk
+  sonra Pages otomatik yeniden yayınlar.
 - Site göreli yollar kullandığı için alt-klasörlü Pages adresinde sorunsuz çalışır.
+- **`.nojekyll`** kökte bulunur — Pages'in eski Jekyll build'i saf statik siteyi
+  takarsa (deploy "building"de asılı kalırsa) bunu SİLME; Jekyll'i devre dışı bırakır.
+- **İkinci yönetici:** `ierayisik` hesabı depoya **collaborator** olarak ekli
+  (sahiplik devri yapılmadı, `bgrckr` sahibi kalır).
+
+## Alan adı (domain) — BEKLEMEDE
+- `erayinteriors.com` + kurumsal e-posta **Natro**'dan alındı; alan adı **henüz
+  aktif değil**. Aktifleşince yapılacak sıra:
+  1. Kökte `CNAME` dosyası oluştur, içeriği: `erayinteriors.com`.
+  2. Tüm mutlak URL'leri `https://bgrckr.github.io/eray-interiors/` →
+     `https://erayinteriors.com/` güncelle (tüm HTML `canonical`/`og:url`/`og:image`/
+     `twitter:image` + JSON-LD `url`/`image`/`logo` + `sitemap.xml` + `robots.txt`).
+  3. Natro DNS: apex için A kayıtları `185.199.108.153`, `.109`, `.110`, `.111`;
+     `www` için CNAME → `bgrckr.github.io`. **MX / e-posta kayıtlarına DOKUNMA.**
+  4. Pages'te **Enforce HTTPS**'i aç.
+  5. Sonra Google Search Console (Domain property) kurulumu.
 
 ## İçerik yönetim paneli (CMS)
 - **Pages CMS** kullanılıyor (https://app.pagescms.org). Yapılandırma: kök dizindeki
@@ -68,6 +98,10 @@ Blog: `blog.html` yazıları kart olarak listeler; kart → `yazi.html?id=<slug>
   Görseller `assets/img/`'e yüklenir (`.pages.yml` → media input/output).
 - Panelden yönetilen içerik: her sayfanın **hero görseli, galeri görselleri VE
   3 dilli metinleri** (hero başlığı/alt başlığı, sayfa başlığı, tanıtım gövdesi).
+- Panelde ayrıca **"Projeler"** koleksiyonu (`content/projects.json`) ve ana sayfa
+  **hero slaytları** (`hero_slides`) düzenlenir. `.pages.yml`'de `projects` koleksiyonu
+  `blocks` listesinde `side`(sol/sağ) **select** ve `caption` alanlarıyla tanımlıdır —
+  görsel yerleşimi ve yanındaki yazı buradan yönetilir.
 - İçerik veri dosyaları: `content/home.json` (+ ozel/ic/mutfak). Şema:
   `{ "hero": "assets/img/..", "hero_title": {tr,en,es}, "hero_sub": {tr,en,es},
   "title": {tr,en,es}, "body": {tr,en,es}, "gallery": ["assets/img/..", ...] }`.
@@ -100,9 +134,10 @@ Blog: `blog.html` yazıları kart olarak listeler; kart → `yazi.html?id=<slug>
   kritik. Şu an adres olmadığından eklenmedi.
 
 ## Yapılacaklar / açık maddeler
+- **Alan adı bağla** (yukarıdaki "Alan adı" adımları) — Natro'da `erayinteriors.com`
+  aktifleşince. Bu tamamlanınca **Google Search Console** kur.
 - Gerçek hero ve galeri görsellerini ekle.
 - Facebook/Pinterest/LinkedIn gerçek URL'lerini `js/footer.js`'e yaz
   (verilince JSON-LD `sameAs` dizisine de eklenmeli).
 - İsteğe bağlı: fiziksel adres/şehir → JSON-LD `address` (yerel SEO).
-- İsteğe bağlı: kendi alan adını (ör. erayinteriors.com) Pages'e bağla.
 - İsteğe bağlı: `mailto` yerine gerçek iletişim formu (ör. Formspree).

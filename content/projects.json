@@ -1,0 +1,141 @@
+{
+  "projects": [
+    {
+      "slug": "bebek-daire",
+      "date": "2026-05-20",
+      "category": "ic",
+      "featured": true,
+      "cover": "assets/img/3.jpg",
+      "title": {
+        "tr": "Bebek Dairesi",
+        "en": "Bebek Apartment",
+        "es": "Apartamento en Bebek"
+      },
+      "blocks": [
+        {
+          "image": "assets/img/3.jpg",
+          "side": "left",
+          "caption": {
+            "tr": "Salon: doğal ışığı merkeze alan, sıcak nötr tonlarda bir yaşam alanı.",
+            "en": "Living room: a warm, neutral space built around natural light.",
+            "es": "Salón: un espacio cálido y neutro concebido en torno a la luz natural."
+          }
+        },
+        {
+          "image": "assets/img/8.jpg",
+          "side": "right",
+          "caption": {
+            "tr": "",
+            "en": "",
+            "es": ""
+          }
+        },
+        {
+          "image": "assets/img/16.jpg",
+          "side": "left",
+          "caption": {
+            "tr": "Ismarlama depolama çözümleriyle sadeleştirilmiş koridor.",
+            "en": "A hallway simplified with bespoke storage solutions.",
+            "es": "Un pasillo simplificado con soluciones de almacenamiento a medida."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "ada-mutfak",
+      "date": "2026-04-10",
+      "category": "mutfak",
+      "featured": true,
+      "cover": "assets/img/8.jpg",
+      "title": {
+        "tr": "Ada Mutfak",
+        "en": "Island Kitchen",
+        "es": "Cocina con Isla"
+      },
+      "blocks": [
+        {
+          "image": "assets/img/8.jpg",
+          "side": "left",
+          "caption": {
+            "tr": "Geniş ada, hem çalışma hem sosyalleşme alanı olarak kurgulandı.",
+            "en": "A large island designed as both a work surface and a social hub.",
+            "es": "Una gran isla pensada como superficie de trabajo y punto de encuentro."
+          }
+        },
+        {
+          "image": "assets/img/32.jpg",
+          "side": "right",
+          "caption": {
+            "tr": "",
+            "en": "",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "slug": "atolye-ofis",
+      "date": "2026-03-02",
+      "category": "ticari",
+      "featured": false,
+      "cover": "assets/img/32.jpg",
+      "title": {
+        "tr": "Atölye Ofis",
+        "en": "Studio Office",
+        "es": "Oficina Estudio"
+      },
+      "blocks": [
+        {
+          "image": "assets/img/32.jpg",
+          "side": "left",
+          "caption": {
+            "tr": "Markanın kimliğini yansıtan karşılama alanı.",
+            "en": "A reception area that reflects the brand's identity.",
+            "es": "Una zona de recepción que refleja la identidad de la marca."
+          }
+        },
+        {
+          "image": "assets/img/b4.jpg",
+          "side": "right",
+          "caption": {
+            "tr": "",
+            "en": "",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "slug": "ismarlama-kitaplik",
+      "date": "2026-02-15",
+      "category": "ozel",
+      "featured": true,
+      "cover": "assets/img/16.jpg",
+      "title": {
+        "tr": "Ismarlama Kitaplık",
+        "en": "Bespoke Library",
+        "es": "Biblioteca a Medida"
+      },
+      "blocks": [
+        {
+          "image": "assets/img/16.jpg",
+          "side": "left",
+          "caption": {
+            "tr": "Tavana kadar yükselen, mekâna gömülü ceviz kitaplık.",
+            "en": "A floor-to-ceiling walnut library built into the space.",
+            "es": "Una biblioteca de nogal de suelo a techo integrada en el espacio."
+          }
+        },
+        {
+          "image": "assets/img/15.jpg",
+          "side": "right",
+          "caption": {
+            "tr": "Okuma köşesi: gizli aydınlatma ve özel oturma birimi.",
+            "en": "Reading nook: hidden lighting and a custom seating unit.",
+            "es": "Rincón de lectura: iluminación oculta y un asiento personalizado."
+          }
+        }
+      ]
+    }
+  ]
+}
