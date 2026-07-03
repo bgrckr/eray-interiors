@@ -122,9 +122,10 @@ Projeler: kayan şeritteki kutu → `proje.html?id=<slug>` (iki sütunlu, sol/sa
   `robots`, Open Graph, Twitter Card, `theme-color` ve **JSON-LD `LocalBusiness`**
   yapısal verisi bulunur. JSON-LD tüm sayfalarda aynıdır (ad, url, logo, e-posta,
   telefon, `sameAs`=Instagram, `areaServed`=TR).
-- **Favicon/ikonlar:** kökte `favicon.ico` (16/32/48) + `favicon.svg` (vektör, yeşil
-  "E" monogramı) + `assets/apple-touch-icon.png` (180) + `assets/icon-192.png` /
-  `icon-512.png` (`site.webmanifest`'te). Marka rengi `#1B4D3E`.
+- **Favicon/ikonlar:** kökte `favicon.ico` (48) + `favicon.svg` (vektör, **siyah zemin +
+  beyaz "EI" monogramı**) + `assets/apple-touch-icon.png` (180) + `assets/icon-192.png` /
+  `icon-512.png` (`site.webmanifest`'te). Zemin `#000000`, harfler beyaz. Raster ikonlar
+  PowerShell `System.Drawing` ile SVG'deki aynı dikdörtgen geometrisinden üretildi.
 - **Sosyal paylaşım görseli:** `assets/og-image.png` (1200×630, tüm OG/Twitter
   etiketlerinde mutlak URL ile). İkon/OG görselleri PowerShell `System.Drawing` ile
   üretildi; yeniden üretmek gerekirse aynı geometri/renk kullanılır.
