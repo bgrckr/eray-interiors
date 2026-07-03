@@ -1,0 +1,11 @@
+{
+  "hero": "assets/img/hero-ic.jpg",
+  "gallery": [
+    "assets/img/ic-1.jpg",
+    "assets/img/ic-2.jpg",
+    "assets/img/ic-3.jpg",
+    "assets/img/ic-4.jpg",
+    "assets/img/ic-5.jpg",
+    "assets/img/ic-6.jpg"
+  ]
+}

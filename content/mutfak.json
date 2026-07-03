@@ -1,0 +1,11 @@
+{
+  "hero": "assets/img/hero-mutfak.jpg",
+  "gallery": [
+    "assets/img/mutfak-1.jpg",
+    "assets/img/mutfak-2.jpg",
+    "assets/img/mutfak-3.jpg",
+    "assets/img/mutfak-4.jpg",
+    "assets/img/mutfak-5.jpg",
+    "assets/img/mutfak-6.jpg"
+  ]
+}

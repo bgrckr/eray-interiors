@@ -3,14 +3,15 @@
    Bu dosya her sayfada EN SON yüklenir.
    ============================================================ */
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
   renderHeader();
   renderFooter();
   I18N.apply();          // header/footer enjekte edildikten SONRA metinleri uygula
   setupLang();
   setupSearch();
   setupMobileMenu();
-  initCarousels();
+  await loadPageContent(); // panelden gelen hero/galeri görsellerini uygula
+  initCarousels();         // galeri kurulduktan SONRA otomatik kaydırmayı başlat
 
   // Dışarı tıklayınca açık menüleri kapat
   document.addEventListener('click', function (e) {

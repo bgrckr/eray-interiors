@@ -53,6 +53,21 @@ Her sayfanın düzeni: **header → hero görsel → tanıtım metni → otomati
   Push'tan ~1 dk sonra Pages otomatik yeniden yayınlar.
 - Site göreli yollar kullandığı için alt-klasörlü Pages adresinde sorunsuz çalışır.
 
+## İçerik yönetim paneli (CMS)
+- **Decap CMS** paneli `admin/` altındadır: `admin/index.html` + `admin/config.yml`.
+  Panel adresi: `<siteadresi>/admin/`. Giriş **Netlify Identity + Git Gateway** ile.
+- Panelden yönetilen içerik **görsellerdir** (her sayfanın hero'su + galeri listesi).
+- İçerik veri dosyaları: `content/home.json`, `content/ozel.json`, `content/ic.json`,
+  `content/mutfak.json`. Şema: `{ "hero": "assets/img/..", "gallery": ["assets/img/..", ...] }`.
+- **`js/content.js`** her sayfada `content/<data-page>.json`'ı `fetch` ile okur; hero
+  arka planını ve `.carousel-track` içindeki galeriyi bu veriye göre oluşturur.
+  `app.js` içinde `initCarousels()`'tan ÖNCE `await loadPageContent()` çağrılır.
+  Dosya okunamazsa (ör. `file://`) HTML'deki statik görseller/yer tutucular kalır.
+- **Not:** Panel için site bir HTTP sunucudan servis edilmelidir (Netlify). Yönetim
+  paneli Netlify Identity gerektirdiğinden GitHub Pages tek başına panel girişi sağlamaz.
+- **Metinler hâlâ `js/i18n.js`'te** (panelde değil). İstenirse metinler de panele
+  taşınabilir (content JSON'a tr/en/es alanları eklenip content.js ile I18N'e verilir).
+
 ## Yapılacaklar / açık maddeler
 - Gerçek hero ve galeri görsellerini ekle.
 - Facebook/Pinterest/LinkedIn gerçek URL'lerini `js/footer.js`'e yaz.
