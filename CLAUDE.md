@@ -42,8 +42,10 @@ Projeler: kayan şeritteki kutu → `proje.html?id=<slug>` (iki sütunlu, sol/sa
 ## Sık yapılan değişiklikler — nereden?
 - **Metinler (3 dilde):** `js/i18n.js` → `translations` (tr/en/es). Sayfa gövdeleri
   `page.<sayfa>.body` altında, HTML içerir. Türkçeyi değiştirince en/es'i de güncelle.
-- **Renkler:** `css/style.css` en üstteki `:root` → `--green` (royal green, `#1B4D3E`).
-  Header ve footer aynı `--green`'i kullanır.
+- **Renkler:** `css/style.css` en üstteki `:root` → `--green` (ana marka rengi; şu an
+  **siyah `#000000`**). Header, footer, intro ve butonlar aynı `--green`'i kullanır.
+  Değiştirmek için tek satır yeterli. (Ayrıca HTML `theme-color` metaları ve
+  `site.webmanifest` `theme_color` = `#000000`.)
 - **Arama içeriği:** `js/data.js` → `SITE_ITEMS`.
 - **Sosyal linkler:** `js/footer.js` → `SOCIAL` dizisi. Instagram tanımlı
   (`instagram.com/erayinteriors`); Facebook/Pinterest/LinkedIn şu an `#` yer tutucu.

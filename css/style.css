@@ -5,9 +5,9 @@
    ============================================================ */
 
 :root{
-  --green:#1B4D3E;          /* Royal green (ana marka rengi) */
-  --green-700:#143b30;      /* Koyu ton (hover/gölge) */
-  --green-300:#3e6b5b;      /* Açık ton */
+  --green:#000000;          /* Ana marka rengi (siyah) */
+  --green-700:#000000;      /* Koyu ton (hover/gölge) */
+  --green-300:#1f1f1f;      /* Açık ton (hero gradyanında hafif kontrast) */
   --white:#ffffff;
   --ink:#1a1a1a;            /* Ana metin */
   --muted:#6b7b74;          /* İkincil metin */
@@ -139,7 +139,7 @@ img{ max-width:100%; display:block; }
   background-size:cover; background-position:center;
   display:flex; align-items:center; justify-content:center;
 }
-.hero::after{ content:''; position:absolute; inset:0; background:rgba(15,35,28,.28); z-index:1; }
+.hero::after{ content:''; position:absolute; inset:0; background:rgba(0,0,0,.30); z-index:1; }
 .hero-overlay{ position:relative; z-index:2; text-align:center; color:var(--white); padding:0 24px; }
 .hero-title{
   font-family:var(--font-brand); font-weight:200; letter-spacing:.16em;
