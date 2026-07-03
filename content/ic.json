@@ -1,5 +1,5 @@
 {
-  "hero": "assets/img/hero-ic.jpg",
+  "hero": "assets/img/38-1.jpg",
   "hero_title": {
     "tr": "İç Mekânlar",
     "en": "Interiors",
@@ -21,11 +21,14 @@
     "es": "En el diseño de interiores nuestro objetivo es unir la estética con el confort, y la función con la emoción, bajo un mismo techo. Para viviendas, oficinas y espacios comerciales creamos diseños que revelan todo el potencial de un espacio.\n\nDe la paleta de colores a la iluminación, de la selección de mobiliario a las texturas, abordamos cada decisión con un lenguaje coherente. El resultado son espacios atemporales y equilibrados que hablan no solo a la vista, sino a quienes los habitan."
   },
   "gallery": [
-    "assets/img/ic-1.jpg",
-    "assets/img/ic-2.jpg",
-    "assets/img/ic-3.jpg",
-    "assets/img/ic-4.jpg",
-    "assets/img/ic-5.jpg",
-    "assets/img/ic-6.jpg"
+    "assets/img/38.jpg",
+    "assets/img/37-1.jpg",
+    "assets/img/36.jpg",
+    "assets/img/40.jpg",
+    "assets/img/41.jpg",
+    "assets/img/42.jpg",
+    "assets/img/43.jpg",
+    "assets/img/46.jpg",
+    "assets/img/44.jpg"
   ]
 }
