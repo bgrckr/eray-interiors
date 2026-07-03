@@ -65,6 +65,12 @@
            '</a>';
   }
 
+  // Proje yoksa (ya da içerik henüz yüklenmediyse) gösterilecek boş kutular.
+  function placeholderCards(n) {
+    var one = '<span class="slide project-card project-placeholder" aria-hidden="true"><span class="card-img"></span></span>';
+    var s = ''; for (var i = 0; i < n; i++) s += one; return s;
+  }
+
   // Şeritleri doldurur. doubled=true → içeriği iki kez yazar (carousel.js'in
   // kesintisiz döngü klonlamasını taklit eder; dil değişince yeniden kurmak için).
   function fillStrips(l, doubled) {
@@ -77,10 +83,10 @@
         ? list.filter(function (p) { return p.featured; })
         : list.filter(function (p) { return p.category === cat; });
 
-      if (!list.length) { car.style.display = 'none'; return; }
-      car.style.display = '';
-
-      var html = list.map(function (p) { return cardHtml(p, indexOf(p), l); }).join('');
+      car.style.display = '';   // boş olsa da şeridi GİZLEME — pencereleri tut
+      var html = list.length
+        ? list.map(function (p) { return cardHtml(p, indexOf(p), l); }).join('')
+        : placeholderCards(5);
       track.innerHTML = doubled ? (html + html) : html;
     });
   }

@@ -224,6 +224,10 @@ img{ max-width:100%; display:block; }
 .project-card .card-date{
   display:block; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; opacity:.85; margin-top:3px;
 }
+/* Boş yer tutucu kutu (proje yokken / içerik yüklenmeden) */
+.project-placeholder{ pointer-events:none; }
+.project-placeholder::after{ display:none; }
+.project-placeholder .card-img{ background:#e4e9e7; }
 
 /* ---------- Proje detay sayfası (iki sütun, dikey kaydırma) ---------- */
 .project-detail{ max-width:var(--maxw); margin:0 auto; padding:var(--space-lg) 28px var(--space-xl); }
