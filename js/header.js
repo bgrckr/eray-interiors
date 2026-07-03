@@ -27,7 +27,7 @@ window.renderHeader = function () {
   host.innerHTML = `
     <div class="header-inner">
       <button class="hamburger" aria-label="Menü" aria-expanded="false"><span></span><span></span><span></span></button>
-      <nav class="main-nav">${links}</nav>
+      <nav class="main-nav">${links}<a href="blog.html" class="nav-link nav-blog${blogActive}" data-i18n="menu.blog"></a></nav>
       <a class="brand" href="index.html">ERAY INTERIORS</a>
       <div class="tools">
         <a href="blog.html" class="nav-link blog-link${blogActive}" data-i18n="menu.blog"></a>
