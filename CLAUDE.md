@@ -19,12 +19,12 @@ index.html · ic-mekanlar.html · mutfaklar.html · ozel-tasarim.html · ticari-
 blog.html (liste) · yazi.html (tekil yazı, yazi.html?id=<slug>)
 proje.html (tekil proje, proje.html?id=<slug>)
 css/style.css
-js/  icons.js  data.js  i18n.js  header.js  footer.js  content.js  carousel.js  hero.js  projects.js  app.js  blog.js
+js/  icons.js  data.js  i18n.js  header.js  footer.js  content.js  carousel.js  hero.js  projects.js  intro.js  app.js  blog.js
 content/  home.json ic.json mutfak.json ozel.json ticari.json blog.json projects.json
 assets/img/   (hero + galeri görselleri buraya)
 ```
-Hizmet sayfalarının düzeni: **header → hero görsel → tanıtım metni → otomatik kayan PROJE şeridi → yeşil footer.**
-Ana sayfa: **header → 5 görselli yavaş kayan hero slider → tanıtım → öne çıkan projeler şeridi → footer.**
+Hizmet sayfalarının düzeni: **header → hero görsel → tanıtım metni → otomatik kayan PROJE şeridi → siyah footer.**
+Ana sayfa: **(ilk açılışta siyah açılış ekranı) → header → 5 görselli yavaş kayan hero slider → tanıtım → öne çıkan projeler şeridi → footer.**
 Blog: `blog.html` yazıları kart olarak listeler; kart → `yazi.html?id=<slug>` tekil yazı sayfasını açar. Her ikisi `js/blog.js` ile `content/blog.json`'dan render edilir.
 Projeler: kayan şeritteki kutu → `proje.html?id=<slug>` (iki sütunlu, sol/sağ büyük görseller + yanına yazı). `js/projects.js` + `content/projects.json`.
 
@@ -32,12 +32,22 @@ Projeler: kayan şeritteki kutu → `proje.html?id=<slug>` (iki sütunlu, sol/sa
 - **Header ve footer tek kaynaktan** JS ile enjekte edilir (`js/header.js`,
   `js/footer.js`) — her HTML'de tekrar edilmez. `#site-header` ve `#site-footer`
   boş kapsayıcılardır.
-- **`js/app.js`** her sayfada EN SON yüklenir; `DOMContentLoaded`'da sırasıyla
-  `renderHeader()`, `renderFooter()`, `I18N.apply()`, dil/arama/mobil menü ve
-  `initCarousels()` çağırır.
+- **`js/app.js`** her sayfada EN SON (intro.js hariç) yüklenir; `DOMContentLoaded`'da
+  sırasıyla `renderHeader()`, `renderFooter()`, `I18N.apply()`, dil/arama/mobil menü,
+  `await loadPageContent()`, `await loadProjects()`, `initHeroSlider()` ve
+  `initCarousels()` çağırır (şeritler klonlanmadan önce dolu olsun diye bu sıra).
 - Sol menüler (alt menüsüz, sırayla): İç Mekanlar · Mutfaklar · Özel Tasarım · Ticari Mekanlar.
-  **Blog** menüsü hizmet menülerinden ayrı, sağda arama ikonunun yanında (`header.js` → `.tools`).
+  **Blog:** masaüstünde hizmet menülerinden ayrı, sağda arama ikonunun yanında
+  (`header.js` → `.tools .blog-link`); **mobilde (≤1024) soldaki hamburger menüsünün içinde**
+  (`.main-nav .nav-blog`; CSS ile masaüstü/mobil görünürlüğü değişir).
   Menü sırası/etiketleri `js/header.js` (dizi) + `js/i18n.js` (`menu.*`) ile yönetilir.
+- **Header ve footer tam genişliktir** (`max-width:none`, `padding:clamp(24px,4vw,72px)`) —
+  geniş monitörde içerik kenarlara yaslanır, iki yanda boşluk kalmaz. Diğer içerik
+  bölümleri (`--maxw`) ortalıdır.
+- **Açılış ekranı (intro):** yalnızca ana sayfada. `#intro` (siyah zemin + beyaz
+  "ERAY INTERIORS" logosu) 3 sn görünür, sonra yumuşak geçişle kapanır. `js/intro.js`
+  yönetir; `sessionStorage` ile **oturum başına bir kez** gösterilir (flash önlemek için
+  `index.html` head'inde küçük bir kontrol scripti var). Tıklayınca da geçilir.
 
 ## Sık yapılan değişiklikler — nereden?
 - **Metinler (3 dilde):** `js/i18n.js` → `translations` (tr/en/es). Sayfa gövdeleri
@@ -51,7 +61,8 @@ Projeler: kayan şeritteki kutu → `proje.html?id=<slug>` (iki sütunlu, sol/sa
   (`instagram.com/erayinteriors`); Facebook/Pinterest/LinkedIn şu an `#` yer tutucu.
 - **İkon/bayraklar:** `js/icons.js` (inline SVG; bayraklar Windows'ta da tutarlı görünsün diye emoji değil).
 - **Görseller:** `assets/img/` içine README'deki adlarla ekle (`hero-*.jpg`,
-  `home-1.jpg`…`mutfak-6.jpg`). Görsel yoksa yeşil degrade yer tutucu görünür.
+  `home-1.jpg`…`mutfak-6.jpg`). Hero görseli yoksa koyu degrade yer tutucu, proje şeridi
+  boşsa gri "pencere" kutuları görünür.
 - **Projeler:** `content/projects.json` → `projects` dizisi (panelden: "Projeler").
   Her proje: `slug, date, category(ic/mutfak/ozel/ticari), featured, cover, title{tr,en,es}`
   ve `blocks[]` (her blok: `image`, `side`(left/right), `caption{tr,en,es}`). Şeritler
@@ -61,6 +72,8 @@ Projeler: kayan şeritteki kutu → `proje.html?id=<slug>` (iki sütunlu, sol/sa
 - **Responsive/boşluk:** `css/style.css` `:root` → `--space-*` token'ları + `--gap-menu-title`
   (menü↔başlık boşluğu) + `--hero-h`. Kırılımlar: ≥1600/≥2200 (geniş), 1100, 1024 (hamburger),
   768 (katlanabilir/tablet), 480 (telefon), 360 (Fold kapak). `prefers-reduced-motion` desteklenir.
+  Mobilde (≤480/≤360) header taşmasını önlemek için marka küçülür, dil "TR" etiketi ve çok dar
+  ekranda dil oku gizlenir (bayrak kalır). Playwright ile 2560→280px arası taşmasız doğrulandı.
 
 ## İletişim bilgileri (footer'da sabit)
 - E-posta: `erayinteriors@gmail.com` · Telefon: `+90 507 164 8959`
