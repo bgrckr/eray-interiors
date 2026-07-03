@@ -11,5 +11,8 @@ window.SITE_ITEMS = [
   { id: 'ic1',    page: 'ic-mekanlar.html',  title: { tr: 'Konut İç Mekan Tasarımı',      en: 'Residential Interior Design', es: 'Diseño de Interiores Residenciales' } },
   { id: 'ic2',    page: 'ic-mekanlar.html',  title: { tr: 'Ofis ve Ticari Mekanlar',      en: 'Office & Commercial Spaces',  es: 'Espacios de Oficina y Comerciales' } },
   { id: 'mut1',   page: 'mutfaklar.html',    title: { tr: 'Modern Ada Mutfak',            en: 'Modern Island Kitchen',       es: 'Cocina Moderna con Isla' } },
-  { id: 'mut2',   page: 'mutfaklar.html',    title: { tr: 'Klasik Mutfak Çözümleri',      en: 'Classic Kitchen Solutions',   es: 'Soluciones de Cocina Clásica' } }
+  { id: 'mut2',   page: 'mutfaklar.html',    title: { tr: 'Klasik Mutfak Çözümleri',      en: 'Classic Kitchen Solutions',   es: 'Soluciones de Cocina Clásica' } },
+  { id: 'tic1',   page: 'ticari-mekanlar.html', title: { tr: 'Ticari Mekan Tasarımı',     en: 'Commercial Space Design',     es: 'Diseño de Espacios Comerciales' } },
+  { id: 'tic2',   page: 'ticari-mekanlar.html', title: { tr: 'Ofis, Mağaza ve Kafe Tasarımı', en: 'Office, Store & Cafe Design', es: 'Diseño de Oficinas, Tiendas y Cafés' } },
+  { id: 'blog1',  page: 'blog.html',         title: { tr: 'Blog — Tasarım Yazıları',      en: 'Blog — Design Articles',      es: 'Blog — Artículos de Diseño' } }
 ];

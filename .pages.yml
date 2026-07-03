@@ -122,6 +122,78 @@ content:
           - { name: es, label: "Español", type: text }
       - { name: gallery, label: "Galeri görselleri", type: image, list: true }
 
+  - name: ticari
+    label: Ticari Mekanlar
+    type: file
+    path: content/ticari.json
+    fields:
+      - { name: hero, label: "Hero (büyük üst görsel)", type: image }
+      - name: hero_title
+        label: "Hero başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: hero_sub
+        label: "Hero alt başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: title
+        label: "Sayfa başlığı"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: string }
+          - { name: en, label: "English", type: string }
+          - { name: es, label: "Español", type: string }
+      - name: body
+        label: "Tanıtım metni (paragrafları boş satırla ayırın)"
+        type: object
+        fields:
+          - { name: tr, label: "Türkçe", type: text }
+          - { name: en, label: "English", type: text }
+          - { name: es, label: "Español", type: text }
+      - { name: gallery, label: "Galeri görselleri", type: image, list: true }
+
+  - name: blog
+    label: Blog Yazıları
+    type: file
+    path: content/blog.json
+    fields:
+      - name: posts
+        label: "Yazılar"
+        type: object
+        list: true
+        fields:
+          - { name: slug, label: "Kısa ad (link için, ör. mutfak-trendleri)", type: string }
+          - { name: date, label: "Tarih", type: date }
+          - { name: cover, label: "Kapak görseli", type: image }
+          - name: title
+            label: "Başlık"
+            type: object
+            fields:
+              - { name: tr, label: "Türkçe", type: string }
+              - { name: en, label: "English", type: string }
+              - { name: es, label: "Español", type: string }
+          - name: excerpt
+            label: "Özet (liste kartında görünür)"
+            type: object
+            fields:
+              - { name: tr, label: "Türkçe", type: text }
+              - { name: en, label: "English", type: text }
+              - { name: es, label: "Español", type: text }
+          - name: body
+            label: "Yazı metni (paragrafları boş satırla ayırın)"
+            type: object
+            fields:
+              - { name: tr, label: "Türkçe", type: text }
+              - { name: en, label: "English", type: text }
+              - { name: es, label: "Español", type: text }
+          - { name: images, label: "Ek görseller (yazı içinde)", type: image, list: true }
+
   - name: mutfak
     label: Mutfaklar
     type: file

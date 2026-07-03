@@ -17,8 +17,9 @@ window.I18N = (function () {
 
   const translations = {
     tr: {
-      menu: { ozel: 'Özel Tasarım', ic: 'İç Mekanlar', mutfak: 'Mutfaklar' },
+      menu: { ic: 'İç Mekanlar', mutfak: 'Mutfaklar', ozel: 'Özel Tasarım', ticari: 'Ticari Mekanlar', blog: 'Blog' },
       search: { placeholder: 'Ara…', empty: 'Sonuç bulunamadı' },
+      blog: { title: 'Blog', intro: 'Tasarım üzerine yazılar, projelerimizden notlar ve ilham veren mekânlar.', readmore: 'Devamını oku', back: 'Bloga dön', empty: 'Henüz yazı eklenmedi.' },
       footer: {
         contact: 'İletişim', follow: 'Bizi Takip Edin',
         rights: '© 2026 Eray Interiors. Tüm hakları saklıdır.'
@@ -55,13 +56,22 @@ window.I18N = (function () {
           body:
             '<p>Mutfak, evin kalbidir. Bu yüzden mutfak tasarımlarımızda ergonomi, dayanıklılık ve estetiği bir arada düşünüyoruz. Çalışma üçgeninden depolama çözümlerine kadar her detay, günlük hayatınızı kolaylaştıracak şekilde planlanıyor.</p>' +
             '<p>Modern ada mutfaklardan sıcak ve klasik kurgulara kadar; kaliteli malzemeler ve akıllı çözümlerle uzun yıllar keyifle kullanacağınız mutfaklar tasarlıyoruz. Her proje, sizin alışkanlıklarınıza göre biçimleniyor.</p>'
+        },
+        ticari: {
+          hero: 'Ticari Mekanlar',
+          sub: 'Markanızı yansıtan ticari tasarımlar',
+          title: 'Ticari Mekanlar',
+          body:
+            '<p>Ofis, mağaza, kafe ve restoran gibi ticari mekânlarda tasarım; yalnızca estetik değil, aynı zamanda marka kimliği, müşteri deneyimi ve verimlilik demektir. Eray Interiors olarak işinizin ihtiyaçlarını ve hedef kitlenizi analiz ederek sizi doğru yansıtan mekânlar kurguluyoruz.</p>' +
+            '<p>Karşılama alanlarından çalışma düzenine, aydınlatmadan yönlendirmeye kadar her detayı; markanızı güçlendiren, müşteriyi içeride tutan ve ekibin verimini artıran bir bütün olarak ele alıyoruz. Konseptten uygulamaya kadar süreci uçtan uca yönetiyoruz.</p>'
         }
       }
     },
 
     en: {
-      menu: { ozel: 'Custom Design', ic: 'Interiors', mutfak: 'Kitchens' },
+      menu: { ic: 'Interiors', mutfak: 'Kitchens', ozel: 'Custom Design', ticari: 'Commercial', blog: 'Blog' },
       search: { placeholder: 'Search…', empty: 'No results found' },
+      blog: { title: 'Blog', intro: 'Articles on design, notes from our projects and spaces that inspire.', readmore: 'Read more', back: 'Back to blog', empty: 'No posts yet.' },
       footer: {
         contact: 'Contact', follow: 'Follow Us',
         rights: '© 2026 Eray Interiors. All rights reserved.'
@@ -98,13 +108,22 @@ window.I18N = (function () {
           body:
             '<p>The kitchen is the heart of the home. That is why our kitchen designs bring together ergonomics, durability and aesthetics. From the work triangle to storage solutions, every detail is planned to make daily life easier.</p>' +
             '<p>From modern island kitchens to warm, classic layouts, we design kitchens you will enjoy for many years, using quality materials and smart solutions. Every project is shaped around your habits.</p>'
+        },
+        ticari: {
+          hero: 'Commercial Spaces',
+          sub: 'Commercial design that reflects your brand',
+          title: 'Commercial Spaces',
+          body:
+            '<p>In commercial spaces such as offices, stores, cafes and restaurants, design means more than aesthetics — it is brand identity, customer experience and efficiency. At Eray Interiors we analyse your business needs and target audience to create spaces that represent you accurately.</p>' +
+            '<p>From reception areas to workflow, from lighting to wayfinding, we treat every detail as a whole that strengthens your brand, keeps customers inside and boosts your team\'s productivity. We manage the process end to end, from concept to completion.</p>'
         }
       }
     },
 
     es: {
-      menu: { ozel: 'Diseño Personalizado', ic: 'Interiores', mutfak: 'Cocinas' },
+      menu: { ic: 'Interiores', mutfak: 'Cocinas', ozel: 'Diseño Personalizado', ticari: 'Espacios Comerciales', blog: 'Blog' },
       search: { placeholder: 'Buscar…', empty: 'No se encontraron resultados' },
+      blog: { title: 'Blog', intro: 'Artículos sobre diseño, notas de nuestros proyectos y espacios que inspiran.', readmore: 'Leer más', back: 'Volver al blog', empty: 'Aún no hay entradas.' },
       footer: {
         contact: 'Contacto', follow: 'Síguenos',
         rights: '© 2026 Eray Interiors. Todos los derechos reservados.'
@@ -141,6 +160,14 @@ window.I18N = (function () {
           body:
             '<p>La cocina es el corazón del hogar. Por eso nuestros diseños de cocina combinan ergonomía, durabilidad y estética. Del triángulo de trabajo a las soluciones de almacenamiento, cada detalle se planifica para facilitar su día a día.</p>' +
             '<p>De cocinas modernas con isla a distribuciones cálidas y clásicas, diseñamos cocinas que disfrutará durante muchos años, con materiales de calidad y soluciones inteligentes. Cada proyecto se moldea según sus hábitos.</p>'
+        },
+        ticari: {
+          hero: 'Espacios Comerciales',
+          sub: 'Diseño comercial que refleja su marca',
+          title: 'Espacios Comerciales',
+          body:
+            '<p>En espacios comerciales como oficinas, tiendas, cafeterías y restaurantes, el diseño es más que estética: es identidad de marca, experiencia del cliente y eficiencia. En Eray Interiors analizamos las necesidades de su negocio y su público objetivo para crear espacios que lo representen con precisión.</p>' +
+            '<p>Desde las áreas de recepción hasta el flujo de trabajo, de la iluminación a la señalización, tratamos cada detalle como un conjunto que fortalece su marca, retiene a los clientes y aumenta la productividad de su equipo. Gestionamos el proceso de principio a fin, del concepto a la ejecución.</p>'
         }
       }
     }

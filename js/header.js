@@ -11,14 +11,18 @@ window.renderHeader = function () {
 
   const path = (location.pathname.split('/').pop() || 'index.html');
   const menu = [
-    { href: 'ozel-tasarim.html', key: 'menu.ozel' },
-    { href: 'ic-mekanlar.html',  key: 'menu.ic' },
-    { href: 'mutfaklar.html',    key: 'menu.mutfak' }
+    { href: 'ic-mekanlar.html',    key: 'menu.ic' },
+    { href: 'mutfaklar.html',      key: 'menu.mutfak' },
+    { href: 'ozel-tasarim.html',   key: 'menu.ozel' },
+    { href: 'ticari-mekanlar.html', key: 'menu.ticari' }
   ];
 
   const links = menu.map(m =>
     `<a href="${m.href}" class="nav-link${path === m.href ? ' active' : ''}" data-i18n="${m.key}"></a>`
   ).join('');
+
+  // Blog, hizmet menülerinden ayrı olarak sağda (arama yanında) durur
+  const blogActive = (path === 'blog.html' || path === 'yazi.html') ? ' active' : '';
 
   host.innerHTML = `
     <div class="header-inner">
@@ -26,6 +30,7 @@ window.renderHeader = function () {
       <nav class="main-nav">${links}</nav>
       <a class="brand" href="index.html">ERAY INTERIORS</a>
       <div class="tools">
+        <a href="blog.html" class="nav-link blog-link${blogActive}" data-i18n="menu.blog"></a>
         <div class="search">
           <button class="search-toggle" aria-label="Ara">${ICONS.search}</button>
           <div class="search-box">

@@ -1,0 +1,31 @@
+{
+  "hero": "assets/img/hero-ticari.jpg",
+  "hero_title": {
+    "tr": "Ticari Mekanlar",
+    "en": "Commercial Spaces",
+    "es": "Espacios Comerciales"
+  },
+  "hero_sub": {
+    "tr": "Markanızı yansıtan ticari tasarımlar",
+    "en": "Commercial design that reflects your brand",
+    "es": "Diseño comercial que refleja su marca"
+  },
+  "title": {
+    "tr": "Ticari Mekanlar",
+    "en": "Commercial Spaces",
+    "es": "Espacios Comerciales"
+  },
+  "body": {
+    "tr": "Ofis, mağaza, kafe ve restoran gibi ticari mekânlarda tasarım; yalnızca estetik değil, aynı zamanda marka kimliği, müşteri deneyimi ve verimlilik demektir. Eray Interiors olarak işinizin ihtiyaçlarını ve hedef kitlenizi analiz ederek sizi doğru yansıtan mekânlar kurguluyoruz.\n\nKarşılama alanlarından çalışma düzenine, aydınlatmadan yönlendirmeye kadar her detayı; markanızı güçlendiren, müşteriyi içeride tutan ve ekibin verimini artıran bir bütün olarak ele alıyoruz. Konseptten uygulamaya kadar süreci uçtan uca yönetiyoruz.",
+    "en": "In commercial spaces such as offices, stores, cafes and restaurants, design means more than aesthetics — it is brand identity, customer experience and efficiency. At Eray Interiors we analyse your business needs and target audience to create spaces that represent you accurately.\n\nFrom reception areas to workflow, from lighting to wayfinding, we treat every detail as a whole that strengthens your brand, keeps customers inside and boosts your team's productivity. We manage the process end to end, from concept to completion.",
+    "es": "En espacios comerciales como oficinas, tiendas, cafeterías y restaurantes, el diseño es más que estética: es identidad de marca, experiencia del cliente y eficiencia. En Eray Interiors analizamos las necesidades de su negocio y su público objetivo para crear espacios que lo representen con precisión.\n\nDesde las áreas de recepción hasta el flujo de trabajo, de la iluminación a la señalización, tratamos cada detalle como un conjunto que fortalece su marca, retiene a los clientes y aumenta la productividad de su equipo. Gestionamos el proceso de principio a fin, del concepto a la ejecución."
+  },
+  "gallery": [
+    "assets/img/ticari-1.jpg",
+    "assets/img/ticari-2.jpg",
+    "assets/img/ticari-3.jpg",
+    "assets/img/ticari-4.jpg",
+    "assets/img/ticari-5.jpg",
+    "assets/img/ticari-6.jpg"
+  ]
+}

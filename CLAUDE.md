@@ -15,12 +15,15 @@ proje notlarını içerir. Yeni bir oturumda önce bunu okuyun.
 
 ## Dosya yapısı
 ```
-index.html · ozel-tasarim.html · ic-mekanlar.html · mutfaklar.html
+index.html · ic-mekanlar.html · mutfaklar.html · ozel-tasarim.html · ticari-mekanlar.html
+blog.html (liste) · yazi.html (tekil yazı, yazi.html?id=<slug>)
 css/style.css
-js/  icons.js  data.js  i18n.js  header.js  footer.js  carousel.js  app.js
+js/  icons.js  data.js  i18n.js  header.js  footer.js  content.js  carousel.js  app.js  blog.js
+content/  home.json ic.json mutfak.json ozel.json ticari.json blog.json
 assets/img/   (hero + galeri görselleri buraya)
 ```
-Her sayfanın düzeni: **header → hero görsel → tanıtım metni → otomatik kayan galeri → yeşil footer.**
+Hizmet sayfalarının düzeni: **header → hero görsel → tanıtım metni → otomatik kayan galeri → yeşil footer.**
+Blog: `blog.html` yazıları kart olarak listeler; kart → `yazi.html?id=<slug>` tekil yazı sayfasını açar. Her ikisi `js/blog.js` ile `content/blog.json`'dan render edilir.
 
 ## Mimari notlar
 - **Header ve footer tek kaynaktan** JS ile enjekte edilir (`js/header.js`,
@@ -29,7 +32,9 @@ Her sayfanın düzeni: **header → hero görsel → tanıtım metni → otomati
 - **`js/app.js`** her sayfada EN SON yüklenir; `DOMContentLoaded`'da sırasıyla
   `renderHeader()`, `renderFooter()`, `I18N.apply()`, dil/arama/mobil menü ve
   `initCarousels()` çağırır.
-- Menüler (3 adet, alt menüsüz): Özel Tasarım, İç Mekânlar, Mutfaklar.
+- Sol menüler (alt menüsüz, sırayla): İç Mekanlar · Mutfaklar · Özel Tasarım · Ticari Mekanlar.
+  **Blog** menüsü hizmet menülerinden ayrı, sağda arama ikonunun yanında (`header.js` → `.tools`).
+  Menü sırası/etiketleri `js/header.js` (dizi) + `js/i18n.js` (`menu.*`) ile yönetilir.
 
 ## Sık yapılan değişiklikler — nereden?
 - **Metinler (3 dilde):** `js/i18n.js` → `translations` (tr/en/es). Sayfa gövdeleri
