@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   setupLang();
   setupSearch();
   setupMobileMenu();
+  setupScrollHeader();     // aşağı inince beliren kayar menü
   await loadPageContent(); // panelden gelen hero/galeri görsellerini uygula
   if (window.loadProjects) await loadProjects();   // proje şeritlerini + detay sayfasını kur
   if (window.initHeroSlider) initHeroSlider();      // ana sayfa hero slaytları
@@ -95,6 +96,19 @@ function setupSearch() {
       results.appendChild(a);
     });
   });
+}
+
+/* ---------- Aşağı inince beliren kayar menü ---------- */
+function setupScrollHeader() {
+  const header = document.getElementById('site-header');
+  if (!header) return;
+  const TH = 80;   // bu kadar aşağı inince menü belirir
+  function update() {
+    if (window.scrollY > TH) header.classList.add('show');
+    else header.classList.remove('show');
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
 }
 
 /* ---------- Mobil menü ---------- */
