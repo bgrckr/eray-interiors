@@ -23,12 +23,11 @@
         },
         {
           "image": "assets/img/8.jpg",
-          "side": "right",
-          "caption": {
-            "tr": "",
-            "en": "",
-            "es": ""
-          }
+          "caption": { "tr": "", "en": "", "es": "" }
+        },
+        {
+          "image": "assets/img/15.jpg",
+          "caption": { "tr": "", "en": "", "es": "" }
         },
         {
           "image": "assets/img/16.jpg",

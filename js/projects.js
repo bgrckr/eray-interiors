@@ -65,6 +65,28 @@
            '</a>';
   }
 
+  // Bir blokta (herhangi bir dilde) yazı var mı? — yerleşim kararı buna göre,
+  // dil değişse de düzen sabit kalsın diye tüm dillere bakar.
+  function hasCap(b) {
+    var c = b && b.caption;
+    return !!(c && (c.tr || c.en || c.es));
+  }
+
+  // Ana sayfa hero slaytlarını ÖNE ÇIKAN projelerden kurar; her slayt o projenin
+  // kapak fotoğrafıdır ve tıklanınca proje detayına gider. Öne çıkan proje yoksa
+  // mevcut (statik/home.json) slaytlar korunur.
+  function buildHeroSlides(l) {
+    var wrap = document.querySelector('[data-hero-slider] .hero-slides');
+    if (!wrap) return;
+    var list = (PROJECTS || []).slice().filter(function (p) { return p.featured; }).sort(byDateDesc);
+    if (!list.length) return;
+    wrap.innerHTML = list.map(function (p) {
+      var bg = p.cover ? ' style="background-image:url(\'' + p.cover + '\')"' : '';
+      return '<a class="hero-slide" href="' + projHref(p, indexOf(p)) + '"' + bg +
+             ' aria-label="' + escapeHtml(pick(p.title, l)) + '"></a>';
+    }).join('');
+  }
+
   // Proje yoksa (ya da içerik henüz yüklenmediyse) gösterilecek boş kutular.
   function placeholderCards(n) {
     var one = '<span class="slide project-card project-placeholder" aria-hidden="true"><span class="card-img"></span></span>';
@@ -79,9 +101,8 @@
       if (!track) return;
       var cat = car.getAttribute('data-projects');
       var list = (PROJECTS || []).slice().sort(byDateDesc);
-      list = (cat === 'featured')
-        ? list.filter(function (p) { return p.featured; })
-        : list.filter(function (p) { return p.category === cat; });
+      if (cat === 'featured') list = list.filter(function (p) { return p.featured; });
+      else if (cat !== 'all') list = list.filter(function (p) { return p.category === cat; });
 
       car.style.display = '';   // boş olsa da şeridi GİZLEME — pencereleri tut
       var html = list.length
@@ -118,15 +139,34 @@
 
     var catPage = CATEGORY_PAGE[p.category] || 'index.html';
     var blocks = Array.isArray(p.blocks) ? p.blocks : [];
-    var grid = blocks.map(function (b) {
-      var side = (b.side === 'right') ? 'right' : 'left';
-      var cap = pick(b.caption, l);
-      var capHtml = cap
-        ? '<div class="project-caption">' + escapeHtml(cap).replace(/\n/g, '<br>') + '</div>' : '';
-      var img = b.image
-        ? '<img src="' + b.image + '" alt="' + escapeHtml(title) + '" loading="lazy">' : '';
-      return '<div class="project-block ' + side + '">' + img + capHtml + '</div>';
-    }).join('');
+
+    // Yazılı fotoğraf → tam genişlik tek satır (yazı yanda; 1. sola, 2. sağa, sırayla).
+    // Yazısız fotoğraflar → yan yana 2 sütunlu ızgara (ardışık olanlar gruplanır).
+    var rows = '';
+    var capIndex = 0;
+    var i = 0;
+    while (i < blocks.length) {
+      var b = blocks[i];
+      if (hasCap(b)) {
+        var flip = (capIndex % 2 === 1);   // 0: görsel solda, 1: görsel sağda
+        capIndex++;
+        var cap = pick(b.caption, l);
+        var fig = b.image
+          ? '<div class="project-figure"><img src="' + b.image + '" alt="' + escapeHtml(title) + '" loading="lazy"></div>' : '';
+        var capHtml = '<div class="project-caption">' + escapeHtml(cap).replace(/\n/g, '<br>') + '</div>';
+        rows += '<div class="project-row wide' + (flip ? ' flip' : '') + '">' + fig + capHtml + '</div>';
+        i++;
+      } else {
+        var group = '';
+        while (i < blocks.length && !hasCap(blocks[i])) {
+          if (blocks[i].image) {
+            group += '<img src="' + blocks[i].image + '" alt="' + escapeHtml(title) + '" loading="lazy">';
+          }
+          i++;
+        }
+        rows += '<div class="project-grid">' + group + '</div>';
+      }
+    }
 
     // Aynı kategoride önceki/sonraki proje (tarihe göre)
     var sameCat = (PROJECTS || []).slice()
@@ -149,7 +189,7 @@
           '<div class="project-date">' + escapeHtml(fmtDate(p.date, l)) + '</div>' +
           '<h1 class="project-title">' + escapeHtml(title) + '</h1>' +
         '</div>' +
-        '<div class="project-grid">' + grid + '</div>' +
+        rows +
       '</div>' + nav;
   }
 
@@ -159,7 +199,8 @@
   window.loadProjects = async function () {
     var hasStrip = document.querySelector('[data-projects]');
     var hasDetail = document.getElementById('project-detail');
-    if (!hasStrip && !hasDetail) return;   // bu sayfada projeye gerek yok
+    var hasHero = document.querySelector('[data-hero-slider] .hero-slides');
+    if (!hasStrip && !hasDetail && !hasHero) return;   // bu sayfada projeye gerek yok
 
     if (PROJECTS == null) {
       try {
@@ -169,7 +210,8 @@
     }
 
     var l = lang();
-    if (hasStrip) { fillStrips(l, false); stripsBuilt = true; }  // initCarousels sonra klonlar
+    if (hasHero) buildHeroSlides(l);                            // initHeroSlider'dan ÖNCE
+    if (hasStrip) { fillStrips(l, false); stripsBuilt = true; } // initCarousels sonra klonlar
     if (hasDetail) renderDetail(l);
 
     // Dil değişince metinleri yenile. Şeritler zaten klonlandığı için

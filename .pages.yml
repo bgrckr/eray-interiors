@@ -222,18 +222,13 @@ content:
               - { name: en, label: "English", type: string }
               - { name: es, label: "Español", type: string }
           - name: blocks
-            label: "Görsel blokları (sırayı ve sol/sağ konumu siz belirlersiniz)"
+            label: "Görseller (sırayla ekleyin). Yazı eklenen görsel tam genişlikte, yazısı yanında (sırayla sol/sağ) gösterilir; yazısız görseller yan yana 2 sütun kalır."
             type: object
             list: true
             fields:
               - { name: image, label: "Görsel", type: image }
-              - name: side
-                label: "Konum (sol / sağ)"
-                type: select
-                options:
-                  values: [left, right]
               - name: caption
-                label: "Görselin yanına yazı (boş bırakılabilir)"
+                label: "Görselin yanına yazı — İSTEĞE BAĞLI (boş bırakılırsa görsel yazısız/2 sütun kalır)"
                 type: object
                 fields:
                   - { name: tr, label: "Türkçe", type: text }
