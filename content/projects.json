@@ -1,12 +1,16 @@
 {
   "projects": [
     {
-      "slug": "bebek-daire",
-      "date": "2026-05-20",
-      "category": "ic",
+      "slug": "Döviz Bürosu, Yalova",
+      "date": "2025-05-20",
+      "category": "ticari",
       "featured": true,
       "cover": "assets/img/3.jpg",
-      "title": { "tr": "Bebek Dairesi", "en": "Bebek Apartment", "es": "Apartamento en Bebek" },
+      "title": {
+        "tr": "Döviz Bürosu",
+        "en": "Exchange Office",
+        "es": "Sasa de Cambio o oficina de cambio"
+      },
       "blocks": [
         {
           "image": "assets/img/3.jpg",
@@ -16,15 +20,40 @@
             "es": "Salón: un espacio cálido y neutro concebido en torno a la luz natural."
           }
         },
-        { "image": "assets/img/8.jpg", "caption": { "tr": "", "en": "", "es": "" } },
-        { "image": "assets/img/15.jpg", "caption": { "tr": "", "en": "", "es": "" } },
         {
-          "image": "assets/img/16.jpg",
+          "image": "assets/img/15-1.jpg"
+        },
+        {
+          "image": "assets/img/16-1.jpg"
+        },
+        {
+          "image": "assets/img/5.jpg",
           "caption": {
             "tr": "Ismarlama depolama çözümleriyle sadeleştirilmiş koridor.",
             "en": "A hallway simplified with bespoke storage solutions.",
             "es": "Un pasillo simplificado con soluciones de almacenamiento a medida."
           }
+        },
+        {
+          "image": "assets/img/6-4.jpg"
+        },
+        {
+          "image": "assets/img/7-1.jpg"
+        },
+        {
+          "image": "assets/img/8-2.jpg"
+        },
+        {
+          "image": "assets/img/11.jpg"
+        },
+        {
+          "image": "assets/img/9.jpg"
+        },
+        {
+          "image": "assets/img/10.jpg"
+        },
+        {
+          "image": "assets/img/13.jpg"
         }
       ]
     },
@@ -33,8 +62,11 @@
       "date": "2026-04-28",
       "category": "ic",
       "featured": false,
-      "cover": "assets/img/46-1.jpg",
-      "title": { "tr": "Nişantaşı Loft", "en": "Nişantaşı Loft", "es": "Loft en Nişantaşı" },
+      "title": {
+        "tr": "Nişantaşı Loft",
+        "en": "Nişantaşı Loft",
+        "es": "Loft en Nişantaşı"
+      },
       "blocks": [
         {
           "image": "assets/img/46-1.jpg",
@@ -44,8 +76,12 @@
             "es": "Loft de planta abierta: vida moderna con techos altos y texturas crudas."
           }
         },
-        { "image": "assets/img/38-2.jpg", "caption": { "tr": "", "en": "", "es": "" } },
-        { "image": "assets/img/b4.jpg", "caption": { "tr": "", "en": "", "es": "" } }
+        {
+          "image": "assets/img/38-2.jpg"
+        },
+        {
+          "image": "assets/img/b4.jpg"
+        }
       ]
     },
     {
@@ -54,7 +90,11 @@
       "category": "mutfak",
       "featured": true,
       "cover": "assets/img/8.jpg",
-      "title": { "tr": "Ada Mutfak", "en": "Island Kitchen", "es": "Cocina con Isla" },
+      "title": {
+        "tr": "Ada Mutfak",
+        "en": "Island Kitchen",
+        "es": "Cocina con Isla"
+      },
       "blocks": [
         {
           "image": "assets/img/8.jpg",
@@ -64,7 +104,9 @@
             "es": "Una gran isla pensada como superficie de trabajo y punto de encuentro."
           }
         },
-        { "image": "assets/img/32.jpg", "caption": { "tr": "", "en": "", "es": "" } }
+        {
+          "image": "assets/img/32.jpg"
+        }
       ]
     },
     {
@@ -73,7 +115,11 @@
       "category": "mutfak",
       "featured": false,
       "cover": "assets/img/32.jpg",
-      "title": { "tr": "Klasik Mutfak", "en": "Classic Kitchen", "es": "Cocina Clásica" },
+      "title": {
+        "tr": "Klasik Mutfak",
+        "en": "Classic Kitchen",
+        "es": "Cocina Clásica"
+      },
       "blocks": [
         {
           "image": "assets/img/32.jpg",
@@ -83,7 +129,9 @@
             "es": "Una cocina clásica con madera cálida y detalles atemporales."
           }
         },
-        { "image": "assets/img/15.jpg", "caption": { "tr": "", "en": "", "es": "" } }
+        {
+          "image": "assets/img/15.jpg"
+        }
       ]
     },
     {
@@ -92,7 +140,11 @@
       "category": "ozel",
       "featured": true,
       "cover": "assets/img/16.jpg",
-      "title": { "tr": "Ismarlama Kitaplık", "en": "Bespoke Library", "es": "Biblioteca a Medida" },
+      "title": {
+        "tr": "Ismarlama Kitaplık",
+        "en": "Bespoke Library",
+        "es": "Biblioteca a Medida"
+      },
       "blocks": [
         {
           "image": "assets/img/16.jpg",
@@ -118,7 +170,11 @@
       "category": "ozel",
       "featured": false,
       "cover": "assets/img/b4.jpg",
-      "title": { "tr": "Giyinme Odası", "en": "Walk-in Wardrobe", "es": "Vestidor" },
+      "title": {
+        "tr": "Giyinme Odası",
+        "en": "Walk-in Wardrobe",
+        "es": "Vestidor"
+      },
       "blocks": [
         {
           "image": "assets/img/b4.jpg",
@@ -128,7 +184,9 @@
             "es": "Un sistema de vestidor a medida: un lugar para todo, ordenado con precisión."
           }
         },
-        { "image": "assets/img/3.jpg", "caption": { "tr": "", "en": "", "es": "" } }
+        {
+          "image": "assets/img/3.jpg"
+        }
       ]
     },
     {
@@ -137,7 +195,11 @@
       "category": "ticari",
       "featured": false,
       "cover": "assets/img/32.jpg",
-      "title": { "tr": "Atölye Ofis", "en": "Studio Office", "es": "Oficina Estudio" },
+      "title": {
+        "tr": "Atölye Ofis",
+        "en": "Studio Office",
+        "es": "Oficina Estudio"
+      },
       "blocks": [
         {
           "image": "assets/img/32.jpg",
@@ -147,7 +209,9 @@
             "es": "Una zona de recepción que refleja la identidad de la marca."
           }
         },
-        { "image": "assets/img/b4.jpg", "caption": { "tr": "", "en": "", "es": "" } }
+        {
+          "image": "assets/img/b4.jpg"
+        }
       ]
     },
     {
@@ -156,7 +220,11 @@
       "category": "ticari",
       "featured": true,
       "cover": "assets/img/38-2.jpg",
-      "title": { "tr": "Kafe Tasarımı", "en": "Café Design", "es": "Diseño de Café" },
+      "title": {
+        "tr": "Kafe Tasarımı",
+        "en": "Café Design",
+        "es": "Diseño de Café"
+      },
       "blocks": [
         {
           "image": "assets/img/38-2.jpg",
@@ -166,7 +234,9 @@
             "es": "Un ambiente de café acogedor con luz cálida y materiales naturales."
           }
         },
-        { "image": "assets/img/46-1.jpg", "caption": { "tr": "", "en": "", "es": "" } }
+        {
+          "image": "assets/img/46-1.jpg"
+        }
       ]
     }
   ]
