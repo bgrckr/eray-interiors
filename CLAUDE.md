@@ -155,10 +155,23 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
   yalnızca `js/i18n.js`'tedir (panelde değil).
 
 ## SEO & favicon
-- Her sayfanın `<head>`'inde: benzersiz `<title>` + `meta description`, `canonical`,
-  `robots`, Open Graph, Twitter Card, `theme-color` ve **JSON-LD `LocalBusiness`**
-  yapısal verisi bulunur. JSON-LD tüm sayfalarda aynıdır (ad, url, logo, e-posta,
-  telefon, `sameAs`=Instagram, `areaServed`=TR).
+- Her sayfanın `<head>`'inde: benzersiz `<title>` + `meta description` (~150 krktr),
+  `canonical`, `robots`, Open Graph, Twitter Card, `theme-color` ve **JSON-LD
+  `LocalBusiness`** yapısal verisi bulunur. JSON-LD alanları: ad, `alternateName`
+  (=Eray İç Mimarlık / İç Mimari), url, logo, e-posta, telefon, `sameAs`
+  (Instagram + LinkedIn), `areaServed` (Bursa/Yalova/Türkiye), `knowsAbout`, `founder`
+  (İbrahim Eray Işık). Kategori sayfaları + blog'da ayrıca **`BreadcrumbList`** JSON-LD var.
+- **JS-render + tarama:** header/footer/içerik JS ile enjekte edilir; bu yüzden ana
+  metinler (hero-sub, page-title, page-body, blog intro) HTML'e **Türkçe "yedek" olarak
+  gömülüdür** (i18n her yüklemede üstüne yazar → görünüm değişmez, ama tarayıcı/JS'siz
+  botlar içeriği görür). Yeni sayfa eklerken bu yedek metni koymayı unutma.
+- **404:** kökte `404.html` (noindex, marka temalı, mutlak `/` linkleri). GitHub Pages
+  bilinmeyen yollarda bunu sunar.
+- **LCP/performans:** her sayfada ilk hero görseli `<link rel="preload" as="image"
+  fetchpriority="high">` ile öne alınır (home 9-2, yasam 38-1, ozel 31, ticari 6-3).
+  NOT: ozel/ticari hero'su `content/*.json`'daki `hero` alanından gelir (31.jpg / 6-3.jpg);
+  HTML'deki inline bg de aynı gerçek dosyaya işaret eder (eski `hero-ozel/ticari.jpg`
+  dosyaları YOK, kullanma).
 - **Favicon/ikonlar:** kökte `favicon.ico` (48) + `favicon.svg` (vektör, **siyah zemin +
   beyaz "EI" monogramı**) + `assets/apple-touch-icon.png` (180) + `assets/icon-192.png` /
   `icon-512.png` (`site.webmanifest`'te). Zemin `#000000`, harfler beyaz. Raster ikonlar

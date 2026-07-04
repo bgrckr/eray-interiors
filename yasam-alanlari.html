@@ -10,6 +10,9 @@
   <meta name="author" content="Eray Interiors">
   <meta name="theme-color" content="#000000">
 
+  <!-- LCP hızlandırma: hero görselini önceden yükle -->
+  <link rel="preload" as="image" href="assets/img/38-1.jpg" fetchpriority="high">
+
   <!-- Favicon / app icons -->
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -52,7 +55,21 @@
     "telephone": "+905071648959",
     "areaServed": "TR",
     "knowsLanguage": ["tr", "en", "es"],
+    "areaServed": ["Bursa", "Yalova", "Türkiye"],
+    "knowsAbout": ["İç mimarlık", "İç mekân tasarımı", "Konut tasarımı", "Ticari mekan tasarımı", "Mutfak tasarımı", "Ismarlama mobilya"],
+    "founder": { "@type": "Person", "name": "İbrahim Eray Işık", "jobTitle": "İç Mimar", "sameAs": "https://www.linkedin.com/in/ibrahim-eray-i%C5%9F%C4%B1k-976782159/" },
     "sameAs": ["https://instagram.com/erayinteriors", "https://www.linkedin.com/in/ibrahim-eray-i%C5%9F%C4%B1k-976782159/"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://erayinteriors.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Yaşam Alanları", "item": "https://erayinteriors.com/yasam-alanlari.html" }
+    ]
   }
   </script>
 
@@ -67,14 +84,14 @@
   <main>
     <section class="hero" style="background-image:url('assets/img/38-1.jpg')">
       <div class="hero-overlay">
-        <h1 class="hero-title" data-i18n="page.yasam.hero"></h1>
-        <p class="hero-sub" data-i18n="page.yasam.sub"></p>
+        <h1 class="hero-title" data-i18n="page.yasam.hero">Yaşam Alanları</h1>
+        <p class="hero-sub" data-i18n="page.yasam.sub">Konut iç mekânları ve mutfak tasarımı</p>
       </div>
     </section>
 
     <section class="page-intro">
-      <h2 class="page-title" data-i18n="page.yasam.title"></h2>
-      <div class="page-body" data-i18n="page.yasam.body" data-i18n-html></div>
+      <h2 class="page-title" data-i18n="page.yasam.title">Yaşam Alanları</h2>
+      <div class="page-body" data-i18n="page.yasam.body" data-i18n-html><p>İç mekân tasarımında hedefimiz; estetik ile konforu, işlevsellik ile duyguyu aynı çatı altında buluşturmak. Konutlar, ofisler ve ticari alanlar için mekânın potansiyelini en yüksek noktaya taşıyan tasarımlar kurguluyoruz.</p><p>Renk paletinden aydınlatmaya, mobilya seçiminden dokulara kadar her kararı bütünsel bir dille ele alıyoruz. Böylece yalnızca göze değil, yaşayana da hitap eden; zamansız ve dengeli mekânlar ortaya çıkıyor.</p></div>
     </section>
 
     <div class="strip-head"><h2 class="strip-title" data-i18n="projects.title"></h2></div>
