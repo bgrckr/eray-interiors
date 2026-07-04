@@ -95,7 +95,8 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
 
 ## Yayın (deployment)
 - **GitHub deposu:** https://github.com/bgrckr/eray-interiors (public)
-- **Canlı site (GitHub Pages):** https://bgrckr.github.io/eray-interiors/
+- **Canlı site:** https://erayinteriors.com/ (birincil, DNS aktif olunca) ·
+  yedek/kaynak: https://bgrckr.github.io/eray-interiors/ (custom domain sonrası buraya yönlenir)
 - **Güncelleme akışı:** değişiklik → `git add .` → `git commit -m "..."` →
   **`git pull --rebase`** → `git push`. (Panel/ikinci hesap eşzamanlı commit
   atabildiği için push'tan önce her zaman `pull --rebase` yap.) Push'tan ~1 dk
@@ -106,17 +107,22 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
 - **İkinci yönetici:** `ierayisik` hesabı depoya **collaborator** olarak ekli
   (sahiplik devri yapılmadı, `bgrckr` sahibi kalır).
 
-## Alan adı (domain) — BEKLEMEDE
-- `erayinteriors.com` + kurumsal e-posta **Natro**'dan alındı; alan adı **henüz
-  aktif değil**. Aktifleşince yapılacak sıra:
-  1. Kökte `CNAME` dosyası oluştur, içeriği: `erayinteriors.com`.
-  2. Tüm mutlak URL'leri `https://bgrckr.github.io/eray-interiors/` →
-     `https://erayinteriors.com/` güncelle (tüm HTML `canonical`/`og:url`/`og:image`/
-     `twitter:image` + JSON-LD `url`/`image`/`logo` + `sitemap.xml` + `robots.txt`).
-  3. Natro DNS: apex için A kayıtları `185.199.108.153`, `.109`, `.110`, `.111`;
-     `www` için CNAME → `bgrckr.github.io`. **MX / e-posta kayıtlarına DOKUNMA.**
-  4. Pages'te **Enforce HTTPS**'i aç.
-  5. Sonra Google Search Console (Domain property) kurulumu.
+## Alan adı (domain) — KOD HAZIR, DNS/AYAR BEKLİYOR
+- `erayinteriors.com` + kurumsal e-posta **Natro**'dan alındı. Kod tarafı bağlamaya
+  hazır hâle getirildi (2026-07-04):
+  - ✅ Kökte `CNAME` dosyası var, içeriği: `erayinteriors.com`.
+  - ✅ Tüm mutlak URL'ler `https://bgrckr.github.io/eray-interiors/` →
+    `https://erayinteriors.com/` güncellendi (HTML `canonical`/`og:url`/`og:image`/
+    `twitter:image` + JSON-LD `url`/`image`/`logo` + `sitemap.xml` + `robots.txt`).
+- **Kullanıcının yapması gerekenler** (panel işleri — kodda değil):
+  1. **Natro DNS:** apex (`@`) için A kayıtları `185.199.108.153`, `.109`, `.110`,
+     `.111`; `www` için CNAME → `bgrckr.github.io`. **MX / e-posta kayıtlarına DOKUNMA.**
+  2. **GitHub → Settings → Pages → Custom domain:** `erayinteriors.com` yaz, kaydet
+     (CNAME dosyası zaten var; DNS check yeşile dönünce).
+  3. DNS doğrulanınca **Enforce HTTPS**'i aç (sertifika birkaç dk–saat sürebilir).
+  4. Sonra Google Search Console (Domain property) kurulumu.
+- GitHub, eski `bgrckr.github.io/eray-interiors/` adresini otomatik olarak yeni
+  alan adına yönlendirir; bağlantı kopmaz.
 
 ## İçerik yönetim paneli (CMS)
 - **Pages CMS** kullanılıyor (https://app.pagescms.org). Yapılandırma: kök dizindeki
@@ -168,8 +174,9 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
   kritik. Şu an adres olmadığından eklenmedi.
 
 ## Yapılacaklar / açık maddeler
-- **Alan adı bağla** (yukarıdaki "Alan adı" adımları) — Natro'da `erayinteriors.com`
-  aktifleşince. Bu tamamlanınca **Google Search Console** kur.
+- **Alan adı bağla:** kod hazır (CNAME + URL'ler güncel). Kullanıcı Natro DNS +
+  GitHub Pages custom domain + Enforce HTTPS adımlarını yapacak (bkz. "Alan adı"
+  bölümü). Bu tamamlanınca **Google Search Console** (Domain property) kur.
 - Gerçek hero ve galeri görsellerini ekle.
 - (Gerekirse) yeni sosyal hesap URL'lerini `js/footer.js` → `SOCIAL`'a ekle
   (verilince JSON-LD `sameAs` dizisine de eklenmeli).
