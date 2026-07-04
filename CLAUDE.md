@@ -24,7 +24,7 @@ content/  home.json ic.json mutfak.json ozel.json ticari.json blog.json
 content/  projects-ic.json projects-mutfak.json projects-ozel.json projects-ticari.json  (klasörler; menü başına ayrı dosya)
 assets/img/   (hero + galeri görselleri buraya)
 ```
-Hizmet sayfalarının düzeni: **header → hero görsel → tanıtım metni → otomatik kayan PROJE şeridi → siyah footer.**
+Hizmet sayfalarının düzeni: **header → hero görsel → tanıtım metni → 2 sütunlu PROJE pencereleri (grid; kapak + üstünde ad, tıklanınca proje) → siyah footer.**
 Ana sayfa: **(ilk açılışta siyah açılış ekranı) → header → hero slider (MANUEL yüklenen görseller, projelerden bağımsız) → tanıtım → öne çıkan projeler şeridi → footer.**
 Blog: `blog.html` yazıları kart olarak listeler; kart → `yazi.html?id=<slug>` tekil yazı sayfasını açar. Her ikisi `js/blog.js` ile `content/blog.json`'dan render edilir.
 Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. Detay düzeni: **yazılı** görsel = tam genişlik tek satır, yazı yanda (1. sola, 2. sağa, sırayla); **yazısız** görseller = yan yana 2 sütun. `js/projects.js` + `content/projects.json`.
@@ -70,8 +70,10 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
   `blocks[]` (her blok: `image` + isteğe bağlı `caption{tr,en,es}`). `js/projects.js` 4 dosyayı
   `fetch` ile okuyup birleştirir; **site görünümü tek dosyalıyla aynıdır**. **Yerleşim otomatik**:
   caption'ı olan görsel tam genişlik + yan yazı (sırayla sol/sağ), caption'sız görseller 2 sütun.
-  "Yazı var mı" kararı tüm dillere bakar. Şeritler `date` azalan; kategori sayfası kendi
-  klasörlerini, ana sayfa `featured` olanları gösterir.
+  "Yazı var mı" kararı tüm dillere bakar. Sıralama `date` azalan.
+  **Gösterim:** kategori sayfaları → `[data-projects-grid="<kat>"]` (2 sütunlu dikey pencere
+  ızgarası, `fillGrids`); ana sayfa öne çıkanlar → `[data-projects] .carousel-track` (kayan
+  şerit, `fillStrips`). İkisi de kart olarak kapak + adı gösterir, tıklanınca `proje.html`.
 - **Ana sayfa hero slaytları (projelerden BAĞIMSIZ):** `content/home.json` → `hero_slides`
   (panelden manuel yüklenen görseller). Boşsa `index.html`'deki statik slaytlar yedek.
   `js/content.js` bu görselleri `.hero-slides`'a yazar, `js/hero.js` (~6 sn, yavaş kayma)

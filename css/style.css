@@ -230,6 +230,35 @@ img{ max-width:100%; display:block; }
 .project-placeholder::after{ display:none; }
 .project-placeholder .card-img{ background:#e4e9e7; }
 
+/* ---------- Menü sayfası: 2 sütunlu proje pencereleri (grid) ---------- */
+.project-cards{
+  max-width:var(--maxw); margin:var(--space-md) auto var(--space-xl);
+  padding:0 clamp(16px,4vw,28px);
+  display:grid; grid-template-columns:1fr 1fr; gap:clamp(14px,2vw,26px);
+}
+.pcard{
+  position:relative; display:block; overflow:hidden;
+  aspect-ratio:4/3; border-radius:var(--radius); text-decoration:none;
+  background:#e4e9e7;
+}
+.pcard-img{
+  position:absolute; inset:0; z-index:0;
+  background:#e4e9e7 center/cover no-repeat; transition:transform .5s ease;
+}
+.pcard:hover .pcard-img{ transform:scale(1.05); }
+.pcard::after{
+  content:''; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0) 55%);
+}
+.pcard-title{
+  position:absolute; left:0; right:0; bottom:0; z-index:2;
+  color:var(--white); font-family:var(--font-brand); font-weight:300;
+  font-size:clamp(1rem,1.7vw,1.35rem); letter-spacing:.03em; line-height:1.25;
+  padding:clamp(12px,1.5vw,18px);
+}
+.pcard-placeholder{ pointer-events:none; }
+.pcard-placeholder::after{ display:none; }
+
 /* ---------- Proje detay sayfası (iki sütun, dikey kaydırma) ---------- */
 .project-detail{ max-width:var(--maxw); margin:0 auto; padding:var(--space-lg) 28px var(--space-xl); }
 .project-back{ display:inline-block; color:var(--green); font-size:.9rem; margin-bottom:var(--space-md); }

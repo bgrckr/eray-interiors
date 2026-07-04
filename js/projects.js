@@ -79,6 +79,32 @@
     var s = ''; for (var i = 0; i < n; i++) s += one; return s;
   }
 
+  // --- Menü (kategori) sayfası: 2 sütunlu dikey pencere ızgarası ---
+  // Kapak + üstünde proje adı; tıklanınca proje sayfası açılır.
+  function gridCardHtml(p, i, l) {
+    var cover = p.cover || (p.blocks && p.blocks[0] && p.blocks[0].image) || '';
+    var bg = cover ? ' style="background-image:url(\'' + cover + '\')"' : '';
+    return '<a class="pcard" href="' + projHref(p, i) + '">' +
+             '<span class="pcard-img"' + bg + '></span>' +
+             '<span class="pcard-title">' + escapeHtml(pick(p.title, l)) + '</span>' +
+           '</a>';
+  }
+  function placeholderGrid(n) {
+    var one = '<span class="pcard pcard-placeholder" aria-hidden="true"><span class="pcard-img"></span></span>';
+    var s = ''; for (var i = 0; i < n; i++) s += one; return s;
+  }
+  function fillGrids(l) {
+    document.querySelectorAll('[data-projects-grid]').forEach(function (box) {
+      var cat = box.getAttribute('data-projects-grid');
+      var list = (PROJECTS || []).slice().sort(byDateDesc);
+      if (cat === 'featured') list = list.filter(function (p) { return p.featured; });
+      else if (cat !== 'all') list = list.filter(function (p) { return p.category === cat; });
+      box.innerHTML = list.length
+        ? list.map(function (p) { return gridCardHtml(p, indexOf(p), l); }).join('')
+        : placeholderGrid(4);
+    });
+  }
+
   // Şeritleri doldurur. doubled=true → içeriği iki kez yazar (carousel.js'in
   // kesintisiz döngü klonlamasını taklit eder; dil değişince yeniden kurmak için).
   function fillStrips(l, doubled) {
@@ -184,8 +210,9 @@
   // app.js tarafından initCarousels()'tan ÖNCE await edilir.
   window.loadProjects = async function () {
     var hasStrip = document.querySelector('[data-projects]');
+    var hasGrid = document.querySelector('[data-projects-grid]');
     var hasDetail = document.getElementById('project-detail');
-    if (!hasStrip && !hasDetail) return;   // bu sayfada projeye gerek yok
+    if (!hasStrip && !hasGrid && !hasDetail) return;   // bu sayfada projeye gerek yok
 
     if (PROJECTS == null) {
       // Klasörler her menü (kategori) için AYRI dosyada tutulur (panelde ayrı bölüm).
@@ -212,6 +239,7 @@
 
     var l = lang();
     if (hasStrip) { fillStrips(l, false); stripsBuilt = true; } // initCarousels sonra klonlar
+    if (hasGrid) fillGrids(l);
     if (hasDetail) renderDetail(l);
 
     // Dil değişince metinleri yenile. Şeritler zaten klonlandığı için
@@ -219,6 +247,7 @@
     document.addEventListener('langchange', function () {
       var ll = lang();
       if (stripsBuilt) fillStrips(ll, true);
+      if (hasGrid) fillGrids(ll);
       renderDetail(ll);
     });
   };
