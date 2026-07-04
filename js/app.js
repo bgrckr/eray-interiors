@@ -26,35 +26,54 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 /* ---------- Dil seçici ---------- */
 function setupLang() {
-  const wrap = document.querySelector('.lang');
-  if (!wrap) return;
-  const toggle = wrap.querySelector('.lang-toggle');
-  const menu = wrap.querySelector('.lang-menu');
+  const wrap = document.querySelector('.lang');          // masaüstü: sağdaki açılır dil menüsü
+  const navLang = document.querySelector('.nav-lang');   // mobil: hamburger menüsü içindeki dil satırı
+  if (!wrap && !navLang) return;
 
-  function label() {
+  const toggle = wrap && wrap.querySelector('.lang-toggle');
+  const menu = wrap && wrap.querySelector('.lang-menu');
+
+  function refresh() {
     const cur = I18N.current();
     const l = I18N.LANGS.find(x => x.code === cur) || I18N.LANGS[0];
-    toggle.innerHTML = FLAGS[l.code] + `<span>${l.label}</span>` + ICONS.chevronDown;
+    if (toggle) toggle.innerHTML = FLAGS[l.code] + `<span>${l.label}</span>` + ICONS.chevronDown;
+    if (navLang) navLang.querySelectorAll('button[data-lang]').forEach(b =>
+      b.classList.toggle('active', b.dataset.lang === cur));
   }
 
-  menu.innerHTML = I18N.LANGS.map(l =>
-    `<li><button data-lang="${l.code}">${FLAGS[l.code]}<span>${l.name}</span></button></li>`
-  ).join('');
+  // Masaüstü açılır menü
+  if (wrap && toggle && menu) {
+    menu.innerHTML = I18N.LANGS.map(l =>
+      `<li><button data-lang="${l.code}">${FLAGS[l.code]}<span>${l.name}</span></button></li>`
+    ).join('');
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      wrap.classList.toggle('open');
+    });
+    menu.addEventListener('click', function (e) {
+      const btn = e.target.closest('button[data-lang]');
+      if (!btn) return;
+      I18N.set(btn.dataset.lang);
+      wrap.classList.remove('open');
+    });
+  }
 
-  label();
+  // Mobil menü içi dil satırı (bayrak + dil adı; seçince menüyü kapatır)
+  if (navLang) {
+    navLang.innerHTML = I18N.LANGS.map(l =>
+      `<button data-lang="${l.code}" class="nav-lang-btn">${FLAGS[l.code]}<span>${l.name}</span></button>`
+    ).join('');
+    navLang.addEventListener('click', function (e) {
+      const btn = e.target.closest('button[data-lang]');
+      if (!btn) return;
+      I18N.set(btn.dataset.lang);
+      const header = document.getElementById('site-header');
+      if (header) header.classList.remove('nav-open');
+    });
+  }
 
-  toggle.addEventListener('click', function (e) {
-    e.stopPropagation();
-    wrap.classList.toggle('open');
-  });
-
-  menu.addEventListener('click', function (e) {
-    const btn = e.target.closest('button[data-lang]');
-    if (!btn) return;
-    I18N.set(btn.dataset.lang);
-    wrap.classList.remove('open');
-    label();
-  });
+  refresh();
+  document.addEventListener('langchange', refresh);
 }
 
 /* ---------- Arama (istemci tarafı) ---------- */

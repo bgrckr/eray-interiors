@@ -131,6 +131,17 @@ img{ max-width:100%; display:block; }
 }
 .lang-menu button:hover{ background:rgba(255,255,255,.14); }
 
+/* Mobil menü içi dil satırı — masaüstünde gizli, hamburger menüsünde görünür */
+.nav-lang{ display:none; }
+.nav-lang-btn{
+  display:inline-flex; align-items:center; gap:8px; background:none; border:none; cursor:pointer;
+  color:var(--white); font-family:var(--font-body); font-size:.9rem; padding:8px 12px;
+  border:1px solid rgba(255,255,255,.22); border-radius:4px; opacity:.7; transition:opacity .2s, background .2s;
+}
+.nav-lang-btn .flag{ width:22px; height:15px; border-radius:2px; overflow:hidden; box-shadow:0 0 0 1px rgba(0,0,0,.06); }
+.nav-lang-btn:hover{ opacity:1; background:rgba(255,255,255,.10); }
+.nav-lang-btn.active{ opacity:1; border-color:var(--white); background:rgba(255,255,255,.14); }
+
 /* Hamburger (mobil) */
 .hamburger{ display:none; flex-direction:column; gap:5px; }
 .hamburger span{ width:24px; height:2px; background:var(--white); transition:.25s; }
@@ -403,9 +414,11 @@ img{ max-width:100%; display:block; }
 /* Tablet yatay / hamburger eşiği */
 @media (max-width:1024px){
   :root{ --header-h:70px; }
-  .header-inner{ grid-template-columns:auto 1fr auto; padding:0 18px; }
+  .header-inner{ position:relative; grid-template-columns:auto 1fr auto; padding:0 18px; }
   .hamburger{ display:flex; justify-self:start; }
-  .brand{ font-size:1.3rem; letter-spacing:.2em; }
+  /* Logo ekranda ortalanır (kenar öğelerin genişliğinden bağımsız) */
+  .brand{ position:absolute; left:50%; top:50%; transform:translate(-50%, -50%);
+    font-size:1.3rem; letter-spacing:.2em; padding-left:0; }
   .main-nav{
     position:absolute; top:var(--header-h); left:0; right:0;
     flex-direction:column; align-items:flex-start; gap:0;
@@ -415,7 +428,10 @@ img{ max-width:100%; display:block; }
   #site-header.nav-open .main-nav{ display:flex; }
   .main-nav .nav-link{ padding:12px 0; width:100%; }
   .main-nav .nav-blog{ display:block; }   /* Blog mobilde hamburger menüsüne girer */
+  .main-nav .nav-lang{ display:flex; flex-wrap:wrap; gap:10px; padding:14px 0 4px;
+    margin-top:6px; width:100%; border-top:1px solid rgba(255,255,255,.14); }
   .tools .blog-link{ display:none; }        /* sağdaki Blog mobilde gizli */
+  .tools .lang{ display:none; }             /* dil seçimi mobilde hamburger menüsünde */
   .tools{ gap:10px; }
   .footer-inner{ grid-template-columns:1fr; gap:34px; }
   .footer-right{ text-align:left; }
@@ -439,7 +455,7 @@ img{ max-width:100%; display:block; }
 /* Telefon */
 @media (max-width:480px){
   .header-inner{ padding:0 12px; gap:6px; }
-  .brand{ font-size:1rem; letter-spacing:.08em; padding-left:.08em; }
+  .brand{ font-size:1rem; letter-spacing:.08em; padding-left:0; }
   .tools{ gap:7px; }
   .tools .lang-toggle span:not(.flag){ display:none; }   /* dar ekranda "TR" etiketini gizle; bayrak+ok kalır */
   .blog-link{ font-size:.66rem; letter-spacing:.06em; }
@@ -453,7 +469,7 @@ img{ max-width:100%; display:block; }
 /* Küçük telefon / Galaxy Fold kapak ekranı (~280–360px) */
 @media (max-width:360px){
   .header-inner{ padding:0 10px; gap:5px; }
-  .brand{ font-size:.78rem; letter-spacing:.03em; padding-left:.03em; }
+  .brand{ font-size:.78rem; letter-spacing:.03em; padding-left:0; }
   .tools{ gap:6px; }
   .tools .lang-toggle .chev{ display:none; }   /* çok dar: dil okunu gizle, bayrak kalır */
   .slide{ flex:0 0 180px; height:140px; }
