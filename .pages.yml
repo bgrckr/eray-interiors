@@ -195,40 +195,142 @@ content:
               - { name: es, label: "Español", type: text }
           - { name: images, label: "Ek görseller (yazı içinde)", type: image, list: true }
 
-  - name: projects
-    label: Projeler (Klasörler)
+  # KLASÖRLER — her menü için AYRI bölüm. Kategori dosyadan bellidir (ayrıca seçmeye gerek yok).
+  # Site (js/projects.js) bu 4 dosyayı okuyup birleştirir; görünüm aynı kalır.
+  - name: projects_ic
+    label: "İç Mekanlar — Klasörler"
     type: file
-    path: content/projects.json
+    path: content/projects-ic.json
     fields:
       - name: projects
-        label: "Klasörler — her menüye (kategoriye) istediğiniz kadar ekleyin; her klasör o menünün şeridinde bir kutu olur"
+        label: "İç Mekanlar klasörleri — istediğin kadar ekle (her klasör şeritte bir kutu)"
         type: object
         list: true
         fields:
           - { name: slug, label: "Kısa ad (link için, ör. bebek-daire)", type: string }
-          - { name: date, label: "Proje tarihi", type: date }
-          - name: category
-            label: "Kategori"
-            type: select
-            options:
-              values: [ic, mutfak, ozel, ticari]
+          - { name: date, label: "Tarih", type: date }
           - { name: featured, label: "Ana sayfada öne çıkar", type: boolean }
-          - { name: cover, label: "Ana görsel (şeritteki kapak — tıklanınca proje açılır)", type: image }
+          - { name: cover, label: "Ana görsel (kapak — tıklanınca klasör açılır)", type: image }
           - name: title
-            label: "Proje adı"
+            label: "Klasör adı"
             type: object
             fields:
               - { name: tr, label: "Türkçe", type: string }
               - { name: en, label: "English", type: string }
               - { name: es, label: "Español", type: string }
           - name: blocks
-            label: "Görseller (sırayla ekleyin). Yazı eklenen görsel tam genişlikte, yazısı yanında (sırayla sol/sağ) gösterilir; yazısız görseller yan yana 2 sütun kalır."
+            label: "Görseller (sırayla). Yazı eklenen görsel tam genişlik + yan yazı (sırayla sol/sağ); yazısız görseller 2 sütun."
             type: object
             list: true
             fields:
               - { name: image, label: "Görsel", type: image }
               - name: caption
-                label: "Görselin yanına yazı — İSTEĞE BAĞLI (boş bırakılırsa görsel yazısız/2 sütun kalır)"
+                label: "Görselin yanına yazı — İSTEĞE BAĞLI (boş = yazısız/2 sütun)"
+                type: object
+                fields:
+                  - { name: tr, label: "Türkçe", type: text }
+                  - { name: en, label: "English", type: text }
+                  - { name: es, label: "Español", type: text }
+
+  - name: projects_mutfak
+    label: "Mutfaklar — Klasörler"
+    type: file
+    path: content/projects-mutfak.json
+    fields:
+      - name: projects
+        label: "Mutfak klasörleri — istediğin kadar ekle (her klasör şeritte bir kutu)"
+        type: object
+        list: true
+        fields:
+          - { name: slug, label: "Kısa ad (link için)", type: string }
+          - { name: date, label: "Tarih", type: date }
+          - { name: featured, label: "Ana sayfada öne çıkar", type: boolean }
+          - { name: cover, label: "Ana görsel (kapak — tıklanınca klasör açılır)", type: image }
+          - name: title
+            label: "Klasör adı"
+            type: object
+            fields:
+              - { name: tr, label: "Türkçe", type: string }
+              - { name: en, label: "English", type: string }
+              - { name: es, label: "Español", type: string }
+          - name: blocks
+            label: "Görseller (sırayla). Yazı eklenen görsel tam genişlik + yan yazı; yazısız görseller 2 sütun."
+            type: object
+            list: true
+            fields:
+              - { name: image, label: "Görsel", type: image }
+              - name: caption
+                label: "Görselin yanına yazı — İSTEĞE BAĞLI (boş = yazısız/2 sütun)"
+                type: object
+                fields:
+                  - { name: tr, label: "Türkçe", type: text }
+                  - { name: en, label: "English", type: text }
+                  - { name: es, label: "Español", type: text }
+
+  - name: projects_ozel
+    label: "Özel Tasarım — Klasörler"
+    type: file
+    path: content/projects-ozel.json
+    fields:
+      - name: projects
+        label: "Özel Tasarım klasörleri — istediğin kadar ekle (her klasör şeritte bir kutu)"
+        type: object
+        list: true
+        fields:
+          - { name: slug, label: "Kısa ad (link için)", type: string }
+          - { name: date, label: "Tarih", type: date }
+          - { name: featured, label: "Ana sayfada öne çıkar", type: boolean }
+          - { name: cover, label: "Ana görsel (kapak — tıklanınca klasör açılır)", type: image }
+          - name: title
+            label: "Klasör adı"
+            type: object
+            fields:
+              - { name: tr, label: "Türkçe", type: string }
+              - { name: en, label: "English", type: string }
+              - { name: es, label: "Español", type: string }
+          - name: blocks
+            label: "Görseller (sırayla). Yazı eklenen görsel tam genişlik + yan yazı; yazısız görseller 2 sütun."
+            type: object
+            list: true
+            fields:
+              - { name: image, label: "Görsel", type: image }
+              - name: caption
+                label: "Görselin yanına yazı — İSTEĞE BAĞLI (boş = yazısız/2 sütun)"
+                type: object
+                fields:
+                  - { name: tr, label: "Türkçe", type: text }
+                  - { name: en, label: "English", type: text }
+                  - { name: es, label: "Español", type: text }
+
+  - name: projects_ticari
+    label: "Ticari Mekanlar — Klasörler"
+    type: file
+    path: content/projects-ticari.json
+    fields:
+      - name: projects
+        label: "Ticari Mekanlar klasörleri — istediğin kadar ekle (her klasör şeritte bir kutu)"
+        type: object
+        list: true
+        fields:
+          - { name: slug, label: "Kısa ad (link için)", type: string }
+          - { name: date, label: "Tarih", type: date }
+          - { name: featured, label: "Ana sayfada öne çıkar", type: boolean }
+          - { name: cover, label: "Ana görsel (kapak — tıklanınca klasör açılır)", type: image }
+          - name: title
+            label: "Klasör adı"
+            type: object
+            fields:
+              - { name: tr, label: "Türkçe", type: string }
+              - { name: en, label: "English", type: string }
+              - { name: es, label: "Español", type: string }
+          - name: blocks
+            label: "Görseller (sırayla). Yazı eklenen görsel tam genişlik + yan yazı; yazısız görseller 2 sütun."
+            type: object
+            list: true
+            fields:
+              - { name: image, label: "Görsel", type: image }
+              - name: caption
+                label: "Görselin yanına yazı — İSTEĞE BAĞLI (boş = yazısız/2 sütun)"
                 type: object
                 fields:
                   - { name: tr, label: "Türkçe", type: text }

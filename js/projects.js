@@ -55,7 +55,8 @@
 
   // Bir projeyi kayan şerit kartına çevirir
   function cardHtml(p, i, l) {
-    var bg = p.cover ? ' style="background-image:url(\'' + p.cover + '\')"' : '';
+    var cover = p.cover || (p.blocks && p.blocks[0] && p.blocks[0].image) || '';
+    var bg = cover ? ' style="background-image:url(\'' + cover + '\')"' : '';
     return '<a class="slide project-card" href="' + projHref(p, i) + '">' +
              '<span class="card-img"' + bg + '></span>' +
              '<span class="card-meta">' +
@@ -187,10 +188,26 @@
     if (!hasStrip && !hasDetail) return;   // bu sayfada projeye gerek yok
 
     if (PROJECTS == null) {
-      try {
-        var res = await fetch('content/projects.json', { cache: 'no-store' });
-        PROJECTS = res.ok ? ((await res.json()).projects || []) : [];
-      } catch (e) { PROJECTS = []; }
+      // Klasörler her menü (kategori) için AYRI dosyada tutulur (panelde ayrı bölüm).
+      // Site bu dosyaları okuyup birleştirir; kategori dosyadan atanır.
+      var FILES = [
+        { path: 'content/projects-ic.json', category: 'ic' },
+        { path: 'content/projects-mutfak.json', category: 'mutfak' },
+        { path: 'content/projects-ozel.json', category: 'ozel' },
+        { path: 'content/projects-ticari.json', category: 'ticari' }
+      ];
+      PROJECTS = [];
+      await Promise.all(FILES.map(async function (f) {
+        try {
+          var res = await fetch(f.path, { cache: 'no-store' });
+          if (!res.ok) return;
+          var data = await res.json();
+          (data.projects || []).forEach(function (p) {
+            p.category = f.category;   // kategori dosyadan
+            PROJECTS.push(p);
+          });
+        } catch (e) { /* dosya yoksa/okunamazsa atla */ }
+      }));
     }
 
     var l = lang();

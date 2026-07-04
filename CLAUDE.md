@@ -20,7 +20,8 @@ blog.html (liste) · yazi.html (tekil yazı, yazi.html?id=<slug>)
 proje.html (tekil proje, proje.html?id=<slug>)
 css/style.css
 js/  icons.js  data.js  i18n.js  header.js  footer.js  content.js  carousel.js  hero.js  projects.js  intro.js  app.js  blog.js
-content/  home.json ic.json mutfak.json ozel.json ticari.json blog.json projects.json
+content/  home.json ic.json mutfak.json ozel.json ticari.json blog.json
+content/  projects-ic.json projects-mutfak.json projects-ozel.json projects-ticari.json  (klasörler; menü başına ayrı dosya)
 assets/img/   (hero + galeri görselleri buraya)
 ```
 Hizmet sayfalarının düzeni: **header → hero görsel → tanıtım metni → otomatik kayan PROJE şeridi → siyah footer.**
@@ -63,12 +64,14 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
 - **Görseller:** `assets/img/` içine README'deki adlarla ekle (`hero-*.jpg`,
   `home-1.jpg`…`mutfak-6.jpg`). Hero görseli yoksa koyu degrade yer tutucu, proje şeridi
   boşsa gri "pencere" kutuları görünür.
-- **Projeler:** `content/projects.json` → `projects` dizisi (panelden: "Projeler").
-  Her proje: `slug, date, category(ic/mutfak/ozel/ticari), featured, cover, title{tr,en,es}`
-  ve `blocks[]` (her blok: `image` + isteğe bağlı `caption{tr,en,es}`). **Yerleşim otomatik**
-  (`side` alanı YOK): caption'ı olan görsel tam genişlik tek satır olur ve yazı yanına gelir
-  (yazılı görseller sırayla sol/sağ); caption'ı olmayan görseller yan yana 2 sütun akar.
-  "Yazı var mı" kararı tüm dillere bakar (dil değişse düzen sabit). Şeritler `date` azalan.
+- **Projeler/Klasörler:** Menü başına AYRI dosya — `content/projects-<kategori>.json`
+  (`ic/mutfak/ozel/ticari`), her biri `{ "projects": [...] }`. **Kategori dosyadan atanır**
+  (veride `category` yok). Her klasör: `slug, date, featured, cover, title{tr,en,es}` ve
+  `blocks[]` (her blok: `image` + isteğe bağlı `caption{tr,en,es}`). `js/projects.js` 4 dosyayı
+  `fetch` ile okuyup birleştirir; **site görünümü tek dosyalıyla aynıdır**. **Yerleşim otomatik**:
+  caption'ı olan görsel tam genişlik + yan yazı (sırayla sol/sağ), caption'sız görseller 2 sütun.
+  "Yazı var mı" kararı tüm dillere bakar. Şeritler `date` azalan; kategori sayfası kendi
+  klasörlerini, ana sayfa `featured` olanları gösterir.
 - **Ana sayfa hero slaytları (projelerden BAĞIMSIZ):** `content/home.json` → `hero_slides`
   (panelden manuel yüklenen görseller). Boşsa `index.html`'deki statik slaytlar yedek.
   `js/content.js` bu görselleri `.hero-slides`'a yazar, `js/hero.js` (~6 sn, yavaş kayma)
@@ -117,11 +120,13 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
   Görseller `assets/img/`'e yüklenir (`.pages.yml` → media input/output).
 - Panelden yönetilen içerik: her sayfanın **hero görseli, galeri görselleri VE
   3 dilli metinleri** (hero başlığı/alt başlığı, sayfa başlığı, tanıtım gövdesi).
-- Panelde ayrıca **"Projeler"** koleksiyonu (`content/projects.json`) ve ana sayfa
-  **hero slaytları** (`hero_slides`, manuel) düzenlenir. `projects` `blocks` listesinde her
-  görselin altında İSTEĞE BAĞLI `caption` alanı vardır — yazı eklersen o görsel tam
-  genişlik/yan yazı olur, eklemezsen 2 sütunda kalır. Her projenin `cover`'ı = şeritteki
-  kapak (tıklanınca proje açılır); `featured` = ana sayfa öne çıkan projeler şeridinde göster.
+- Panelde **klasörler menü başına AYRI bölümdür**: "İç Mekanlar — Klasörler",
+  "Mutfaklar — Klasörler", "Özel Tasarım — Klasörler", "Ticari Mekanlar — Klasörler"
+  (her biri `content/projects-<kategori>.json`). Kategori dosyadan bellidir (panelde seçilmez).
+  Her klasörün `cover`'ı = şeritteki kapak (tıklanınca açılır); `blocks` görsellerinin altında
+  İSTEĞE BAĞLI `caption` (yazı → tam genişlik/yan yazı; yazısız → 2 sütun); `featured` = ana
+  sayfa öne çıkanlar şeridi. Ana sayfa **hero slaytları** (`home.json` `hero_slides`, manuel)
+  ayrıdır ve projelerden bağımsızdır.
 - İçerik veri dosyaları: `content/home.json` (+ ozel/ic/mutfak). Şema:
   `{ "hero": "assets/img/..", "hero_title": {tr,en,es}, "hero_sub": {tr,en,es},
   "title": {tr,en,es}, "body": {tr,en,es}, "gallery": ["assets/img/..", ...] }`.

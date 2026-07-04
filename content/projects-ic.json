@@ -1,0 +1,47 @@
+{
+  "projects": [
+    {
+      "slug": "Örnek Daire, Bursa",
+      "date": "2026-04-28",
+      "featured": true,
+      "cover": "assets/img/8-3.jpg",
+      "title": {
+        "tr": "Örnek Daire, Bursa"
+      },
+      "blocks": [
+        {
+          "image": "assets/img/6-5.jpg",
+          "caption": {
+            "tr": "Açık planlı loft: yüksek tavan ve ham dokularla modern bir yaşam.",
+            "en": "Open-plan loft: modern living with high ceilings and raw textures.",
+            "es": "Loft de planta abierta: vida moderna con techos altos y texturas crudas."
+          }
+        },
+        {
+          "image": "assets/img/7-2.jpg"
+        },
+        {
+          "image": "assets/img/8-4.jpg"
+        },
+        {
+          "image": "assets/img/9-1.jpg"
+        },
+        {
+          "image": "assets/img/10-1.jpg"
+        },
+        {
+          "image": "assets/img/11-1.jpg"
+        },
+        {
+          "image": "assets/img/12.jpg"
+        },
+        {
+          "image": "assets/img/13-1.jpg"
+        },
+        {
+          "image": "assets/img/14.jpg"
+        }
+      ]
+    }
+  ]
+}

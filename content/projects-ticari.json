@@ -1,0 +1,60 @@
+{
+  "projects": [
+    {
+      "slug": "Döviz Bürosu, Yalova",
+      "date": "2025-05-20",
+      "featured": true,
+      "cover": "assets/img/3.jpg",
+      "title": {
+        "tr": "Döviz Bürosu",
+        "en": "Exchange Office",
+        "es": "Sasa de Cambio o oficina de cambio"
+      },
+      "blocks": [
+        {
+          "image": "assets/img/3.jpg",
+          "caption": {
+            "tr": "Salon: doğal ışığı merkeze alan, sıcak nötr tonlarda bir yaşam alanı.",
+            "en": "Living room: a warm, neutral space built around natural light.",
+            "es": "Salón: un espacio cálido y neutro concebido en torno a la luz natural."
+          }
+        },
+        {
+          "image": "assets/img/15-1.jpg"
+        },
+        {
+          "image": "assets/img/16-1.jpg"
+        },
+        {
+          "image": "assets/img/5.jpg",
+          "caption": {
+            "tr": "Ismarlama depolama çözümleriyle sadeleştirilmiş koridor.",
+            "en": "A hallway simplified with bespoke storage solutions.",
+            "es": "Un pasillo simplificado con soluciones de almacenamiento a medida."
+          }
+        },
+        {
+          "image": "assets/img/6-4.jpg"
+        },
+        {
+          "image": "assets/img/7-1.jpg"
+        },
+        {
+          "image": "assets/img/8-2.jpg"
+        },
+        {
+          "image": "assets/img/11.jpg"
+        },
+        {
+          "image": "assets/img/9.jpg"
+        },
+        {
+          "image": "assets/img/10.jpg"
+        },
+        {
+          "image": "assets/img/13.jpg"
+        }
+      ]
+    }
+  ]
+}
