@@ -58,18 +58,17 @@
       ]
     },
     {
-      "slug": "nisantasi-loft",
+      "slug": "Örnek Daire, Bursa",
       "date": "2026-04-28",
       "category": "ic",
-      "featured": false,
+      "featured": true,
+      "cover": "assets/img/8-3.jpg",
       "title": {
-        "tr": "Nişantaşı Loft",
-        "en": "Nişantaşı Loft",
-        "es": "Loft en Nişantaşı"
+        "tr": "Örnek Daire, Bursa"
       },
       "blocks": [
         {
-          "image": "assets/img/46-1.jpg",
+          "image": "assets/img/6-5.jpg",
           "caption": {
             "tr": "Açık planlı loft: yüksek tavan ve ham dokularla modern bir yaşam.",
             "en": "Open-plan loft: modern living with high ceilings and raw textures.",
@@ -77,10 +76,28 @@
           }
         },
         {
-          "image": "assets/img/38-2.jpg"
+          "image": "assets/img/7-2.jpg"
         },
         {
-          "image": "assets/img/b4.jpg"
+          "image": "assets/img/8-4.jpg"
+        },
+        {
+          "image": "assets/img/9-1.jpg"
+        },
+        {
+          "image": "assets/img/10-1.jpg"
+        },
+        {
+          "image": "assets/img/11-1.jpg"
+        },
+        {
+          "image": "assets/img/12.jpg"
+        },
+        {
+          "image": "assets/img/13-1.jpg"
+        },
+        {
+          "image": "assets/img/14.jpg"
         }
       ]
     },
