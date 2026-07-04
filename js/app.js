@@ -117,10 +117,22 @@ function setupSearch() {
   });
 }
 
-/* ---------- Aşağı inince beliren kayar menü ---------- */
+/* ---------- Menü davranışı ----------
+   Ana sayfa: aşağı inince beliren KAYAR menü.
+   Alt sayfalar: SABİT menü (her zaman görünür). Hero'su olmayan
+   sayfalarda (blog/proje/yazı) içerik menünün altında kalmasın diye
+   gövdeye üst boşluk eklenir. */
 function setupScrollHeader() {
   const header = document.getElementById('site-header');
   if (!header) return;
+
+  const isHome = document.body.getAttribute('data-page') === 'home';
+  if (!isHome) {
+    document.body.classList.add('static-header');                 // menü sabit, gizlenmez
+    if (!document.querySelector('.hero')) document.body.classList.add('no-hero');
+    return;
+  }
+
   const TH = 80;   // bu kadar aşağı inince menü belirir
   function update() {
     if (window.scrollY > TH) header.classList.add('show');

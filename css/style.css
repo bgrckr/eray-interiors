@@ -50,6 +50,9 @@ img{ max-width:100%; display:block; }
   transform:translateY(-100%); transition:transform .35s ease;   /* üstte gizli */
 }
 #site-header.show{ transform:translateY(0); }                     /* aşağı inince görünür */
+/* Alt sayfalar: menü sabit (kayar özellik yalnızca ana sayfada) */
+body.static-header #site-header{ transform:none; transition:none; }
+body.static-header.no-hero{ padding-top:var(--header-h); }        /* hero yoksa içerik menünün altında kalmasın */
 .header-inner{
   max-width:none; margin:0 auto; min-height:var(--header-h);
   padding:0 clamp(24px, 4vw, 72px);   /* tam genişlik — menü kenarlara yaslanır, boşta kalmaz */
