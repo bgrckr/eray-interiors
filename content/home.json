@@ -1,13 +1,13 @@
 {
   "hero": "assets/img/16.jpg",
   "hero_slides": [
+    "assets/img/9-2.jpg",
     "assets/img/3.jpg",
     "assets/img/16.jpg",
     "assets/img/38-2.jpg",
     "assets/img/32.jpg",
     "assets/img/b4.jpg",
-    "assets/img/46-1.jpg",
-    "assets/img/9-2.jpg"
+    "assets/img/46-1.jpg"
   ],
   "hero_title": {
     "tr": "ERAY INTERIORS",
