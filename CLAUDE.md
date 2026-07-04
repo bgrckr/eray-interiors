@@ -15,13 +15,13 @@ proje notlarını içerir. Yeni bir oturumda önce bunu okuyun.
 
 ## Dosya yapısı
 ```
-index.html · ic-mekanlar.html · mutfaklar.html · ozel-tasarim.html · ticari-mekanlar.html
+index.html · yasam-alanlari.html · ticari-mekanlar.html · ozel-tasarim.html
 blog.html (liste) · yazi.html (tekil yazı, yazi.html?id=<slug>)
 proje.html (tekil proje, proje.html?id=<slug>)
 css/style.css
 js/  icons.js  data.js  i18n.js  header.js  footer.js  content.js  carousel.js  hero.js  projects.js  intro.js  app.js  blog.js
-content/  home.json ic.json mutfak.json ozel.json ticari.json blog.json
-content/  projects-ic.json projects-mutfak.json projects-ozel.json projects-ticari.json  (klasörler; menü başına ayrı dosya)
+content/  home.json yasam.json ozel.json ticari.json blog.json
+content/  projects-yasam.json projects-ozel.json projects-ticari.json  (klasörler; menü başına ayrı dosya)
 assets/img/   (hero + galeri görselleri buraya)
 ```
 Hizmet sayfalarının düzeni: **header → hero görsel → tanıtım metni → 2 sütunlu PROJE pencereleri (grid; kapak + üstünde ad, tıklanınca proje) → siyah footer.**
@@ -37,7 +37,9 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
   sırasıyla `renderHeader()`, `renderFooter()`, `I18N.apply()`, dil/arama/mobil menü,
   `await loadPageContent()`, `await loadProjects()`, `initHeroSlider()` ve
   `initCarousels()` çağırır (şeritler klonlanmadan önce dolu olsun diye bu sıra).
-- Sol menüler (alt menüsüz, sırayla): İç Mekanlar · Mutfaklar · Özel Tasarım · Ticari Mekanlar.
+- Sol menüler (alt menüsüz, sırayla): **Yaşam Alanları · Ticari Mekanlar · Özel Tasarım**.
+  (`Yaşam Alanları` = eski İç Mekanlar + Mutfaklar birleşimi; kategori kodu `yasam`,
+  sayfa `yasam-alanlari.html`, içerik `content/yasam.json`, klasörler `projects-yasam.json`.)
   **Blog:** masaüstünde hizmet menülerinden ayrı, sağda arama ikonunun yanında
   (`header.js` → `.tools .blog-link`); **mobilde (≤1024) soldaki hamburger menüsünün içinde**
   (`.main-nav .nav-blog`; CSS ile masaüstü/mobil görünürlüğü değişir).
@@ -45,6 +47,9 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
 - **Header ve footer tam genişliktir** (`max-width:none`, `padding:clamp(24px,4vw,72px)`) —
   geniş monitörde içerik kenarlara yaslanır, iki yanda boşluk kalmaz. Diğer içerik
   bölümleri (`--maxw`) ortalıdır.
+- **Hero tam ekran + kayar menü:** hero `min-height:100svh` (tam ekran). Header
+  `position:fixed`, en üstte gizli (`translateY(-100%)`); aşağı inince (`scrollY>80`)
+  `.show` sınıfıyla kayarak gelir (`app.js` → `setupScrollHeader`).
 - **Açılış ekranı (intro):** yalnızca ana sayfada. `#intro` (siyah zemin + beyaz
   "ERAY INTERIORS" logosu) 3 sn görünür, sonra yumuşak geçişle kapanır. `js/intro.js`
   yönetir; `sessionStorage` ile **oturum başına bir kez** gösterilir (flash önlemek için

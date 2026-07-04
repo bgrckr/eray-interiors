@@ -13,8 +13,7 @@
    ============================================================ */
 (function () {
   var CATEGORY_PAGE = {
-    ic: 'ic-mekanlar.html',
-    mutfak: 'mutfaklar.html',
+    yasam: 'yasam-alanlari.html',
     ozel: 'ozel-tasarim.html',
     ticari: 'ticari-mekanlar.html'
   };
@@ -218,8 +217,7 @@
       // Klasörler her menü (kategori) için AYRI dosyada tutulur (panelde ayrı bölüm).
       // Site bu dosyaları okuyup birleştirir; kategori dosyadan atanır.
       var FILES = [
-        { path: 'content/projects-ic.json', category: 'ic' },
-        { path: 'content/projects-mutfak.json', category: 'mutfak' },
+        { path: 'content/projects-yasam.json', category: 'yasam' },
         { path: 'content/projects-ozel.json', category: 'ozel' },
         { path: 'content/projects-ticari.json', category: 'ticari' }
       ];

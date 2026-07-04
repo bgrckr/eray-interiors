@@ -1,0 +1,23 @@
+{
+  "hero": "assets/img/38-1.jpg",
+  "hero_title": {
+    "tr": "Yaşam Alanları",
+    "en": "Living Spaces",
+    "es": "Espacios de Vida"
+  },
+  "hero_sub": {
+    "tr": "Konut iç mekânları ve mutfak tasarımı",
+    "en": "Residential interiors and kitchen design",
+    "es": "Interiores residenciales y diseño de cocinas"
+  },
+  "title": {
+    "tr": "Yaşam Alanları",
+    "en": "Living Spaces",
+    "es": "Espacios de Vida"
+  },
+  "body": {
+    "tr": "Yaşam alanları tasarımında hedefimiz; estetik ile konforu, işlevsellik ile duyguyu aynı çatı altında buluşturmak. Konutların her odasından mutfaklara kadar, mekânın potansiyelini en yüksek noktaya taşıyan bütüncül tasarımlar kurguluyoruz.\n\nRenk paletinden aydınlatmaya, mobilya seçiminden mutfak ergonomisine kadar her kararı bütünsel bir dille ele alıyoruz. Böylece yalnızca göze değil, içinde yaşayana da hitap eden; zamansız ve dengeli mekânlar ortaya çıkıyor.",
+    "en": "In living-space design our aim is to unite aesthetics with comfort, and function with emotion, under one roof. From every room of a home to the kitchen, we create holistic designs that bring out the full potential of a space.\n\nFrom the colour palette to lighting, from furniture selection to kitchen ergonomics, we handle every decision with a coherent language. The result is timeless, balanced spaces that speak not only to the eye but to those who live in them.",
+    "es": "En el diseño de espacios de vida nuestro objetivo es unir la estética con el confort, y la función con la emoción, bajo un mismo techo. Desde cada habitación de una vivienda hasta la cocina, creamos diseños integrales que revelan todo el potencial de un espacio.\n\nDe la paleta de colores a la iluminación, de la selección de mobiliario a la ergonomía de la cocina, abordamos cada decisión con un lenguaje coherente. El resultado son espacios atemporales y equilibrados que hablan no solo a la vista, sino a quienes los habitan."
+  }
+}

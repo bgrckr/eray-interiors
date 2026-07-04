@@ -83,6 +83,30 @@
           "image": "assets/img/9-3.jpg"
         }
       ]
+    },
+    {
+      "slug": "ada-mutfak",
+      "date": "2026-04-10",
+      "featured": true,
+      "cover": "assets/img/8.jpg",
+      "title": {
+        "tr": "Ada Mutfak",
+        "en": "Island Kitchen",
+        "es": "Cocina con Isla"
+      },
+      "blocks": [
+        {
+          "image": "assets/img/8.jpg",
+          "caption": {
+            "tr": "Geniş ada, hem çalışma hem sosyalleşme alanı olarak kurgulandı.",
+            "en": "A large island designed as both a work surface and a social hub.",
+            "es": "Una gran isla pensada como superficie de trabajo y punto de encuentro."
+          }
+        },
+        {
+          "image": "assets/img/32.jpg"
+        }
+      ]
     }
   ]
 }

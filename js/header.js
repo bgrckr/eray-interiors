@@ -11,10 +11,9 @@ window.renderHeader = function () {
 
   const path = (location.pathname.split('/').pop() || 'index.html');
   const menu = [
-    { href: 'ic-mekanlar.html',    key: 'menu.ic' },
-    { href: 'mutfaklar.html',      key: 'menu.mutfak' },
-    { href: 'ozel-tasarim.html',   key: 'menu.ozel' },
-    { href: 'ticari-mekanlar.html', key: 'menu.ticari' }
+    { href: 'yasam-alanlari.html', key: 'menu.yasam' },
+    { href: 'ticari-mekanlar.html', key: 'menu.ticari' },
+    { href: 'ozel-tasarim.html',   key: 'menu.ozel' }
   ];
 
   const links = menu.map(m =>

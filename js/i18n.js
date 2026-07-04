@@ -17,7 +17,7 @@ window.I18N = (function () {
 
   const translations = {
     tr: {
-      menu: { ic: 'İç Mekanlar', mutfak: 'Mutfaklar', ozel: 'Özel Tasarım', ticari: 'Ticari Mekanlar', blog: 'Blog' },
+      menu: { yasam: 'Yaşam Alanları', ticari: 'Ticari Mekanlar', ozel: 'Özel Tasarım', blog: 'Blog' },
       search: { placeholder: 'Ara…', empty: 'Sonuç bulunamadı' },
       blog: { title: 'Blog', intro: 'Tasarım üzerine yazılar, projelerimizden notlar ve ilham veren mekânlar.', readmore: 'Devamını oku', back: 'Bloga dön', empty: 'Henüz yazı eklenmedi.' },
       projects: { title: 'Projeler', featured: 'Öne Çıkan Projeler', view: 'Projeyi gör', back: 'Projelere dön', empty: 'Proje bulunamadı.' },
@@ -42,21 +42,13 @@ window.I18N = (function () {
             '<p>Her mekân biriciktir; bu yüzden hazır kalıplar yerine tümüyle size özel tasarımlar geliştiriyoruz. Ölçüden malzemeye, formdan işlevine kadar her ayrıntı, yaşam biçiminize ve zevkinize göre şekilleniyor.</p>' +
             '<p>Ismarlama mobilya, özel dolap sistemleri ve mekâna gömülü çözümlerle her santimetrekareyi verimli ve estetik bir bütüne dönüştürüyoruz. Tasarım sürecini sizinle birlikte, şeffaf bir şekilde yürütüyor; fikirden uygulamaya kadar yanınızda oluyoruz.</p>'
         },
-        ic: {
-          hero: 'İç Mekânlar',
-          sub: 'Konut ve ticari mekân tasarımı',
-          title: 'İç Mekânlar',
+        yasam: {
+          hero: 'Yaşam Alanları',
+          sub: 'Konut iç mekânları ve mutfak tasarımı',
+          title: 'Yaşam Alanları',
           body:
             '<p>İç mekân tasarımında hedefimiz; estetik ile konforu, işlevsellik ile duyguyu aynı çatı altında buluşturmak. Konutlar, ofisler ve ticari alanlar için mekânın potansiyelini en yüksek noktaya taşıyan tasarımlar kurguluyoruz.</p>' +
             '<p>Renk paletinden aydınlatmaya, mobilya seçiminden dokulara kadar her kararı bütünsel bir dille ele alıyoruz. Böylece yalnızca göze değil, yaşayana da hitap eden; zamansız ve dengeli mekânlar ortaya çıkıyor.</p>'
-        },
-        mutfak: {
-          hero: 'Mutfaklar',
-          sub: 'İşlevsel ve şık mutfak tasarımları',
-          title: 'Mutfaklar',
-          body:
-            '<p>Mutfak, evin kalbidir. Bu yüzden mutfak tasarımlarımızda ergonomi, dayanıklılık ve estetiği bir arada düşünüyoruz. Çalışma üçgeninden depolama çözümlerine kadar her detay, günlük hayatınızı kolaylaştıracak şekilde planlanıyor.</p>' +
-            '<p>Modern ada mutfaklardan sıcak ve klasik kurgulara kadar; kaliteli malzemeler ve akıllı çözümlerle uzun yıllar keyifle kullanacağınız mutfaklar tasarlıyoruz. Her proje, sizin alışkanlıklarınıza göre biçimleniyor.</p>'
         },
         ticari: {
           hero: 'Ticari Mekanlar',
@@ -70,7 +62,7 @@ window.I18N = (function () {
     },
 
     en: {
-      menu: { ic: 'Interiors', mutfak: 'Kitchens', ozel: 'Custom Design', ticari: 'Commercial', blog: 'Blog' },
+      menu: { yasam: 'Living Spaces', ticari: 'Commercial', ozel: 'Custom Design', blog: 'Blog' },
       search: { placeholder: 'Search…', empty: 'No results found' },
       blog: { title: 'Blog', intro: 'Articles on design, notes from our projects and spaces that inspire.', readmore: 'Read more', back: 'Back to blog', empty: 'No posts yet.' },
       projects: { title: 'Projects', featured: 'Featured Projects', view: 'View project', back: 'Back to projects', empty: 'Project not found.' },
@@ -95,21 +87,13 @@ window.I18N = (function () {
             '<p>Every space is unique, so instead of ready-made templates we develop designs entirely tailored to you. From dimensions to materials, from form to function, every detail is shaped around your lifestyle and taste.</p>' +
             '<p>With bespoke furniture, custom storage systems and built-in solutions, we turn every square metre into an efficient and elegant whole. We run the design process transparently, standing by you from idea to completion.</p>'
         },
-        ic: {
-          hero: 'Interiors',
-          sub: 'Residential and commercial interior design',
-          title: 'Interiors',
+        yasam: {
+          hero: 'Living Spaces',
+          sub: 'Residential interiors and kitchen design',
+          title: 'Living Spaces',
           body:
             '<p>In interior design our aim is to unite aesthetics with comfort, and function with emotion, under one roof. For homes, offices and commercial spaces we create designs that bring out the full potential of a space.</p>' +
             '<p>From the colour palette to lighting, from furniture selection to textures, we handle every decision with a coherent language. The result is timeless, balanced spaces that speak not only to the eye but to those who live in them.</p>'
-        },
-        mutfak: {
-          hero: 'Kitchens',
-          sub: 'Functional and stylish kitchen design',
-          title: 'Kitchens',
-          body:
-            '<p>The kitchen is the heart of the home. That is why our kitchen designs bring together ergonomics, durability and aesthetics. From the work triangle to storage solutions, every detail is planned to make daily life easier.</p>' +
-            '<p>From modern island kitchens to warm, classic layouts, we design kitchens you will enjoy for many years, using quality materials and smart solutions. Every project is shaped around your habits.</p>'
         },
         ticari: {
           hero: 'Commercial Spaces',
@@ -123,7 +107,7 @@ window.I18N = (function () {
     },
 
     es: {
-      menu: { ic: 'Interiores', mutfak: 'Cocinas', ozel: 'Diseño Personalizado', ticari: 'Espacios Comerciales', blog: 'Blog' },
+      menu: { yasam: 'Espacios de Vida', ticari: 'Espacios Comerciales', ozel: 'Diseño Personalizado', blog: 'Blog' },
       search: { placeholder: 'Buscar…', empty: 'No se encontraron resultados' },
       blog: { title: 'Blog', intro: 'Artículos sobre diseño, notas de nuestros proyectos y espacios que inspiran.', readmore: 'Leer más', back: 'Volver al blog', empty: 'Aún no hay entradas.' },
       projects: { title: 'Proyectos', featured: 'Proyectos Destacados', view: 'Ver proyecto', back: 'Volver a proyectos', empty: 'Proyecto no encontrado.' },
@@ -148,21 +132,13 @@ window.I18N = (function () {
             '<p>Cada espacio es único, por eso en lugar de plantillas prefabricadas desarrollamos diseños totalmente hechos a su medida. De las dimensiones a los materiales, de la forma a la función, cada detalle se moldea según su estilo de vida y su gusto.</p>' +
             '<p>Con mobiliario a medida, sistemas de almacenamiento personalizados y soluciones integradas, convertimos cada metro cuadrado en un conjunto eficiente y elegante. Llevamos el proceso de diseño de forma transparente, a su lado desde la idea hasta la ejecución.</p>'
         },
-        ic: {
-          hero: 'Interiores',
-          sub: 'Diseño de interiores residenciales y comerciales',
-          title: 'Interiores',
+        yasam: {
+          hero: 'Espacios de Vida',
+          sub: 'Interiores residenciales y diseño de cocinas',
+          title: 'Espacios de Vida',
           body:
             '<p>En el diseño de interiores nuestro objetivo es unir la estética con el confort, y la función con la emoción, bajo un mismo techo. Para viviendas, oficinas y espacios comerciales creamos diseños que revelan todo el potencial de un espacio.</p>' +
             '<p>De la paleta de colores a la iluminación, de la selección de mobiliario a las texturas, abordamos cada decisión con un lenguaje coherente. El resultado son espacios atemporales y equilibrados que hablan no solo a la vista, sino a quienes los habitan.</p>'
-        },
-        mutfak: {
-          hero: 'Cocinas',
-          sub: 'Diseño de cocinas funcional y elegante',
-          title: 'Cocinas',
-          body:
-            '<p>La cocina es el corazón del hogar. Por eso nuestros diseños de cocina combinan ergonomía, durabilidad y estética. Del triángulo de trabajo a las soluciones de almacenamiento, cada detalle se planifica para facilitar su día a día.</p>' +
-            '<p>De cocinas modernas con isla a distribuciones cálidas y clásicas, diseñamos cocinas que disfrutará durante muchos años, con materiales de calidad y soluciones inteligentes. Cada proyecto se moldea según sus hábitos.</p>'
         },
         ticari: {
           hero: 'Espacios Comerciales',

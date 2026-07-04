@@ -87,10 +87,10 @@ content:
           - { name: es, label: "Español", type: text }
       - { name: gallery, label: "Galeri görselleri", type: image, list: true }
 
-  - name: ic
-    label: İç Mekânlar
+  - name: yasam
+    label: Yaşam Alanları
     type: file
-    path: content/ic.json
+    path: content/yasam.json
     fields:
       - { name: hero, label: "Hero (büyük üst görsel)", type: image }
       - name: hero_title
@@ -196,18 +196,18 @@ content:
           - { name: images, label: "Ek görseller (yazı içinde)", type: image, list: true }
 
   # KLASÖRLER — her menü için AYRI bölüm. Kategori dosyadan bellidir (ayrıca seçmeye gerek yok).
-  # Site (js/projects.js) bu 4 dosyayı okuyup birleştirir; görünüm aynı kalır.
-  - name: projects_ic
-    label: "İç Mekanlar — Klasörler"
+  # Site (js/projects.js) bu dosyaları okuyup birleştirir; görünüm aynı kalır.
+  - name: projects_yasam
+    label: "Yaşam Alanları — Klasörler"
     type: file
-    path: content/projects-ic.json
+    path: content/projects-yasam.json
     fields:
       - name: projects
-        label: "İç Mekanlar klasörleri — istediğin kadar ekle (her klasör şeritte bir kutu)"
+        label: "Yaşam Alanları klasörleri — istediğin kadar ekle (her klasör bir kutu olur)"
         type: object
         list: true
         fields:
-          - { name: slug, label: "Kısa ad (link için, ör. bebek-daire)", type: string }
+          - { name: slug, label: "Kısa ad (link için, ör. ornek-daire)", type: string }
           - { name: date, label: "Tarih", type: date }
           - { name: featured, label: "Ana sayfada öne çıkar", type: boolean }
           - { name: cover, label: "Ana görsel (kapak — tıklanınca klasör açılır)", type: image }
@@ -220,41 +220,6 @@ content:
               - { name: es, label: "Español", type: string }
           - name: blocks
             label: "Görseller (sırayla). Yazı eklenen görsel tam genişlik + yan yazı (sırayla sol/sağ); yazısız görseller 2 sütun."
-            type: object
-            list: true
-            fields:
-              - { name: image, label: "Görsel", type: image }
-              - name: caption
-                label: "Görselin yanına yazı — İSTEĞE BAĞLI (boş = yazısız/2 sütun)"
-                type: object
-                fields:
-                  - { name: tr, label: "Türkçe", type: text }
-                  - { name: en, label: "English", type: text }
-                  - { name: es, label: "Español", type: text }
-
-  - name: projects_mutfak
-    label: "Mutfaklar — Klasörler"
-    type: file
-    path: content/projects-mutfak.json
-    fields:
-      - name: projects
-        label: "Mutfak klasörleri — istediğin kadar ekle (her klasör şeritte bir kutu)"
-        type: object
-        list: true
-        fields:
-          - { name: slug, label: "Kısa ad (link için)", type: string }
-          - { name: date, label: "Tarih", type: date }
-          - { name: featured, label: "Ana sayfada öne çıkar", type: boolean }
-          - { name: cover, label: "Ana görsel (kapak — tıklanınca klasör açılır)", type: image }
-          - name: title
-            label: "Klasör adı"
-            type: object
-            fields:
-              - { name: tr, label: "Türkçe", type: string }
-              - { name: en, label: "English", type: string }
-              - { name: es, label: "Español", type: string }
-          - name: blocks
-            label: "Görseller (sırayla). Yazı eklenen görsel tam genişlik + yan yazı; yazısız görseller 2 sütun."
             type: object
             list: true
             fields:
@@ -337,38 +302,3 @@ content:
                   - { name: en, label: "English", type: text }
                   - { name: es, label: "Español", type: text }
 
-  - name: mutfak
-    label: Mutfaklar
-    type: file
-    path: content/mutfak.json
-    fields:
-      - { name: hero, label: "Hero (büyük üst görsel)", type: image }
-      - name: hero_title
-        label: "Hero başlığı"
-        type: object
-        fields:
-          - { name: tr, label: "Türkçe", type: string }
-          - { name: en, label: "English", type: string }
-          - { name: es, label: "Español", type: string }
-      - name: hero_sub
-        label: "Hero alt başlığı"
-        type: object
-        fields:
-          - { name: tr, label: "Türkçe", type: string }
-          - { name: en, label: "English", type: string }
-          - { name: es, label: "Español", type: string }
-      - name: title
-        label: "Sayfa başlığı"
-        type: object
-        fields:
-          - { name: tr, label: "Türkçe", type: string }
-          - { name: en, label: "English", type: string }
-          - { name: es, label: "Español", type: string }
-      - name: body
-        label: "Tanıtım metni (paragrafları boş satırla ayırın)"
-        type: object
-        fields:
-          - { name: tr, label: "Türkçe", type: text }
-          - { name: en, label: "English", type: text }
-          - { name: es, label: "Español", type: text }
-      - { name: gallery, label: "Galeri görselleri", type: image, list: true }
