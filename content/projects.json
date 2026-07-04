@@ -6,32 +6,20 @@
       "category": "ic",
       "featured": true,
       "cover": "assets/img/3.jpg",
-      "title": {
-        "tr": "Bebek Dairesi",
-        "en": "Bebek Apartment",
-        "es": "Apartamento en Bebek"
-      },
+      "title": { "tr": "Bebek Dairesi", "en": "Bebek Apartment", "es": "Apartamento en Bebek" },
       "blocks": [
         {
           "image": "assets/img/3.jpg",
-          "side": "left",
           "caption": {
             "tr": "Salon: doğal ışığı merkeze alan, sıcak nötr tonlarda bir yaşam alanı.",
             "en": "Living room: a warm, neutral space built around natural light.",
             "es": "Salón: un espacio cálido y neutro concebido en torno a la luz natural."
           }
         },
-        {
-          "image": "assets/img/8.jpg",
-          "caption": { "tr": "", "en": "", "es": "" }
-        },
-        {
-          "image": "assets/img/15.jpg",
-          "caption": { "tr": "", "en": "", "es": "" }
-        },
+        { "image": "assets/img/8.jpg", "caption": { "tr": "", "en": "", "es": "" } },
+        { "image": "assets/img/15.jpg", "caption": { "tr": "", "en": "", "es": "" } },
         {
           "image": "assets/img/16.jpg",
-          "side": "left",
           "caption": {
             "tr": "Ismarlama depolama çözümleriyle sadeleştirilmiş koridor.",
             "en": "A hallway simplified with bespoke storage solutions.",
@@ -41,67 +29,61 @@
       ]
     },
     {
+      "slug": "nisantasi-loft",
+      "date": "2026-04-28",
+      "category": "ic",
+      "featured": false,
+      "cover": "assets/img/46-1.jpg",
+      "title": { "tr": "Nişantaşı Loft", "en": "Nişantaşı Loft", "es": "Loft en Nişantaşı" },
+      "blocks": [
+        {
+          "image": "assets/img/46-1.jpg",
+          "caption": {
+            "tr": "Açık planlı loft: yüksek tavan ve ham dokularla modern bir yaşam.",
+            "en": "Open-plan loft: modern living with high ceilings and raw textures.",
+            "es": "Loft de planta abierta: vida moderna con techos altos y texturas crudas."
+          }
+        },
+        { "image": "assets/img/38-2.jpg", "caption": { "tr": "", "en": "", "es": "" } },
+        { "image": "assets/img/b4.jpg", "caption": { "tr": "", "en": "", "es": "" } }
+      ]
+    },
+    {
       "slug": "ada-mutfak",
       "date": "2026-04-10",
       "category": "mutfak",
       "featured": true,
       "cover": "assets/img/8.jpg",
-      "title": {
-        "tr": "Ada Mutfak",
-        "en": "Island Kitchen",
-        "es": "Cocina con Isla"
-      },
+      "title": { "tr": "Ada Mutfak", "en": "Island Kitchen", "es": "Cocina con Isla" },
       "blocks": [
         {
           "image": "assets/img/8.jpg",
-          "side": "left",
           "caption": {
             "tr": "Geniş ada, hem çalışma hem sosyalleşme alanı olarak kurgulandı.",
             "en": "A large island designed as both a work surface and a social hub.",
             "es": "Una gran isla pensada como superficie de trabajo y punto de encuentro."
           }
         },
-        {
-          "image": "assets/img/32.jpg",
-          "side": "right",
-          "caption": {
-            "tr": "",
-            "en": "",
-            "es": ""
-          }
-        }
+        { "image": "assets/img/32.jpg", "caption": { "tr": "", "en": "", "es": "" } }
       ]
     },
     {
-      "slug": "atolye-ofis",
-      "date": "2026-03-02",
-      "category": "ticari",
+      "slug": "klasik-mutfak",
+      "date": "2026-03-15",
+      "category": "mutfak",
       "featured": false,
       "cover": "assets/img/32.jpg",
-      "title": {
-        "tr": "Atölye Ofis",
-        "en": "Studio Office",
-        "es": "Oficina Estudio"
-      },
+      "title": { "tr": "Klasik Mutfak", "en": "Classic Kitchen", "es": "Cocina Clásica" },
       "blocks": [
         {
           "image": "assets/img/32.jpg",
-          "side": "left",
           "caption": {
-            "tr": "Markanın kimliğini yansıtan karşılama alanı.",
-            "en": "A reception area that reflects the brand's identity.",
-            "es": "Una zona de recepción que refleja la identidad de la marca."
+            "tr": "Sıcak ahşap ve zamansız detaylarla klasik bir mutfak kurgusu.",
+            "en": "A classic kitchen layout with warm wood and timeless details.",
+            "es": "Una cocina clásica con madera cálida y detalles atemporales."
           }
         },
-        {
-          "image": "assets/img/b4.jpg",
-          "side": "right",
-          "caption": {
-            "tr": "",
-            "en": "",
-            "es": ""
-          }
-        }
+        { "image": "assets/img/15.jpg", "caption": { "tr": "", "en": "", "es": "" } }
       ]
     },
     {
@@ -110,15 +92,10 @@
       "category": "ozel",
       "featured": true,
       "cover": "assets/img/16.jpg",
-      "title": {
-        "tr": "Ismarlama Kitaplık",
-        "en": "Bespoke Library",
-        "es": "Biblioteca a Medida"
-      },
+      "title": { "tr": "Ismarlama Kitaplık", "en": "Bespoke Library", "es": "Biblioteca a Medida" },
       "blocks": [
         {
           "image": "assets/img/16.jpg",
-          "side": "left",
           "caption": {
             "tr": "Tavana kadar yükselen, mekâna gömülü ceviz kitaplık.",
             "en": "A floor-to-ceiling walnut library built into the space.",
@@ -127,13 +104,69 @@
         },
         {
           "image": "assets/img/15.jpg",
-          "side": "right",
           "caption": {
             "tr": "Okuma köşesi: gizli aydınlatma ve özel oturma birimi.",
             "en": "Reading nook: hidden lighting and a custom seating unit.",
             "es": "Rincón de lectura: iluminación oculta y un asiento personalizado."
           }
         }
+      ]
+    },
+    {
+      "slug": "gardirop-sistemi",
+      "date": "2026-01-20",
+      "category": "ozel",
+      "featured": false,
+      "cover": "assets/img/b4.jpg",
+      "title": { "tr": "Giyinme Odası", "en": "Walk-in Wardrobe", "es": "Vestidor" },
+      "blocks": [
+        {
+          "image": "assets/img/b4.jpg",
+          "caption": {
+            "tr": "Ölçüye özel gardırop sistemi: her parçaya yer, düzenli bir düzen.",
+            "en": "A made-to-measure wardrobe system: a place for everything, neatly ordered.",
+            "es": "Un sistema de vestidor a medida: un lugar para todo, ordenado con precisión."
+          }
+        },
+        { "image": "assets/img/3.jpg", "caption": { "tr": "", "en": "", "es": "" } }
+      ]
+    },
+    {
+      "slug": "atolye-ofis",
+      "date": "2026-03-02",
+      "category": "ticari",
+      "featured": false,
+      "cover": "assets/img/32.jpg",
+      "title": { "tr": "Atölye Ofis", "en": "Studio Office", "es": "Oficina Estudio" },
+      "blocks": [
+        {
+          "image": "assets/img/32.jpg",
+          "caption": {
+            "tr": "Markanın kimliğini yansıtan karşılama alanı.",
+            "en": "A reception area that reflects the brand's identity.",
+            "es": "Una zona de recepción que refleja la identidad de la marca."
+          }
+        },
+        { "image": "assets/img/b4.jpg", "caption": { "tr": "", "en": "", "es": "" } }
+      ]
+    },
+    {
+      "slug": "kafe-tasarimi",
+      "date": "2026-02-05",
+      "category": "ticari",
+      "featured": true,
+      "cover": "assets/img/38-2.jpg",
+      "title": { "tr": "Kafe Tasarımı", "en": "Café Design", "es": "Diseño de Café" },
+      "blocks": [
+        {
+          "image": "assets/img/38-2.jpg",
+          "caption": {
+            "tr": "Sıcak ışık ve doğal malzemelerle davetkâr bir kafe atmosferi.",
+            "en": "An inviting café atmosphere with warm light and natural materials.",
+            "es": "Un ambiente de café acogedor con luz cálida y materiales naturales."
+          }
+        },
+        { "image": "assets/img/46-1.jpg", "caption": { "tr": "", "en": "", "es": "" } }
       ]
     }
   ]

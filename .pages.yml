@@ -196,12 +196,12 @@ content:
           - { name: images, label: "Ek görseller (yazı içinde)", type: image, list: true }
 
   - name: projects
-    label: Projeler
+    label: Projeler (Klasörler)
     type: file
     path: content/projects.json
     fields:
       - name: projects
-        label: "Projeler"
+        label: "Klasörler — her menüye (kategoriye) istediğiniz kadar ekleyin; her klasör o menünün şeridinde bir kutu olur"
         type: object
         list: true
         fields:
