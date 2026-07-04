@@ -141,8 +141,7 @@ img{ max-width:100%; display:block; }
   display:flex; align-items:center; justify-content:center;
 }
 .hero::after{ content:''; position:absolute; inset:0; background:rgba(0,0,0,.30); z-index:1; }
-.hero-overlay{ position:relative; z-index:2; text-align:center; color:var(--white); padding:0 24px; pointer-events:none; }
-.hero-slide{ cursor:pointer; }   /* hero slaytı = proje kapağı, tıklanınca projeye gider */
+.hero-overlay{ position:relative; z-index:2; text-align:center; color:var(--white); padding:0 24px; }
 .hero-title{
   font-family:var(--font-brand); font-weight:200; letter-spacing:.16em;
   font-size:clamp(2rem, 5vw, 3.8rem); margin:0; text-transform:uppercase;

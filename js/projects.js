@@ -72,21 +72,6 @@
     return !!(c && (c.tr || c.en || c.es));
   }
 
-  // Ana sayfa hero slaytlarını ÖNE ÇIKAN projelerden kurar; her slayt o projenin
-  // kapak fotoğrafıdır ve tıklanınca proje detayına gider. Öne çıkan proje yoksa
-  // mevcut (statik/home.json) slaytlar korunur.
-  function buildHeroSlides(l) {
-    var wrap = document.querySelector('[data-hero-slider] .hero-slides');
-    if (!wrap) return;
-    var list = (PROJECTS || []).slice().filter(function (p) { return p.featured; }).sort(byDateDesc);
-    if (!list.length) return;
-    wrap.innerHTML = list.map(function (p) {
-      var bg = p.cover ? ' style="background-image:url(\'' + p.cover + '\')"' : '';
-      return '<a class="hero-slide" href="' + projHref(p, indexOf(p)) + '"' + bg +
-             ' aria-label="' + escapeHtml(pick(p.title, l)) + '"></a>';
-    }).join('');
-  }
-
   // Proje yoksa (ya da içerik henüz yüklenmediyse) gösterilecek boş kutular.
   function placeholderCards(n) {
     var one = '<span class="slide project-card project-placeholder" aria-hidden="true"><span class="card-img"></span></span>';
@@ -199,8 +184,7 @@
   window.loadProjects = async function () {
     var hasStrip = document.querySelector('[data-projects]');
     var hasDetail = document.getElementById('project-detail');
-    var hasHero = document.querySelector('[data-hero-slider] .hero-slides');
-    if (!hasStrip && !hasDetail && !hasHero) return;   // bu sayfada projeye gerek yok
+    if (!hasStrip && !hasDetail) return;   // bu sayfada projeye gerek yok
 
     if (PROJECTS == null) {
       try {
@@ -210,7 +194,6 @@
     }
 
     var l = lang();
-    if (hasHero) buildHeroSlides(l);                            // initHeroSlider'dan ÖNCE
     if (hasStrip) { fillStrips(l, false); stripsBuilt = true; } // initCarousels sonra klonlar
     if (hasDetail) renderDetail(l);
 

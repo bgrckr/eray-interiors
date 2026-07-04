@@ -20,7 +20,7 @@ content:
     path: content/home.json
     fields:
       - { name: hero, label: "Hero (tek görsel — slayt yoksa yedek)", type: image }
-      - { name: hero_slides, label: "Hero slaytları (5 büyük görsel, yavaş kayar)", type: image, list: true }
+      - { name: hero_slides, label: "Hero slaytları (büyük görseller, yavaş kayar — manuel yüklenir)", type: image, list: true }
       - name: hero_title
         label: "Hero başlığı"
         type: object
@@ -213,7 +213,7 @@ content:
             options:
               values: [ic, mutfak, ozel, ticari]
           - { name: featured, label: "Ana sayfada öne çıkar", type: boolean }
-          - { name: cover, label: "Kapak görseli (kayan kutu)", type: image }
+          - { name: cover, label: "Ana görsel (şeritteki kapak — tıklanınca proje açılır)", type: image }
           - name: title
             label: "Proje adı"
             type: object
