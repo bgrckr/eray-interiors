@@ -42,6 +42,47 @@
           "image": "assets/img/14.jpg"
         }
       ]
+    },
+    {
+      "slug": "A.D. Yatak Odası, Bursa",
+      "date": "2025-07-04",
+      "featured": false,
+      "cover": "assets/img/6-6.jpg",
+      "title": {
+        "tr": "A.D. Yatak Odası, Bursa"
+      },
+      "blocks": [
+        {
+          "image": "assets/img/1-1.jpg"
+        },
+        {
+          "image": "assets/img/3-1.jpg"
+        },
+        {
+          "image": "assets/img/4.jpg"
+        },
+        {
+          "image": "assets/img/5-1.jpg"
+        },
+        {
+          "image": "assets/img/6-7.jpg"
+        },
+        {
+          "image": "assets/img/7-3.jpg"
+        },
+        {
+          "image": "assets/img/14-1.jpg"
+        },
+        {
+          "image": "assets/img/11-2.jpg"
+        },
+        {
+          "image": "assets/img/8-5.jpg"
+        },
+        {
+          "image": "assets/img/9-3.jpg"
+        }
+      ]
     }
   ]
 }
