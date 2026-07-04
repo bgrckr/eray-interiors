@@ -95,8 +95,8 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
 
 ## Yayın (deployment)
 - **GitHub deposu:** https://github.com/bgrckr/eray-interiors (public)
-- **Canlı site:** https://erayinteriors.com/ (birincil, DNS aktif olunca) ·
-  yedek/kaynak: https://bgrckr.github.io/eray-interiors/ (custom domain sonrası buraya yönlenir)
+- **Canlı site:** https://erayinteriors.com/ (birincil, HTTPS aktif) ·
+  https://bgrckr.github.io/eray-interiors/ artık buraya 301 yönlenir
 - **Güncelleme akışı:** değişiklik → `git add .` → `git commit -m "..."` →
   **`git pull --rebase`** → `git push`. (Panel/ikinci hesap eşzamanlı commit
   atabildiği için push'tan önce her zaman `pull --rebase` yap.) Push'tan ~1 dk
@@ -107,22 +107,21 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
 - **İkinci yönetici:** `ierayisik` hesabı depoya **collaborator** olarak ekli
   (sahiplik devri yapılmadı, `bgrckr` sahibi kalır).
 
-## Alan adı (domain) — KOD HAZIR, DNS/AYAR BEKLİYOR
-- `erayinteriors.com` + kurumsal e-posta **Natro**'dan alındı. Kod tarafı bağlamaya
-  hazır hâle getirildi (2026-07-04):
-  - ✅ Kökte `CNAME` dosyası var, içeriği: `erayinteriors.com`.
-  - ✅ Tüm mutlak URL'ler `https://bgrckr.github.io/eray-interiors/` →
-    `https://erayinteriors.com/` güncellendi (HTML `canonical`/`og:url`/`og:image`/
-    `twitter:image` + JSON-LD `url`/`image`/`logo` + `sitemap.xml` + `robots.txt`).
-- **Kullanıcının yapması gerekenler** (panel işleri — kodda değil):
-  1. **Natro DNS:** apex (`@`) için A kayıtları `185.199.108.153`, `.109`, `.110`,
-     `.111`; `www` için CNAME → `bgrckr.github.io`. **MX / e-posta kayıtlarına DOKUNMA.**
-  2. **GitHub → Settings → Pages → Custom domain:** `erayinteriors.com` yaz, kaydet
-     (CNAME dosyası zaten var; DNS check yeşile dönünce).
-  3. DNS doğrulanınca **Enforce HTTPS**'i aç (sertifika birkaç dk–saat sürebilir).
-  4. Sonra Google Search Console (Domain property) kurulumu.
-- GitHub, eski `bgrckr.github.io/eray-interiors/` adresini otomatik olarak yeni
-  alan adına yönlendirir; bağlantı kopmaz.
+## Alan adı (domain) — CANLI ✅ (2026-07-04'te tamamlandı)
+- **Site canlı:** https://erayinteriors.com/ — HTTPS geçerli (Let's Encrypt),
+  **Enforce HTTPS açık**. `www.erayinteriors.com` → apex'e 301; eski
+  `bgrckr.github.io/eray-interiors/` → yeni domaine 301 (link/SEO değeri korundu).
+- **Yapılan (bir daha gerekmez):**
+  - Kökte `CNAME` = `erayinteriors.com`. Tüm mutlak URL'ler `erayinteriors.com`'a taşındı.
+  - **Natro DNS:** apex `@` → 4 A kaydı `185.199.108.153/.109/.110/.111`;
+    `www` → CNAME `bgrckr.github.io`; sahiplik için TXT `_github-pages-challenge-bgrckr`.
+    E-posta kayıtları (MX `*.kurumsaleposta.com`, SPF, DKIM `ntr._domainkey`,
+    `autodiscover`, SRV) **dokunulmadı** — kurumsal e-posta çalışıyor.
+  - GitHub: hesap seviyesinde domain **Verified**; depo Settings→Pages custom domain
+    set + DNS check ✓ + Enforce HTTPS ✓.
+- **Domaine tekrar dokunman gerekirse:** DNS'i `Resolve-DnsName ... -Server 8.8.8.8`
+  ile doğrula; sertifika takılırsa depo Settings→Pages'te custom domain'i Remove →
+  ~1 dk → tekrar ekle (saati sıfırlar, sadece 24 saati geçen takılmalarda kullan).
 
 ## İçerik yönetim paneli (CMS)
 - **Pages CMS** kullanılıyor (https://app.pagescms.org). Yapılandırma: kök dizindeki
@@ -180,18 +179,26 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
   etiketlerinde mutlak URL ile). İkon/OG görselleri PowerShell `System.Drawing` ile
   üretildi; yeniden üretmek gerekirse aynı geometri/renk kullanılır.
 - **Tarama/indeksleme:** kökte `robots.txt` (sitemap'e işaret eder) ve `sitemap.xml`
-  (4 sayfa). URL'ler mutlak Pages adresini kullanır; alan adı değişirse `sitemap.xml`,
-  `robots.txt`, tüm `canonical`/`og:url`/JSON-LD `url` alanları güncellenmeli.
+  (5 URL: ana + 3 kategori + blog; proje detayları `?id=` olduğundan sitemap dışı).
+  Tüm mutlak URL'ler `https://erayinteriors.com/` kullanır; alan adı yine değişirse
+  `sitemap.xml`, `robots.txt`, `CNAME`, tüm `canonical`/`og:url`/JSON-LD alanları güncellenmeli.
 - **Not (yerel SEO):** İşletmeye fiziksel adres/şehir eklenirse JSON-LD'ye
   `address` (PostalAddress) + `geo` eklenmeli — Google yerel paketi (harita) için
   kritik. Şu an adres olmadığından eklenmedi.
 
-## Yapılacaklar / açık maddeler
-- **Alan adı bağla:** kod hazır (CNAME + URL'ler güncel). Kullanıcı Natro DNS +
-  GitHub Pages custom domain + Enforce HTTPS adımlarını yapacak (bkz. "Alan adı"
-  bölümü). Bu tamamlanınca **Google Search Console** (Domain property) kur.
-- Gerçek hero ve galeri görsellerini ekle.
+## Durum (2026-07-04): proje çalışır ve canlı — bu noktada duruldu
+Site tüm sayfalarıyla https://erayinteriors.com'da yayında; domain + HTTPS + SEO
+tamamlandı. Aşağıdakiler ileride dönülürse yapılacak AÇIK maddeler (aciliyet yok):
+
+- **Google Search Console (SIRADAKİ en yüksek etki):** henüz kurulmadı. "Alan Adı"
+  mülkü ekle → Google'ın verdiği TXT'yi Natro DNS'e koy → doğrula → `sitemap.xml`
+  gönder → sayfaları "dizine ekle" iste. DNS erişimi Natro panelinde.
+- **Google İşletme Profili:** açılmadı. "eray iç mimarlık" marka aramasında harita/
+  bilgi paneli için en etkili adım (kategori: İç Mimar).
+- Gerçek hero ve galeri görsellerini ekle (şu an mevcut foto havuzundan seçili).
 - (Gerekirse) yeni sosyal hesap URL'lerini `js/footer.js` → `SOCIAL`'a ekle
   (verilince JSON-LD `sameAs` dizisine de eklenmeli).
-- İsteğe bağlı: fiziksel adres/şehir → JSON-LD `address` (yerel SEO).
+- İsteğe bağlı: fiziksel adres/şehir → JSON-LD `address` + `geo` (yerel SEO paketi).
 - İsteğe bağlı: `mailto` yerine gerçek iletişim formu (ör. Formspree).
+- İsteğe bağlı: "Döviz Bürosu" İspanyolca başlığındaki yazım hatası ("Sasa" → "Casa")
+  — `content/projects-ticari.json`.
