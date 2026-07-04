@@ -63,8 +63,9 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
   Değiştirmek için tek satır yeterli. (Ayrıca HTML `theme-color` metaları ve
   `site.webmanifest` `theme_color` = `#000000`.)
 - **Arama içeriği:** `js/data.js` → `SITE_ITEMS`.
-- **Sosyal linkler:** `js/footer.js` → `SOCIAL` dizisi. Instagram tanımlı
-  (`instagram.com/erayinteriors`); Facebook/Pinterest/LinkedIn şu an `#` yer tutucu.
+- **Sosyal linkler:** `js/footer.js` → `SOCIAL` dizisi. Instagram
+  (`instagram.com/erayinteriors`) + LinkedIn (İbrahim Eray Işık profili) tanımlı.
+  Facebook/Pinterest kaldırıldı (ikonları `icons.js`'te duruyor ama kullanılmıyor).
 - **İkon/bayraklar:** `js/icons.js` (inline SVG; bayraklar Windows'ta da tutarlı görünsün diye emoji değil).
 - **Görseller:** `assets/img/` içine README'deki adlarla ekle (`hero-*.jpg`,
   `home-1.jpg`…`mutfak-6.jpg`). Hero görseli yoksa koyu degrade yer tutucu, proje şeridi
@@ -90,7 +91,7 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
   ekranda dil oku gizlenir (bayrak kalır). Playwright ile 2560→280px arası taşmasız doğrulandı.
 
 ## İletişim bilgileri (footer'da sabit)
-- E-posta: `erayinteriors@gmail.com` · Telefon: `+90 507 164 8959`
+- E-posta: `info@erayinteriors.com` · Telefon: `+90 507 164 8959`
 
 ## Yayın (deployment)
 - **GitHub deposu:** https://github.com/bgrckr/eray-interiors (public)
@@ -170,7 +171,7 @@ Projeler: kayan şeritteki kutu (ana görsel/kapak) → `proje.html?id=<slug>`. 
 - **Alan adı bağla** (yukarıdaki "Alan adı" adımları) — Natro'da `erayinteriors.com`
   aktifleşince. Bu tamamlanınca **Google Search Console** kur.
 - Gerçek hero ve galeri görsellerini ekle.
-- Facebook/Pinterest/LinkedIn gerçek URL'lerini `js/footer.js`'e yaz
+- (Gerekirse) yeni sosyal hesap URL'lerini `js/footer.js` → `SOCIAL`'a ekle
   (verilince JSON-LD `sameAs` dizisine de eklenmeli).
 - İsteğe bağlı: fiziksel adres/şehir → JSON-LD `address` (yerel SEO).
 - İsteğe bağlı: `mailto` yerine gerçek iletişim formu (ör. Formspree).

@@ -1,8 +1,8 @@
 /* ============================================================
-   Paylaşılan yeşil iletişim bölümü (footer).
+   Paylaşılan iletişim bölümü (footer).
    Sol: İletişim (e-posta + telefon)  ·  Sağ: Bizi Takip Edin.
    Sosyal bağlantıları güncellemek için aşağıdaki SOCIAL dizisini
-   düzenleyin (Facebook/Pinterest/LinkedIn şu an '#' yer tutucu).
+   düzenleyin.
    ============================================================ */
 
 window.renderFooter = function () {
@@ -10,10 +10,8 @@ window.renderFooter = function () {
   if (!host) return;
 
   const SOCIAL = [
-    { name: 'Facebook',  icon: ICONS.facebook,  href: '#' },
     { name: 'Instagram', icon: ICONS.instagram, href: 'https://instagram.com/erayinteriors' },
-    { name: 'Pinterest', icon: ICONS.pinterest, href: '#' },
-    { name: 'LinkedIn',  icon: ICONS.linkedin,  href: '#' }
+    { name: 'LinkedIn',  icon: ICONS.linkedin,  href: 'https://www.linkedin.com/in/ibrahim-eray-i%C5%9F%C4%B1k-976782159/' }
   ];
 
   const social = SOCIAL.map(s =>
@@ -24,7 +22,7 @@ window.renderFooter = function () {
     <div class="footer-inner">
       <div class="footer-col footer-left">
         <h3 data-i18n="footer.contact">İletişim</h3>
-        <div class="contact-item">${ICONS.mail}<a href="mailto:erayinteriors@gmail.com">erayinteriors@gmail.com</a></div>
+        <div class="contact-item">${ICONS.mail}<a href="mailto:info@erayinteriors.com">info@erayinteriors.com</a></div>
         <div class="contact-item">${ICONS.phone}<a href="tel:+905071648959">+90 507 164 8959</a></div>
       </div>
       <div class="footer-col footer-right">
