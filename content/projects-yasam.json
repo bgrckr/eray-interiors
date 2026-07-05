@@ -122,7 +122,8 @@
     {
       "slug": "Korupark Evleri, Bursa",
       "date": "2024-11-09",
-      "featured": false
+      "featured": false,
+      "cover": "assets/img/37-2.jpg"
     }
   ]
 }
