@@ -124,6 +124,11 @@
       "date": "2024-11-09",
       "featured": false,
       "cover": "assets/img/37-2.jpg",
+      "title": {
+        "tr": "Korupark Evleri, Bursa",
+        "en": "Korupark Evleri, Bursa",
+        "es": "Korupark Evleri, Bursa"
+      },
       "blocks": [
         {
           "image": "assets/img/36-2.jpg"
