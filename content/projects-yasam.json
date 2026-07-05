@@ -202,6 +202,17 @@
           "image": "assets/img/5-2.jpg"
         }
       ]
+    },
+    {
+      "slug": "I.E. Genç Odası ",
+      "date": "2026-05-01",
+      "featured": true,
+      "cover": "assets/img/12-1.jpg",
+      "title": {
+        "tr": "I.E. Genç Odası ",
+        "en": "I.E. Genç Odası ",
+        "es": "I.E. Genç Odası "
+      }
     }
   ]
 }
