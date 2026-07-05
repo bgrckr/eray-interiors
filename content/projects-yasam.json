@@ -236,6 +236,40 @@
           "image": "assets/img/13-2.jpg"
         }
       ]
+    },
+    {
+      "slug": "G.M. Mutfak",
+      "date": "2024-02-16",
+      "featured": false,
+      "cover": "assets/img/b4-1.jpg",
+      "title": {
+        "tr": "G.M. Mutfak",
+        "en": "G.M. Kitchen",
+        "es": "G.M. Cocina"
+      },
+      "blocks": [
+        {
+          "image": "assets/img/b1-1.jpg"
+        },
+        {
+          "image": "assets/img/b2.jpg"
+        },
+        {
+          "image": "assets/img/b4-2.jpg"
+        },
+        {
+          "image": "assets/img/b5.jpg"
+        },
+        {
+          "image": "assets/img/3-4.jpg"
+        },
+        {
+          "image": "assets/img/4-2.jpg"
+        },
+        {
+          "image": "assets/img/5-3.jpg"
+        }
+      ]
     }
   ]
 }
