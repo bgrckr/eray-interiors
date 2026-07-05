@@ -123,7 +123,52 @@
       "slug": "Korupark Evleri, Bursa",
       "date": "2024-11-09",
       "featured": false,
-      "cover": "assets/img/37-2.jpg"
+      "cover": "assets/img/37-2.jpg",
+      "blocks": [
+        {
+          "image": "assets/img/36-2.jpg"
+        },
+        {
+          "image": "assets/img/37-3.jpg"
+        },
+        {
+          "image": "assets/img/38-3.jpg"
+        },
+        {
+          "image": "assets/img/39-1.jpg"
+        },
+        {
+          "image": "assets/img/40-1.jpg"
+        },
+        {
+          "image": "assets/img/41-1.jpg"
+        },
+        {
+          "image": "assets/img/42-1.jpg"
+        },
+        {
+          "image": "assets/img/43-1.jpg"
+        },
+        {
+          "image": "assets/img/44-1.jpg"
+        },
+        {
+          "image": "assets/img/45.jpg"
+        },
+        {
+          "image": "assets/img/46-3.jpg"
+        },
+        {
+          "image": "assets/img/26.jpg"
+        },
+        {
+          "image": "assets/img/15-2.jpg"
+        },
+        {
+          "image": "assets/img/16-2.jpg"
+        },
+        {}
+      ]
     }
   ]
 }
