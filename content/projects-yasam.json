@@ -210,9 +210,32 @@
       "cover": "assets/img/12-1.jpg",
       "title": {
         "tr": "I.E. Genç Odası ",
-        "en": "I.E. Genç Odası ",
-        "es": "I.E. Genç Odası "
-      }
+        "en": "I.E. Teen Bedroom",
+        "es": "I.E. Dormitorio juvenil"
+      },
+      "blocks": [
+        {
+          "image": "assets/img/8-8.jpg"
+        },
+        {
+          "image": "assets/img/8a.jpg"
+        },
+        {
+          "image": "assets/img/9-4.jpg"
+        },
+        {
+          "image": "assets/img/10-4.jpg"
+        },
+        {
+          "image": "assets/img/11-3.jpg"
+        },
+        {
+          "image": "assets/img/12-2.jpg"
+        },
+        {
+          "image": "assets/img/13-2.jpg"
+        }
+      ]
     }
   ]
 }
