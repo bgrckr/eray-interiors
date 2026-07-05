@@ -85,26 +85,37 @@
       ]
     },
     {
-      "slug": "ada-mutfak",
-      "date": "2026-04-10",
+      "slug": "B.Ç. Mutfak, Yalova",
+      "date": "2025-08-10",
       "featured": true,
-      "cover": "assets/img/8.jpg",
+      "cover": "assets/img/7.jpg",
       "title": {
-        "tr": "Ada Mutfak",
-        "en": "Island Kitchen",
-        "es": "Cocina con Isla"
+        "tr": "B.Ç. Mutfak, Yalova",
+        "en": "B.Ç. Kitchen, Yalova",
+        "es": "B.Ç. Cocina, Yalova"
       },
       "blocks": [
         {
-          "image": "assets/img/8.jpg",
+          "image": "assets/img/6.jpg",
           "caption": {
-            "tr": "Geniş ada, hem çalışma hem sosyalleşme alanı olarak kurgulandı.",
-            "en": "A large island designed as both a work surface and a social hub.",
-            "es": "Una gran isla pensada como superficie de trabajo y punto de encuentro."
+            "tr": "Bej ve meşe kombinasyonu ile küçük alanda maksimum depolama çözümü üreterek, ankastre cihazlarla fonksiyonel ve temiz bir görünüm yakalanan çalışma tezgahı tasarlandı.",
+            "en": "A countertop design was created that achieves a functional, clean look through the use of built-in appliances, while delivering a maximum storage solution for a small space via a combination of beige and oak finishes.",
+            "es": "Se diseñó una encimera que logra una estética limpia y funcional mediante el uso de electrodomésticos integrados, al tiempo que ofrece una solución de almacenamiento máximo para un espacio reducido gracias a una combinación de acabados en beige y roble."
           }
         },
         {
-          "image": "assets/img/32.jpg"
+          "image": "assets/img/8-7.jpg",
+          "caption": {
+            "tr": "Kiler dolabı ve hızlı kahvaltılar için küçük bar.",
+            "en": "Pantry cabinet and a small bar for quick breakfasts.",
+            "es": "Armario despensero y una pequeña barra para desayunos rápidos."
+          }
+        },
+        {
+          "image": "assets/img/7-4.jpg"
+        },
+        {
+          "image": "assets/img/10-3.jpg"
         }
       ]
     }
