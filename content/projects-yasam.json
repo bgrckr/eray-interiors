@@ -226,7 +226,12 @@
           "image": "assets/img/8a.jpg"
         },
         {
-          "image": "assets/img/9-4.jpg"
+          "image": "assets/img/9-4.jpg",
+          "caption": {
+            "tr": "Sade malzeme dili ve rafine mekânsal kurgu ile genç kullanıcıya yönelik çağdaş bir yaşam alanı tasarlandı.",
+            "en": "A contemporary living space for a young user was designed through a restrained material palette and a refined spatial composition.",
+            "es": "Se diseñó un espacio de vida contemporáneo para un usuario joven a través de una paleta material contenida y una composición espacial refinada."
+          }
         },
         {
           "image": "assets/img/10-4.jpg"
