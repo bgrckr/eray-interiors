@@ -10,12 +10,7 @@
       },
       "blocks": [
         {
-          "image": "assets/img/6-5.jpg",
-          "caption": {
-            "tr": "Açık planlı loft: yüksek tavan ve ham dokularla modern bir yaşam.",
-            "en": "Open-plan loft: modern living with high ceilings and raw textures.",
-            "es": "Loft de planta abierta: vida moderna con techos altos y texturas crudas."
-          }
+          "image": "assets/img/6-5.jpg"
         },
         {
           "image": "assets/img/7-2.jpg"
