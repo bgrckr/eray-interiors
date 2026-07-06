@@ -1,9 +1,8 @@
 {
   "posts": [
     {
-      "slug": "2026-ic-mekan-trendleri",
-      "date": "2026-06-15",
-      "cover": "assets/img/blog-1.jpg",
+      "slug": "Backrooms: Bir İç Mimarın Gözünden “Liminal Mekan” Estetiği",
+      "date": "2026-07-06",
       "title": {
         "tr": "2026 İç Mekân Trendleri: Sıcak Minimalizm",
         "en": "2026 Interior Trends: Warm Minimalism",
@@ -18,8 +17,7 @@
         "tr": "2026, iç mekânlarda \"sıcak minimalizm\" akımının yükseldiği bir yıl oluyor. Soğuk, steril beyaz yüzeylerin yerini; ahşap, keten, taş ve toprak tonları alıyor. Sadelik korunuyor ama artık daha davetkâr, daha yaşanabilir bir sadelik bu.\n\nDoğal malzemeler yalnızca estetik değil, sürdürülebilirlik açısından da öne çıkıyor. Geri dönüştürülebilir yüzeyler, düşük etkili üretim ve uzun ömürlü mobilyalar tasarım kararlarının merkezine yerleşiyor.\n\nAydınlatmada ise katmanlı çözümler öne çıkıyor: tek bir tavan lambası yerine, farklı yükseklik ve sıcaklıklarda ışık kaynaklarıyla mekâna derinlik ve his kazandırılıyor. Amacımız, girdiğiniz anda huzur veren mekânlar tasarlamak.",
         "en": "2026 is the year \"warm minimalism\" rises in interiors. Cold, sterile white surfaces give way to wood, linen, stone and earthy tones. Simplicity remains, but it is now a more inviting, more liveable simplicity.\n\nNatural materials stand out not only aesthetically but also for sustainability. Recyclable surfaces, low-impact production and long-lasting furniture move to the centre of design decisions.\n\nIn lighting, layered solutions lead the way: instead of a single ceiling lamp, light sources at different heights and temperatures give the space depth and feeling. Our aim is to design spaces that bring calm the moment you step in.",
         "es": "2026 es el año en que el \"minimalismo cálido\" gana fuerza en los interiores. Las superficies blancas frías y estériles dan paso a la madera, el lino, la piedra y los tonos tierra. La simplicidad permanece, pero ahora es una simplicidad más acogedora y habitable.\n\nLos materiales naturales destacan no solo por la estética, sino también por la sostenibilidad. Las superficies reciclables, la producción de bajo impacto y el mobiliario duradero pasan al centro de las decisiones de diseño.\n\nEn la iluminación, las soluciones por capas marcan el camino: en lugar de una sola lámpara de techo, fuentes de luz a distintas alturas y temperaturas dan profundidad y carácter al espacio. Nuestro objetivo es diseñar espacios que transmitan calma desde el primer momento."
-      },
-      "images": []
+      }
     }
   ]
 }
